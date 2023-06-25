@@ -6,7 +6,8 @@ https://cleanerlite.blogspot.com/2023/06/cleaner-lite-pro.html?m=1
 ### Premium Page
 http://cleanerlite.blogspot.com/2023/06/purchase-page.html
 
-••••••••••••••••••••••••••••••••••
+•••••••••••••••••••••••••••••••••
+
 Developer Contact details
 Telegram id : @araafroyall
 Email : araafroyall@digdig.org
