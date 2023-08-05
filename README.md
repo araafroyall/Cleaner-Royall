@@ -2,14 +2,16 @@
 𝗧𝗵𝗲 𝗕𝗲𝘀𝘁 𝗖𝗹𝗲𝗮𝗻𝗶𝗻𝗴 𝗔𝗽𝗽 𝗘𝘃𝗲𝗿 𝗠𝗮𝗱𝗲 [Root]
 
 
-### Offcial website
-https://cleanerlite.blogspot.com/2023/06/cleaner-lite-pro.html?m=1
+### Offcial Channel
+https://t.me/cleanerprolite
 
 
-### Premium Page
-http://cleanerlite.blogspot.com/2023/06/purchase-page.html
+### Cleaner Lite Helper App
+https://github.com/araafroyall/Cleaner.Lite.Helper
 
+### Direct Download Latest Version
 
+https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Version2.4/Cleaner.Lite.Pro.v2.4.Signed.apk
 •••••••••••••••••••••••••••••••••
 
 Developer Contact details
