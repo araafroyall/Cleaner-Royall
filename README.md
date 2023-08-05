@@ -11,7 +11,8 @@ https://github.com/araafroyall/Cleaner.Lite.Helper
 
 ### Direct Download Latest Version
 
-https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Version2.4/Cleaner.Lite.Pro.v2.4.Signed.apk
+
+https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Version2.4/Cleaner.Pro.Lite.2.4.Signed.apk
 •••••••••••••••••••••••••••••••••
 
 Developer Contact details
