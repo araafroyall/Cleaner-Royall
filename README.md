@@ -12,7 +12,7 @@ https://t.me/cleanerprolite
 https://github.com/araafroyall/Cleaner.Lite.Helper
 
 ### Direct Download Latest Version
-        [Download](https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Latest/Cleaner.Lite.Pro.Latest.apk)
+      https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Latest/Cleaner.Lite.Pro.Latest.apk
 •••••••••••••••••••••••••••••••••
 
 Developer Contact details
@@ -24,3 +24,4 @@ Email : araafroyall@digdig.org
 Gmail : araafroyall@gmail.com
 
 •••••••••••••••••••••••••••••••••••
+
