@@ -12,7 +12,7 @@ https://t.me/cleanerprolite
 https://github.com/araafroyall/Cleaner.Lite.Helper
 
 ### Direct Download Latest Version
-https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Latest/Cleaner.Lite.Pro.Latest.apk
+        [Download](https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Latest/Cleaner.Lite.Pro.Latest.apk)
 •••••••••••••••••••••••••••••••••
 
 Developer Contact details
