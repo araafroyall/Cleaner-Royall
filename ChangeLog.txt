@@ -1,0 +1,160 @@
+### Version 2.4
+🚀 : Oat Size supports both MB/GB
+🚀 : 𝗘𝗺𝗽𝘁𝘆 𝗙𝗼𝗹𝗱𝗲𝗿 𝐂𝐥𝐞𝐚𝐧𝐞𝐫
+🚀 : 𝗢𝗻𝗲𝗧𝗮𝗽 𝗖𝗹𝗲𝗮𝗻𝗲𝗿
+🚀 : 𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐕𝐢𝐞𝐰𝐞𝐫
+🚀 : 𝐂𝐚𝐜𝐡𝐞 𝐓𝐫𝐢𝐦 𝐒𝐮𝐩𝐞𝐫 𝐄𝐧𝐡𝐚𝐧𝐜𝐞𝐝
+🚀 : Option Hider
+( Every Single folder naming 'Cache' or 'cache' with its contents will be cleared in one click from device Globally )
+🚀 : Empty Folder Output option
+𝗙𝗶𝘅 : Titles of Some Pages
+𝗙𝗶𝘅 : Delvik cache Storage Viewer Mechanism
+𝗙𝗶𝘅 : Error of The specified child already has a parent when using noRoot Cleaner than Root Cleaner .
+𝗙𝗶𝘅 : Easy Cache Wiper API Dirs
+𝗙𝗶𝘅 : Texts & Improvements
+💬 : No Confirm option for Daily clean
+💬 : No Need of Magisk Module
+        𝐓𝐡𝐞 𝐀𝐩𝐩 𝐢𝐬 𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥
+💬 : Removed Useless Root codes
+💬 : New directories for Log Cleaner,Internal Storage cleaner , etc..
+💬 : Bug Fixes & Improvements
+💬 : Updated Coming Soon
+
+--------------------------------------------
+### 𝘃𝟮.𝟮 
+𝗪𝗼𝗿𝗸𝗶𝗻𝗴  𝟯𝗫  𝗙𝗮𝘀𝘁𝗲𝗿 𝗡𝗼𝘄
+🚀 : Lucky Patcher Cleaner
+🚀 : Now showing more accurate tasking and toast For Every Task
+🚀 : Introducing Non-Root Cleaner
+🚀 : Daily Cleaner Enhanced + 
+🚀 : oat(vdex/odex) Total size viewer
+🚀 : Introducing Cleaner Lite Helper
+Fix : More option in custom directories selector
+Fix : FsTrim Restructured with accurate reasoning & Tasking
+Fix : Delvik cache mechanism
+💬 : Now Unavailability or denied of root acess does not kill app instead it will show proper reason of error (if happen)
+💬 : Dropped Android 5 Support as Magisk Officially dropped for it
+💬 : Custom patch & Modified App in Lucky patcher cleaner
+💬 : Readd : Fix /data/local/tmp
+💬 : Removed list from custom cleaner popup but available in its settings
+💬 : Dropped Terminal Support due to StandAlone App
+💬 : WhatsApp cleaner now clears few cache files for All users
+💬 : Removes Many bugs and performed improvements
+💬 : Readd : Mount /data
+💬 : Changed Backup Restore custom directory Mechanism
+••••••••••••••••••••••••••••••••••••••••••••
+### 𝘃𝟮.𝟭
+🚀 : Import | Export Option in Custom Cleaner 
+🚀 : oat/odex/vdex size view 
+Fix : Premium Page Opener
+Fix : Text in custom cleaner
+Fix : Delvik Cache size viewer
+Fix : Removing directory bug in custom cleaner
+💬 : Import & Export through Clipboard or File
+
+••••••••••••••••••••••••••••••••••••••••••••
+### 𝘃𝟮.𝟬  
+🚀 : New UI 
+🚀 : Introducing Premium Features
+🚀 : Whatsapp Tool
+🚀 : Restructured Root commands
+🚀 : Custom Cleaner
+🚀 : Multi-User Support
+🚀 : Used Storage view (Limited)
+🚀 : Help Option in Each Pages
+🚀 : Magisk Module Support (soon)
+Fix : Deep cleaning at system level
+Fix : About Dialog Information
+Fix : Capital Letter Problem
+Fix : Enhanced Delvik Cache clean
+Fix : oat/vdex/odex cleaner
+Fix : Bugs and Issues
+💬 : Premium Restore option and premium code preserve 
+💬 : Fix Cleaning List
+💬 : Updated Banners
+💬 : Fix Custom cleaner Mechanism
+💬 : prevent /data/local/tmp folder from clean by Easy cache wiper API.
+-----------------------------------------------
+### v1.9
+
+🆕 : Fstrim 
+Fix : Folder /data/local/tmp auto
+Update : Dynamic dalvik cleaner
+🆕 : Supports users options
+🆕 : Settings Implimentation [Hot]
+🆕 : Advance Features support 
+Update : Whatsapp cleaner advance
+Update : oat cleaner by versions
+🆕 : Battery calibration (unstable)
+🆕 : View used storage [Hot]
+🆕 : Support Android 5 to 13
+-----------------------------------------------
+### v1.8
+
+🆕 : Introducing New Changelog Ui
+🆕 : Fix "data/local/tmp" folder
+        option
+Fix : Feedback Options 
+Fix : Cleaning Mechanism in Old Android version
+🆕 : Donate Option to keep this
+        project Alive.
+Fix : Integration of commands
+Fix : Removed v1.7 wastes
+Up : Bump version code to 2
+🔅 : Must see coming soon features
+🔅 : Please provide feedback or suggestion if you have any idea.
+------------------------------------------------
+v1.6
+🔸 : Suspended Daily Update
+🆕 : UI Color Designs 🖌️
+🔸 : Suspended Settings page
+        temporarily.
+Fix : Cleaning mechanism
+Fix : Non-Root log view/handler
+Fix : Margins
+------------------------------------------------
+### v1.5
+🆕 : Logcat Cleaner in Logs Cleaner.
+🆕 : Cleaning Directories list Option
+🆕 : UI Designs
+🆕 : Uninstall this App button
+Fix : Removed Subtitle cleaner
+Fix : Check Update Intent.
+Fix : Dialog Random options
+Fix : Log clear mechanism 
+Fix : Margins & Styling
+Note : I am not making beautify Animated UI as this will increase App size.
+More Coming Soon +++...
+------------------------------------------------
+### v1.4
+• 🆕 :oat/odex/vdex cleaner now supports old Android versions.
+• 🆕 : Settings Page Implimentation.
+• Fix : Report bug in random dialog.
+• Fix : Supports system dark mode
+• 🆕 : Daily Cleaner shift to down for easy use.
+• 🆕 : All Old Changeloge Merge.
+• 🆕 : Changelog UI improvements.
+• 🆕 : Action performed replaced to Cleared.
+• 🆕 : Execute replaced to Clear.
+• Fix : Margins
+• Fix : Fonts in About Dialog.
+• Fix : some other improvements.
+------------------------------------------
+###  v1.3 + v1.2 + v1.0
+- New : Proper Instructions
+- New : Daily Cleaner
+- Fix.   : Fonts & Texts
+- New : Feedback Option
+- New : Easy cache wiper API
+- New : Option to mount /data
+- New : Removed sh scripts
+- Fix    : User Reported bugs 
+------------------------------------------
+------------------------------------------
+👨‍🎤 Developer :
+AraafRoyall  || AR
+email : araafroyall@digdig.org
+gmail : araafroyall@gmail.com
+------------------------------------------
+📜 Note : 
+𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐢𝐬 𝐧𝐨𝐭 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐚𝐧𝐲 𝐝𝐚𝐦𝐚𝐠𝐞 𝐩𝐥𝐞𝐚𝐬𝐞 𝐛𝐞 𝐜𝐚𝐫𝐞𝐟𝐮 𝐛𝐞𝐟𝐨𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐢𝐬 𝐚𝐩𝐩.
