@@ -1,3 +1,71 @@
+
+### Version 2.9
+🚀 :  Globally .nomedia Cleaner
+🚀 : SpeedUp EmptyFolder Cleaner
+𝗙𝗶𝘅 : Custom Directories Hints
+𝗙𝗶𝘅 : Temporary Files Cleaner Output
+𝗙𝗶𝘅 : Texts & minor information
+𝗙𝗶𝘅 : Notification checkbox in custom cleaner
+𝗙𝗶𝘅 : Fstrim on Android 13
+𝗙𝗶𝘅 : Bugs & Bot Intent issue
+💬 : Bash changed to 'sh' Shell scripting to support Almost All Devices
+💬 : MultiUser EmptyFolder Cleaner now outputs 'user'
+💬 : New Custom Dirs Import Style
+💬 : Premium Price are now fixed to 3$.
+
+-------------------------------------------
+
+### Version 2.8
+🚀 : Smart Clean (Customizable)
+🚀 : Increased Overall Speed
+🚀 : Multi-User EmptyFolder Cleaner
+🚀 : Theme Support now Available
+🚀 : Browser Cache Cleaner
+🚀 : Templates in Smart Cleaner
+𝗙𝗶𝘅 : output of EmptyFolder Cleaner
+𝗙𝗶𝘅 : Dynamic Action Acess Code
+💬 : Suspended storage view on Android 11 below devices
+💬 : Reduced App Size
+💬 : Introducing Custom Directory Hints
+💬 : Smart Cleaner in place of .nomedia cleaner , and this is moved to Cleaner Toolbox
+💬 : Updated java version 1.7>11
+💬 : Updated Dexer from x to 8
+
+-------------------------------------------
+### Version 2.6 + 2.7
+🚀 : Modified versions of whatsapp Cleaner (Gbwhatsapp,Yowhatsapp,etc)
+🚀 : SeLinux Profile(Toolbox)
+🚀 : Introducing Dymanic Action
+🚀 : Custom Cleaner now supports /data directories
+🚀 : Split Status Cleaner
+🚀 : outputs of empty folder ,temporary files, .nomedia cleaner  
+𝗙𝗶𝘅 : 𝐋𝐚𝐲𝐨𝐮𝐭 𝐂𝐨𝐦𝐩𝐚𝐭𝐚𝐛𝐢𝐥𝐢𝐭𝐲 for All devices 
+𝗙𝗶𝘅 : bug fixes & Improvements 
+💬 : Dark Mode Supporting
+💬 : Dynamic Action include Redeem code, Direct Action, Settings changer , commands etc...
+💬 : Dalvik Enabler/Disabler by Dynamic Action for lower device
+💬 : New Trial Mode
+💬 : Old changelog shift to web
+💬 : Restructured Purchase code generator and Premium Activator
+-------------------------------------------
+
+### Version 2.5
+🚀 : 𝐋𝐨𝐠𝐬 𝐂𝐥𝐞𝐚𝐧𝐞𝐫 𝐄𝐧𝐡𝐚𝐧𝐜𝐞𝐝
+🚀 : 𝐓𝐞𝐦𝐩𝐨𝐫𝐚𝐫𝐲 𝐅𝐢𝐥𝐞𝐬 𝐂𝐥𝐞𝐚𝐧𝐞𝐫
+🚀 : .Nomedia Cleaner
+🚀 : Compatibility Checker
+𝗙𝗶𝘅 : Empty Folder Cleaner
+𝗙𝗶𝘅 : Some dialogs on custom font Devices
+𝗙𝗶𝘅 : Cache Trim Enhance
+💬 : Now Clears all Logs with extension '.log' Globally
+💬 : Updated Many Directories
+💬 : Suspended NoRoot Cleaner as This app mainly for Rooted Device
+💬 : Updated OneTap Cleaner
+💬 : Fix Bugs & Improvements
+💬 : Update Help & Cleaning List
+💬 : Currently this app don't support 𝐒𝐃 𝐂𝐀𝐑𝐃 Cleaner as it is removable storage & time consume process to make cleanable mechanism for this
+
+
 ### Version 2.4
 🚀 : Oat Size supports both MB/GB
 🚀 : 𝗘𝗺𝗽𝘁𝘆 𝗙𝗼𝗹𝗱𝗲𝗿 𝐂𝐥𝐞𝐚𝐧𝐞𝐫
@@ -20,7 +88,7 @@
 💬 : Bug Fixes & Improvements
 💬 : Updated Coming Soon
 
---------------------------------------------
+-------------------------------------------
 ### 𝘃𝟮.𝟮 
 𝗪𝗼𝗿𝗸𝗶𝗻𝗴  𝟯𝗫  𝗙𝗮𝘀𝘁𝗲𝗿 𝗡𝗼𝘄
 🚀 : Lucky Patcher Cleaner
