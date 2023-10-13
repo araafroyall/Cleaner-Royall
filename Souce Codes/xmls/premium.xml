@@ -1,0 +1,255 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#000000">
+		<LinearLayout
+			android:id="@+id/linear1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="2dp"
+			android:background="#000000"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/finalPremium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<ImageView
+					android:id="@+id/imageview2"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:layout_marginLeft="3dp"
+					android:src="@drawable/verifier_1"
+					android:scaleType="fitCenter"
+					android:layout_gravity="center_horizontal|center_vertical" />
+				<HorizontalScrollView
+					android:id="@+id/hscroll2"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+					<TextView
+						android:id="@+id/output"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="left"
+						android:text="Congratulations... Premium is Activated"
+						android:textSize="14sp"
+						android:textColor="#FFFFFF"
+						android:layout_gravity="center_vertical" />
+				</HorizontalScrollView>
+			</LinearLayout>
+			<Button
+				android:id="@+id/features"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="20dp"
+				android:layout_marginBottom="5dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:background="#76FF03"
+				android:text="🛸 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<Button
+				android:id="@+id/purchase"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="20dp"
+				android:layout_marginBottom="5dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:background="#76FF03"
+				android:text="💸 𝗣𝘂𝗿𝗰𝗵𝗮𝘀𝗲 𝗣𝗿𝗲𝗺𝗶𝘂𝗺"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<LinearLayout
+				android:id="@+id/linear11"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="2dp"
+				android:layout_marginBottom="2dp"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/site"
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="1dp"
+					android:padding="8dp"
+					android:background="#FFFF00"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="🖥️ 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗕𝗼𝘁"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:layout_weight="1" />
+				<TextView
+					android:id="@+id/github"
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:layout_marginLeft="5dp"
+					android:layout_marginTop="2dp"
+					android:layout_marginRight="10dp"
+					android:layout_marginBottom="1dp"
+					android:padding="8dp"
+					android:background="#FFFF00"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="🌎 𝐆𝐢𝐭𝐇𝐮𝐛 𝐑𝐞𝐥𝐞𝐚𝐬𝐞𝐬"
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:layout_weight="1" />
+			</LinearLayout>
+			<Button
+				android:id="@+id/restorePurchaseButton"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="20dp"
+				android:layout_marginBottom="5dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:background="#76FF03"
+				android:text="📥 𝙍𝙚𝙨𝙩𝙤𝙧𝙚 𝙋𝙪𝙧𝙘𝙝𝙖𝙨𝙚"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<Button
+				android:id="@+id/Helper"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="20dp"
+				android:layout_marginBottom="5dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:background="#76FF03"
+				android:text="🧩 𝗖𝗹𝗲𝗮𝗻𝗲𝗿 𝗟𝗶𝘁𝗲 𝗛𝗲𝗹𝗽𝗲𝗿"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<LinearLayout
+				android:id="@+id/linear7"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/codetxt"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dp"
+					android:padding="8dp"
+					android:text="Purchase Code : "
+					android:textSize="14sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<TextView
+					android:id="@+id/code"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dp"
+					android:padding="8dp"
+					android:text="GettingCode"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF" />
+				<Button
+					android:id="@+id/copycode"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dp"
+					android:padding="8dp"
+					android:text="📋 Copy"
+					android:textSize="14sp"
+					android:textColor="#000000" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear8"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear9"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="30dp"
+					android:layout_marginRight="30dp"
+					android:padding="8dp"
+					android:background="#FFFF00"
+					android:orientation="vertical">
+					<LinearLayout
+						android:id="@+id/linear10"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+						<HorizontalScrollView
+							android:id="@+id/hscroll1"
+							android:layout_width="250dp"
+							android:layout_height="wrap_content">
+							<EditText
+								android:id="@+id/activationCode"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:padding="8dp"
+								android:textSize="16sp"
+								android:textColor="#000000"
+								android:hint="Paste Activation Code Here"
+								android:textColorHint="#607D8B"
+								android:singleLine="true" />
+						</HorizontalScrollView>
+						<TextView
+							android:id="@+id/activation_code_paster"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:gravity="center_horizontal|center_vertical"
+							android:text="📋"
+							android:textSize="20sp"
+							android:textColor="#000000"
+							android:layout_gravity="center_horizontal|center_vertical" />
+					</LinearLayout>
+					<Button
+						android:id="@+id/codeactivator"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:background="#F48FB1"
+						android:text="🛸 𝐀𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐏𝐫𝐞𝐦𝐢𝐮𝐦"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+			</LinearLayout>
+			<TextView
+				android:id="@+id/result"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:background="#000000"
+				android:text="check"
+				android:textSize="10sp"
+				android:textColor="#000000" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
