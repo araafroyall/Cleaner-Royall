@@ -1,0 +1,261 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/linear1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF"
+			android:orientation="vertical">
+			<TextView
+				android:id="@+id/help"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:padding="8dp"
+				android:background="#FFFF00"
+				android:text="𝐓𝐡𝐢𝐬 𝐅𝐞𝐚𝐭𝐮𝐫𝐞 𝐇𝐞𝐥𝐩 𝐘𝐨𝐮 𝐭𝐨 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐬𝐨𝐦𝐞 𝐝𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐢𝐞𝐬\n 𝐈𝐭 𝐦𝐚𝐲 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐢𝐧𝐚𝐜𝐜𝐮𝐫𝐚𝐭𝐞 𝐝𝐞𝐭𝐚𝐢𝐥𝐬 𝐬𝐨𝐦𝐞𝐭𝐢𝐦𝐞𝐬 𝐨𝐧 𝐬𝐨𝐦𝐞 𝐝𝐞𝐯𝐢𝐜𝐞𝐬 𝐝𝐮𝐞 𝐭𝐨 𝐌𝐞𝐜𝐡𝐚𝐧𝐢𝐬𝐦 𝐄𝐫𝐫𝐨𝐫\n\n𝐂𝐥𝐢𝐜𝐤 𝐭𝐨 𝐤𝐧𝐨𝐰 𝐦𝐨𝐫𝐞"
+				android:textSize="12sp"
+				android:textStyle="bold"
+				android:textColor="#000000" />
+			<LinearLayout
+				android:id="@+id/linear13"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="3dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear14"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview12"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸/system Partition"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/system"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear17"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear18"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview16"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Magisk &amp; Its Modules"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/magisk"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear19"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear20"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview18"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Internal Storage"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/internal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear21"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear22"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview20"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Delvik Cache"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/delvik"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear23"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear24"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview22"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Oat (odex/vdex) usage"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/oat"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear25"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear26"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview24"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Multi-Users Internal Storage"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+					<ImageView
+						android:id="@+id/imageview2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ic_error_black"
+						android:scaleType="center"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/multiInternal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<Button
+				android:id="@+id/Calculate"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="25dp"
+				android:layout_marginTop="30dp"
+				android:layout_marginRight="25dp"
+				android:layout_marginBottom="5dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:background="#00E676"
+				android:text="💽 𝗚𝗲𝘁 𝘀𝘁𝗼𝗿𝗮𝗴𝗲 𝗨𝘀𝗮𝗴𝗲"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<TextView
+				android:id="@+id/result"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:background="#FFFFFF"
+				android:textSize="10sp"
+				android:textColor="#FFFFFF" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

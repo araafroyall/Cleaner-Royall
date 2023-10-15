@@ -1,0 +1,146 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<TextView
+		android:id="@+id/help"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:padding="8dp"
+		android:background="#FFFF00"
+		android:text="𝐈𝐟 𝐲𝐨𝐮 𝐰𝐢𝐬𝐡 𝐭𝐨 𝐂𝐥𝐞𝐚𝐧 𝐌𝐢𝐥𝐭𝐢𝐩𝐥𝐞 𝐈𝐭𝐞𝐦 𝐰𝐢𝐭𝐡 𝐨𝐧𝐞𝐓𝐚𝐩 𝐚𝐧𝐝 𝐬𝐚𝐯𝐞 𝐭𝐢𝐦𝐞 𝐭𝐡𝐚𝐧 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐟𝐞𝐚𝐭𝐮𝐫𝐞 \n𝐉𝐮𝐬𝐭 𝐒𝐞𝐥𝐞𝐜𝐭 𝐭𝐡𝐞 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧𝐬 𝐟𝐨𝐫 𝐨𝐧𝐞𝐓𝐚𝐩 𝐂𝐥𝐞𝐚𝐧𝐞𝐫\nThe unselected will be skipped\n(𝐘𝐨𝐮𝐫 𝐏𝐫𝐞𝐟𝐞𝐫𝐚𝐧𝐜𝐞 𝐰𝐢𝐥𝐥 𝐛𝐞 𝐬𝐚𝐯𝐞𝐝 𝐟𝐨𝐫 𝐥𝐚𝐭𝐞𝐫 𝐮𝐬𝐞)"
+		android:textSize="12sp"
+		android:textStyle="bold"
+		android:textColor="#000000" />
+	<TextView
+		android:id="@+id/textview1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="8dp"
+		android:text="This Feature may not be updated in Upcoming updates as it requires large amount of work"
+		android:textSize="12sp"
+		android:textColor="#D50000" />
+	<CheckBox
+		android:id="@+id/logclean"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Logs Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/wiper"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Cache Wiper API"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/dalvik"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Dalvik Cache Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/internal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Internal Storage Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/oatt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Oat (Odex/Vdex) Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/additional"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Temporary files , .nomedia &amp;  LOST.DIR etc Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/cacheteim"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Cache Trim"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/empty"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Empty Folder Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/customcleaner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Custom Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<CheckBox
+		android:id="@+id/multuser"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:padding="8dp"
+		android:text="Multi-User Cleaner"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+	<Button
+		android:id="@+id/OneTapClean"
+		android:layout_width="350dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:layout_marginTop="30dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginBottom="5dp"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp"
+		android:background="#00E676"
+		android:text="🚀 𝗢𝗻𝗲𝗧𝗮𝗽 𝗖𝗹𝗲𝗮𝗻"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		android:textColor="#000000"
+		android:layout_gravity="center_horizontal|center_vertical" />
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp">
+		<TextView
+			android:id="@+id/Result"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:textSize="12sp"
+			android:textColor="#F44336" />
+	</ScrollView>
+</LinearLayout>
