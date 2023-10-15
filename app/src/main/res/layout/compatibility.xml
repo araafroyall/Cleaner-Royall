@@ -1,0 +1,115 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<TextView
+		android:id="@+id/help"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:padding="8dp"
+		android:background="#FFFF00"
+		android:text="𝐂𝐨𝐦𝐩𝐚𝐭𝐢𝐛𝐢𝐥𝐢𝐭𝐲 𝐈𝐧𝐜𝐥𝐮𝐝𝐞𝐬 𝐭𝐞𝐬𝐭𝐢𝐧𝐠 𝐨𝐟 '𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐨𝐟 𝐭𝐡𝐢𝐬 𝐚𝐩𝐩 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐝𝐞𝐯𝐢𝐜𝐞'\n𝐈𝐟 𝐲𝐨𝐮𝐫 𝐝𝐞𝐯𝐢𝐜𝐞 𝐢𝐬 𝐧𝐨𝐭 𝐜𝐨𝐦𝐩𝐢𝐭𝐢𝐛𝐥𝐞 𝐭𝐨 𝐮𝐬𝐞 '𝐂𝐥𝐞𝐚𝐧𝐞𝐫 𝐋𝐢𝐭𝐞 𝐏𝐫𝐨' 𝐰𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞𝐬 𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻's 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐂𝐨𝐦𝐩𝗮𝐭𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 𝐝𝐞𝐯𝐢𝐜𝐞"
+		android:textSize="14sp"
+		android:textStyle="bold"
+		android:textColor="#000000" />
+	<TextView
+		android:id="@+id/Result"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="15dp"
+		android:padding="8dp"
+		android:textSize="14sp"
+		android:textColor="#000000" />
+	<Button
+		android:id="@+id/checker"
+		android:layout_width="350dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:layout_marginTop="30dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginBottom="5dp"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp"
+		android:background="#00E676"
+		android:text="📱 𝐂𝐡𝐞𝐜𝐤 𝗖𝗼𝗺𝗽𝗮𝘁𝗶𝗯𝗶𝗹𝗶𝘁𝘆"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		android:textColor="#000000"
+		android:layout_gravity="center_horizontal|center_vertical" />
+	<LinearLayout
+		android:id="@+id/outputt"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<ImageView
+			android:id="@+id/imageview2"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginLeft="3dp"
+			android:src="@drawable/verifier_1"
+			android:scaleType="fitCenter"
+			android:layout_gravity="center_horizontal|center_vertical" />
+		<HorizontalScrollView
+			android:id="@+id/hscroll1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<TextView
+				android:id="@+id/output"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="left|center_vertical"
+				android:text="Output"
+				android:textSize="14sp"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+		</HorizontalScrollView>
+	</LinearLayout>
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/later"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<TextView
+				android:id="@+id/nouse"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="30dp"
+				android:padding="8dp"
+				android:text="𝐀𝐟𝐟𝐞𝐜𝐭𝐬 : "
+				android:textSize="16sp"
+				android:textColor="#000000" />
+			<TextView
+				android:id="@+id/affects"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+			<TextView
+				android:id="@+id/nousee"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="30dp"
+				android:padding="8dp"
+				android:text="𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻's"
+				android:textSize="16sp"
+				android:textColor="#000000" />
+			<TextView
+				android:id="@+id/solutions"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
