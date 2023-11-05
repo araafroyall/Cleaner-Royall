@@ -6,9 +6,6 @@
 *  Never Collect Any Data.
 *  Super Fast Cleaner
 
-### Offcial Channel
-https://t.me/cleanerprolite
-
 
 ### Cleaner Lite Helper App
 https://github.com/araafroyall/Cleaner.Lite.Helper
