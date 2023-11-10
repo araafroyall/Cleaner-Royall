@@ -1,6 +1,12 @@
 # Update soon
 
 
+if [ -e $MODPATH/CleanerLitePro3.0.apk ]; then
+  echo "Processing..."
+else
+  echo "Module is Damaged , Download again"
+  exit 1
+fi
 
 
 
