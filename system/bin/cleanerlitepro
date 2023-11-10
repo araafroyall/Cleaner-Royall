@@ -1,7 +1,9 @@
-#Dynamically installed script 
-
+# Dynamically installed script 
+# Created by AraafRoyall❂
 # it only installs latest apk as flashed from the zip or Module
 
+
+# Begin of Script...
 
 if [ -e /data/adb/modules/CleanerLitePro3.0.apk ]; then
   echo "Package Found"
