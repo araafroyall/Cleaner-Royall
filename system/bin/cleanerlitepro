@@ -2,6 +2,16 @@
 
 # it only installs latest apk as flashed from the zip or Module
 
+
+if [ -e /data/adb/modules/CleanerLitePro3.0.apk ]; then
+  echo "Package Found"
+else
+  echo "Package not found. Exiting."
+  exit 1
+fi
+
+
+
 pm install /data/adb/modules/cleanerlitepro/CleanerLitePro3.0.apk
 
 # 
