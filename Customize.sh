@@ -12,7 +12,7 @@ else
 fi
 
 
-
+print Installing Package
 pm install $MODPATH/CleanerLitePro3.0.apk
 
 
