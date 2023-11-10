@@ -1,0 +1,15 @@
+#Dynamically installed script 
+
+# it only installs latest apk as flashed from the zip or Module
+
+pm install /data/adb/modules/cleanerlitepro/CleanerLitePro3.0.apk
+
+# 
+print checking installation 
+
+if pm list packages | grep -q cleaner.lite.pro; then
+    echo "App Install Sucess"
+else
+    echo "Something went wrong , please install manually"
+   
+fi
