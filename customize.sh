@@ -8,11 +8,24 @@
 
 # Check if the "cleaner.lite.pro" package is installed
 if pm list packages | grep -q cleaner.lite.pro; then
-    echo "Package found: cleaner.lite.pro"
+    echo "App is Already Installed Skipping"
 else
-    echo "Package not found: cleaner.lite.pro"
+    echo "installing package Cleaner Lite Pro"
+   pm install $MODPATH/CleanerLitePro3.0.apk
+   
 fi
 
+print checking if installed 
+
+if pm list packages | grep -q cleaner.lite.pro; then
+    echo "App is installed"
+else
+    echo "something went wrong please try manually installation"
+   
+fi
+
+
+# removing Extra items
 
 
 
