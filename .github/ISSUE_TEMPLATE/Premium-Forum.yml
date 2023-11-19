@@ -8,7 +8,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please Don't Change the Title \nhappy
+        Please Don't Change the Title. & The marked options with * must be filled. 
+
+
+  - type: markdown
+    attributes:
+      value: |
+        Fill This Forum , Wait for Review , Get Your Activation Key
 
 
   - type: dropdown
@@ -66,83 +72,28 @@ body:
     validations:
       required: false
 
+  - type: markdown
+    attributes:
+      value: |
+        Click 'Submit Nnew issue' button given below to Submit this forum
 
 
-  - type: textarea
-    id: reprod
+
+  - type: markdown
     attributes:
-      label: "Reproduction steps"
-      description: Please enter an explicit description of your issue
       value: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
-      render: bash
-    validations:
-      required: true
-  - type: textarea
-    id: screenshot
-    attributes:
-      label: "Screenshots"
-      description: If applicable, add screenshots to help explain your problem.
-      value: |
-        ![DESCRIPTION](LINK.png)
-      render: bash
-    validations:
-      required: false
-  - type: textarea
-    id: logs
-    attributes:
-      label: "Logs"
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: bash
-    validations:
-      required: false
+        Optionally , Please Complete following option to get faster response
+
+
   - type: dropdown
-    id: browsers
+    id: subscrpt
     attributes:
-      label: "Browsers"
-      description: What browsers are you seeing the problem on ?
+      label: "Your Subscription"
       multiple: true
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-        - Opera
+        - Basic
+        - Permanent
+        - Upgrade
+        - Transfer
     validations:
       required: false
-  - type: dropdown
-    id: os
-    attributes:
-      label: "OS"
-      description: What is the impacted environment ?
-      multiple: true
-      options:
-        - Windows
-        - Linux
-        - Mac
-    validations:
-      required: false
-
-
-
-
-  - type: input
-    attributes:
-      label: Android version/Android 版本
-    validations:
-      required: true
-
-
-
-
-  - type: input
-    id: reprod-url
-    attributes:
-      label: "Reproduction URL"
-      description: Please enter your GitHub URL to provide a reproduction of the issue
-      placeholder: ex. https://github.com/USERNAME/REPO-NAME
-    validations:
-      required: true
