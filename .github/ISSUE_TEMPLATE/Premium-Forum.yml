@@ -3,6 +3,8 @@ description: Fill This Forum to get Activation Key
 title: "Premium Activation Key"
 labels: ["Activation Key"
 ]
+assignees:
+  - araafroyall
 body:
   - type: markdown
     attributes:
