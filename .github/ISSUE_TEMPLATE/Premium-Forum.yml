@@ -1,6 +1,6 @@
 name: "Premium Forum"
 description: Fill This Forum to get Activation Key
-title: "Please Fill Carefully"
+title: "Premium Activation Key"
 labels: [
   "Activation Key"
 ]
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please leave Title empty
+        Please Don't Change the Title
   - type: textarea
     id: description
     attributes:
