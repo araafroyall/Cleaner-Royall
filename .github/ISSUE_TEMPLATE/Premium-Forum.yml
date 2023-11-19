@@ -5,6 +5,13 @@ labels: [
   "Activation Key"
 ]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Please Don't Change the Title
+
+
+
   - type: dropdown
     id: method
     attributes:
@@ -19,10 +26,6 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        Please Don't Change the Title
   - type: textarea
     id: description
     attributes:
