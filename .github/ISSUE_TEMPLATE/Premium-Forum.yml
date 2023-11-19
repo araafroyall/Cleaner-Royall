@@ -40,7 +40,7 @@ body:
     attributes:
       label: "Paste String"
       description: Paste String text here, you can find this in cleaner lite app at premium activiy page
-      placeholder: ex. https://github.com/USERNAME/REPO-NAME
+      placeholder: Paste String here...
     validations:
       required: true
 
