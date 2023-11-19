@@ -40,7 +40,7 @@ body:
       value: 
       render: bash
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: os
     attributes:
