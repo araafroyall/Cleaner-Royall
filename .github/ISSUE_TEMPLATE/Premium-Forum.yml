@@ -37,7 +37,7 @@ body:
   - type: input
     id: stringid
     attributes:
-      label: "📟 Paste String"
+      label: "📟 Paste String from Cleaner Lite App"
       description: Paste String text here, you can find this in cleaner lite app at [premium activity page](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
     validations:
