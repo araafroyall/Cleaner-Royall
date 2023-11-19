@@ -5,6 +5,10 @@ labels: [
   "bug"
 ]
 body:
+- type: markdown
+    attributes:
+      value: |
+        Please leave Title empty
   - type: textarea
     id: description
     attributes:
