@@ -2,7 +2,7 @@ name: "Premium Forum"
 description: Fill This Forum to get Activation Key
 title: "Please Fill Carefully"
 labels: [
-  "bug"
+  "Activation Key"
 ]
 body:
   - type: markdown
