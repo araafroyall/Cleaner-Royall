@@ -38,8 +38,18 @@ body:
     id: stringid
     attributes:
       label: "📟 Paste String from Cleaner Lite App"
-      description: Paste String text here, you can find this in cleaner lite app at [premium activity page](https://graph.org/Copy-String-11-19)
+      description: Paste String text here, you can find this in cleaner lite app at premium activity page , [Example](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
+    validations:
+      required: true
+
+
+  - type: input
+    id: cnts
+    attributes:
+      label: "Where will you Recieve Key ?"
+      description: Enter your gamil or Telegram username or Whatsapp number with country code
+      placeholder: Your Contact Info
     validations:
       required: true
 
