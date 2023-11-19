@@ -16,7 +16,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        First Make Payment [Here](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods) Than Fill This Forum
+        Only Fill forum when you made payment [Here](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods).
   - type: dropdown
     id: method
     attributes:
