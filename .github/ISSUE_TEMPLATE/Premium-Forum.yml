@@ -8,8 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please Don't Change the Title https://www.google.com
-
+        Please Don't Change the Title
 
 
   - type: dropdown
@@ -39,7 +38,7 @@ body:
     id: stringid
     attributes:
       label: "📟 Paste String"
-      description: Paste String text here, you can find this in cleaner lite app at premium activity page
+      description: Paste String text here, you can find this in cleaner lite app at [premium activity page](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
     validations:
       required: true
