@@ -9,13 +9,14 @@ body:
     attributes:
       value: |
         Please Don't Change the Title. & The marked options with * must be filled. 
-
-
   - type: markdown
     attributes:
       value: |
         Fill This Forum , Wait for Review , Get Your Activation Key, For Any Help [Contact Developer](https://t.me/AraafRoyall)
-
+  - type: markdown
+    attributes:
+      value: |
+        First Make Payment [Here](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods) Than Fill This Forum
   - type: dropdown
     id: method
     attributes:
@@ -43,7 +44,7 @@ body:
     id: stringid
     attributes:
       label: "📟 String from Cleaner Lite App"
-      description: Paste String text here, you can find this in cleaner lite app at premium activity page , [Example](https://graph.org/Copy-String-11-19)
+      description: Paste String thttps://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethodsext here, you can find this in cleaner lite app at premium activity page , [Example](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
     validations:
       required: true
@@ -74,7 +75,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Click 'Submit Nnew issue' button given below to Submit this forum
+        Click 'Submit new issue' button given below or in last to Submit this forum
 
 
 
