@@ -11,6 +11,13 @@ body:
         Please Don't Change the Title
 
 
+  - type: input
+    attributes:try
+      label: Transaction id or Hash
+    validations:
+      required: true
+
+
 
   - type: dropdown
     id: method
