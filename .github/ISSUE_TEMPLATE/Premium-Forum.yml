@@ -5,7 +5,7 @@ labels: [
   "bug"
 ]
 body:
-- type: markdown
+  - type: markdown
     attributes:
       value: |
         Please leave Title empty
