@@ -1,9 +1,10 @@
 name: "Premium Forum"
 description: Fill This Forum to get Activation Key
 title: "Premium Activation Key"
-labels: [
-  "Activation Key"
+labels:
 ]
+assignees:
+  - AraafRoyall
 body:
   - type: markdown
     attributes:
@@ -44,7 +45,7 @@ body:
     id: stringid
     attributes:
       label: "📟 String from Cleaner Lite App"
-      description: Paste String thttps://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethodsext here, you can find this in cleaner lite app at premium activity page , [Example](https://graph.org/Copy-String-11-19)
+      description: Paste String text here, you can find this in cleaner lite app at premium activity page , [Example](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
     validations:
       required: true
