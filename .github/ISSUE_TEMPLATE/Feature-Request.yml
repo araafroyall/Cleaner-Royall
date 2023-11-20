@@ -13,11 +13,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Fill This Forum , Wait for Review , Get Your Activation Key, For Any Help [Contact Developer](https://t.me/AraafRoyall)
+        If you think any directory left from cleaning than you can submit here. we don't support submission of internal storage directory, for this use Custom Cleaner Premium feature. For Any Help [Contact Developer](https://t.me/AraafRoyall)
   - type: markdown
     attributes:
       value: |
-        Fill forum Only If you made payment [Payment Page](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods).
+        Please make sure and fill this forum only if you confirmed that a directory is missing & it is not fully guarenteed that your submitter directory will be accepted. On Approval your submitted directory will be implimented in next update.
 
 
 
@@ -26,8 +26,8 @@ body:
     id: dirs
     attributes:
       label: "Submit Directory"
-      description: Please enter Comments or Other information which you want to tell
+      description: Please enter or Paste Directory or multiple directories
       value: 
       render: bash
     validations:
-      required: false
+      required: true
