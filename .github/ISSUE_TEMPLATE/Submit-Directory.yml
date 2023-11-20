@@ -28,7 +28,7 @@ body:
       label: "Submit Directory"
       description: Please enter or Paste Directory or multiple directories
       value: 
-      render: bash
+      render: shell
     validations:
       required: true
 
