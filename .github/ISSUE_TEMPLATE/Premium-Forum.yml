@@ -48,6 +48,7 @@ body:
       label: "📟 String from Cleaner Lite App"
       description: Paste String text here, you can find this in cleaner lite app at premium activity page, [Example](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
+      render: shell
     validations:
       required: true
 
