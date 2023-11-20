@@ -31,3 +31,13 @@ body:
       render: bash
     validations:
       required: true
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Comment or Extra Information"
+      description: Optionally , Write comment or any extra thing which you want to share or tell us.
+      placeholder: you may also attach payment screenshots here or anything which you want to tell
+    validations:
+      required: false
