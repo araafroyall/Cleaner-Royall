@@ -18,83 +18,16 @@ body:
     attributes:
       value: |
         Fill forum Only If you made payment [Payment Page](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods).
-  - type: dropdown
-    id: method
-    attributes:
-      label: "🪙 Payment Method"
-      description: Select Your Payment Method
-      multiple: true
-      options:
-        - Paypal
-        - UPI
-        - Crypto or BTC or Binance
-        - Others
-    validations:
-      required: true
-
-
-  - type: input
-    attributes:
-      label: 💸 Transaction id or Hash
-    validations:
-      required: true
-
-
-
-  - type: input
-    id: stringid
-    attributes:
-      label: "📟 String from Cleaner Lite App"
-      description: Paste String text here, you can find this in cleaner lite app at premium activity page, [Example](https://graph.org/Copy-String-11-19)
-      placeholder: Paste String here...
-    validations:
-      required: true
-
-
-  - type: input
-    id: cnts
-    attributes:
-      label: "Where will you Recieve Key ?"
-      description: Enter your gamil or Telegram username or Whatsapp number with country code
-      placeholder: Your Contact Info
-    validations:
-      required: true
-
 
 
 
 
   - type: textarea
-    id: description
+    id: dirs
     attributes:
-      label: "Comment or Extra Information"
-      description: Optionally , Write comment or any extra thing which you want to share or tell us.
-      placeholder: you may also attach payment screenshots here or anything which you want to tell
-    validations:
-      required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        Click 'Submit new issue' button given below or in last to Submit this forum
-
-
-
-  - type: markdown
-    attributes:
-      value: |
-        Optionally , Please Complete following option to get faster response
-
-
-  - type: dropdown
-    id: subscrpt
-    attributes:
-      label: "Your Subscription"
-      multiple: true
-      options:
-        - Basic
-        - Permanent
-        - Upgrade
-        - Transfer
+      label: "Submit Directory"
+      description: Please enter Comments or Other information which you want to tell
+      value: 
+      render: bash
     validations:
       required: false
