@@ -10,8 +10,9 @@ body:
     attributes:
       label: "Bug Submission"
       description: Please Explain the bug which you exprienced in detail
-      placeholder: Optionally you can Attach screenshots , video , etc...
+      placeholder: Write here..
     validations:
+      render: bash
       required: true
   - type: dropdown
     id: osh
@@ -36,9 +37,8 @@ body:
     id: reprod
     attributes:
       label: "Comments or Extra Info"
-      description: Please enter Comments or Other information which you want to tell
+      description: Please enter Comments or Other information which you want to tell , you can also attact screenshots , logs etc 
       value: 
-      render: bash
     validations:
       required: false
   - type: dropdown
