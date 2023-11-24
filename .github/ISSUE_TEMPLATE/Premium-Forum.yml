@@ -81,21 +81,3 @@ body:
 
 
 
-  - type: markdown
-    attributes:
-      value: |
-        Optionally , Please Complete following option to get faster response
-
-
-  - type: dropdown
-    id: subscrpt
-    attributes:
-      label: "Your Subscription"
-      multiple: true
-      options:
-        - Basic
-        - Permanent
-        - Upgrade
-        - Transfer
-    validations:
-      required: false
