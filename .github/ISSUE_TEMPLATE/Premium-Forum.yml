@@ -9,16 +9,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please Don't Change the Title. & The marked options with * must be filled. 
+        Please Don't Change the Title. 
   - type: markdown
     attributes:
       value: |
         Fill This Forum , Wait for Review , Get Your Activation Key, For Any Help [Contact Developer](https://t.me/AraafRoyall)
 
-  - type: markdown
-    attributes:
-      value: |
-        Fill forum Only If you made payment [Payment Page](https://github.com/araafroyall/Cleaner-Pro-Lite/blob/main/PaymentMethods).
+
   - type: dropdown
     id: method
     attributes:
