@@ -1,4 +1,4 @@
-name: "Feature Request"
+joname: "Feature Request"
 description: Suggest New Features.
 title: "‎ "
 labels: [
@@ -27,35 +27,3 @@ body:
     validations:
       required: False
 
-
-  - type: dropdown
-    id: osh
-    attributes:
-      label: "Android Version"
-      description: Please Select Your Android Version
-      multiple: true
-      options:
-        - Any Android
-        - Android 6
-        - Android 7
-        - Android 8
-        - Android 9
-        - Android 10
-        - Android 11
-        - Android 12
-        - Android 13
-        - Android 14
-    validations:
-      required: true
-
-  - type: dropdown
-    id: os
-    attributes:
-      label: "App Version"
-      description: 
-      multiple: true
-      options:
-        - v3.0
-        - v3.1
-    validations:
-      required: false
