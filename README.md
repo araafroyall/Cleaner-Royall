@@ -9,7 +9,6 @@
 
 ## Requirements 
    • Root or Magisk & Busybox only
-   • Zero Extra Permission
 
 ### Cleaner Lite Helper App
 https://github.com/araafroyall/Cleaner.Lite.Helper
