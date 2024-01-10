@@ -10,7 +10,10 @@
 )](https://t.me/cleanerprolite)
 
 
-*  App is Totally Offline
+
+
+
+*  Totally Offline & No Permission Required
 *  Never Collect Any Data.
 *  Super Fast Cleaner
 
@@ -20,7 +23,10 @@
 
 •••••••••••••••••••••••••••••••••
 
-Developer Contact details
+## Usefull Links 
+
+
+### Developer Contact details
 
 Telegram id : @araafroyall
 
