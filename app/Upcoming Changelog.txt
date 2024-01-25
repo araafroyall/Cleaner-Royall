@@ -1,7 +1,7 @@
 Changelog , auto calculate size in storage, New Ui , new theme , new style , updated & integrated info box of all pages, storage text fix ,submit dirs directly, integrated Help and directories , fix dump log cleaner
 
-• 
-•
+• Feedbackforum
+• Submit directory forum
 •
 •
 •
