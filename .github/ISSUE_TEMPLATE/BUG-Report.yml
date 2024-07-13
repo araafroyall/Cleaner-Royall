@@ -49,6 +49,6 @@ body:
       multiple: true
       options:
         - Latest
-        - v3.1
+        - v3.2
     validations:
       required: false
