@@ -13,7 +13,7 @@
 
 
 
-*  Totally Offline & No Permission Required
+*  Ultra Fast & No Permission Required
 *  Never Collect Any Data.
 *  Super Fast Cleaner
 
