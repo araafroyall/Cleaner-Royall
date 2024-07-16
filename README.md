@@ -7,7 +7,7 @@
 
 [![Total downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-pro-lite/total)](https://github.com/araafroyall/Cleaner-Pro-Lite/releases/download/Latest/Cleaner.Lite.Pro.Latest.apk)
 [![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-lightgreen?logo=telegram
-)](https://t.me/cleanerprolite)
+)](https://t.me/CleanerRoyall)
 
 
 
