@@ -1,7 +1,8 @@
 <p align="center">
   <img src="assets/icon.png" style="width: 30%;" />
 </p>
-# Cleaner-Pro-Lite
+
+# Cleaner Royall 
 
 𝗧𝗵𝗲 𝗕𝗲𝘀𝘁 𝗖𝗹𝗲𝗮𝗻𝗶𝗻𝗴 𝗔𝗽𝗽 𝗘𝘃𝗲𝗿 𝗠𝗮𝗱𝗲
 
