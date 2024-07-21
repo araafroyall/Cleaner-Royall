@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/icon.png" style="width: 30%;" />
+  <img src="assets/NewIcon.png" style="width: 30%;" />
 </p>
 
 # Cleaner Royall 
