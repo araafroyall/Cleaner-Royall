@@ -24,6 +24,9 @@
 
 •••••••••••••••••••••••••••••••••
 
+<p align="center">
+  <img src="assets/" style="width: 30%;" />
+</p>
 
 
 ### Developer Contact details
