@@ -24,8 +24,8 @@
 
 •••••••••••••••••••••••••••••••••
 
-<p align="center">
-  <img src="assets/" style="width: 30%;" />
+<p align="Left">
+  <img src="assets/Screenshots/Screenshot_2024-07-18-10-06-01-761_cleaner.lite.pro.png" style="width: 30%;" />
 </p>
 
 
