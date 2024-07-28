@@ -25,7 +25,7 @@
 •••••••••••••••••••••••••••••••••
 
 <p align="left">
-  <img src="assets/Screenshots/Screenshot_2024-07-18-10-06-01-761_cleaner.lite.pro.png" style="width: 100%;" />
+  <img src="assets/Screenshots/Info.png" style="width: 100%;" />
 </p>
 
 
