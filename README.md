@@ -14,7 +14,8 @@
 
 
 
-*  Ultra Fast & No Permission Required
+*  Light weight but Ultra Fast
+*  No Permission Required (Except Root)
 *  Never Collect Any Data.
 *  Super Fast Cleaner
 
