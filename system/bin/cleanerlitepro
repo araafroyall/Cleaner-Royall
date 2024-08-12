@@ -1,28 +1,6 @@
 # Dynamically installer script 
 # Created by AraafRoyall❂
-# it only installs latest apk as flashed from the zip or Module
 
 
-# Begin of Script...
 
-if [ -e /data/adb/modules/CleanerLitePro3.0.apk ]; then
-  echo "Package Found"
-else
-  echo "Package not found. Exiting."
-  exit 1
-fi
-
-
-print Installing Package
-
-pm install /data/adb/modules/cleanerlitepro/CleanerLitePro3.0.apk
-
-# 
-print checking installation 
-
-if pm list packages | grep -q cleaner.lite.pro; then
-    echo "App Install Sucess"
-else
-    echo "Something went wrong , please install manually"
-
-fi
+# Install Module from app for function
