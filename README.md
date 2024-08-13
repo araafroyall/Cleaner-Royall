@@ -25,7 +25,7 @@
 
 •••••••••••••••••••••••••••••••••
 
-<p align="center">
+<p align="left">
   <img src="assets/Screenshots/Info.png" style="width: 100%;" />
 </p>
 
