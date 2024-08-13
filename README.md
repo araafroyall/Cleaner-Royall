@@ -43,40 +43,44 @@ Gmail : araafroyall@gmail.com
 ## Screenshots
 
 <p align="left">
-  <img src="assets/Screenshots/1.png" style="width: 100%;" />
+  <img src="assets/Screenshots/1.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/2.png" style="width: 100%;" />
+  <img src="assets/Screenshots/2.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/3.png" style="width: 100%;" />
+  <img src="assets/Screenshots/3.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/4.png" style="width: 100%;" />
+  <img src="assets/Screenshots/4.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/5.png" style="width: 100%;" />
+  <img src="assets/Screenshots/5.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/6.png" style="width: 100%;" />
+  <img src="assets/Screenshots/6.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/7.png" style="width: 100%;" />
+  <img src="assets/Screenshots/7.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/8.png" style="width: 100%;" />
+  <img src="assets/Screenshots/8.jpg" style="width: 100%;" />
 </p><p align="left">
-  <img src="assets/Screenshots/9.png" style="width: 100%;" />
+  <img src="assets/Screenshots/9.jpg" style="width: 100%;" />
 </p>
 
 <p align="left">
-  <img src="assets/Screenshots/10.png" style="width: 100%;" />
+  <img src="assets/Screenshots/10.jpg" style="width: 100%;" />
 </p>
+
+
+
+
 
