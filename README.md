@@ -42,50 +42,7 @@ Gmail : araafroyall@gmail.com
 
 ## Screenshots
 
-<p align="left">
-  <img src="assets/Screenshots/1.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/2.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/3.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/4.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/5.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/6.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/7.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/8.jpg" style="width: 100%;" />
-</p><p align="left">
-  <img src="assets/Screenshots/9.jpg" style="width: 100%;" />
-</p>
-
-<p align="left">
-  <img src="assets/Screenshots/10.jpg" style="width: 100%;" />
-</p>
-
-
-
-
-
-
-<img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/1.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/2.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/3.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/4.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/5.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/6.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/7.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/8.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/9.jpg" width="100">
+<img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/1.jpg" width="110"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/2.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/3.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/4.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/5.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/6.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/7.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/8.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/9.jpg" width="100">
 
 
 
