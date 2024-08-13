@@ -41,5 +41,42 @@ Gmail : araafroyall@gmail.com
 •••••••••••••••••••••••••••••••••••
 
 ## Screenshots
-<img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/1.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/2.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/3.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/4.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/5.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/6.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/7.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/8.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/9.png" width="100">
+
+<p align="left">
+  <img src="assets/Screenshots/1.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/2.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/3.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/4.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/5.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/6.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/7.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/8.png" style="width: 100%;" />
+</p><p align="left">
+  <img src="assets/Screenshots/9.png" style="width: 100%;" />
+</p>
+
+<p align="left">
+  <img src="assets/Screenshots/10.png" style="width: 100%;" />
+</p>
 
