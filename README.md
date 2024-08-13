@@ -40,3 +40,6 @@ Gmail : araafroyall@gmail.com
 
 •••••••••••••••••••••••••••••••••••
 
+## Screenshots
+<img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/1.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/2.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/3.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/4.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/5.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/6.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/7.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/8.png" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/9.png" width="100">
+
