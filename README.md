@@ -32,7 +32,7 @@
 
 ### Developer Contact details
 
-Telegram id : @araafroyall
+Telegram id : @AraafRoyall
 
 Email : araafroyall@digdig.org
 
