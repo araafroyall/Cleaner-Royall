@@ -1,0 +1,70 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="3dp"
+		android:padding="8dp"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/github"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#76FF03"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="Fill Forum at Github"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal|center_vertical" />
+		<TextView
+			android:id="@+id/textview3"
+			android:focusable="false"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="---- OR ----"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/helper"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#B2FF59"
+			android:text="Fill Forum in Helper App"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal|center_vertical" />
+		<TextView
+			android:id="@+id/textview4"
+			android:focusable="false"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="---- OR ----"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/tgb"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#64FFDA"
+			android:text="Fill Forum in Telegram Bot"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal|center_vertical" />
+	</LinearLayout>
+</LinearLayout>
