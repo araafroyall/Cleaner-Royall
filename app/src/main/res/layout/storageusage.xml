@@ -15,22 +15,111 @@
 			android:layout_height="match_parent"
 			android:background="#FFFFFF"
 			android:orientation="vertical">
-			<TextView
-				android:id="@+id/help"
+			<LinearLayout
+				android:id="@+id/header"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_margin="10dp"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="10dp"
 				android:padding="8dp"
-				android:background="#FFFF00"
-				android:text="𝐓𝐡𝐢𝐬 𝐅𝐞𝐚𝐭𝐮𝐫𝐞 𝐇𝐞𝐥𝐩 𝐘𝐨𝐮 𝐭𝐨 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐬𝐨𝐦𝐞 𝐝𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐢𝐞𝐬\n 𝐈𝐭 𝐦𝐚𝐲 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐢𝐧𝐚𝐜𝐜𝐮𝐫𝐚𝐭𝐞 𝐝𝐞𝐭𝐚𝐢𝐥𝐬 𝐬𝐨𝐦𝐞𝐭𝐢𝐦𝐞𝐬 𝐨𝐧 𝐬𝐨𝐦𝐞 𝐝𝐞𝐯𝐢𝐜𝐞𝐬 𝐝𝐮𝐞 𝐭𝐨 𝐌𝐞𝐜𝐡𝐚𝐧𝐢𝐬𝐦 𝐄𝐫𝐫𝐨𝐫\n\n𝐂𝐥𝐢𝐜𝐤 𝐭𝐨 𝐤𝐧𝐨𝐰 𝐦𝐨𝐫𝐞"
-				android:textSize="12sp"
-				android:textStyle="bold"
-				android:textColor="#000000" />
+				android:orientation="horizontal">
+				<ImageView
+					android:id="@+id/imageview1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/header"
+					android:scaleType="center"
+					android:layout_gravity="center_horizontal|center_vertical" />
+				<TextView
+					android:id="@+id/textview1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="𝐓𝐡𝐢𝐬 𝐅𝐞𝐚𝐭𝐮𝐫𝐞 𝐇𝐞𝐥𝐩 𝐘𝐨𝐮 𝐭𝐨 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐬𝐨𝐦𝐞 𝐝𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐢𝐞𝐬"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear31"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear32"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview30"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔹Fixed Storage [𝐓𝐨𝐭𝐚𝐥]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#3F51B5"
+						android:layout_gravity="center_horizontal|center_vertical" />
+					<ImageView
+						android:id="@+id/imageview3"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ic_error_black"
+						android:scaleType="center"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/totalfree"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear45"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear46"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview44"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Available Storage [𝐔𝐬𝐚𝐛𝐥𝐞]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/freeav"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#00E676"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/linear13"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="3dp"
 				android:orientation="horizontal">
 				<LinearLayout
 					android:id="@+id/linear14"
@@ -44,7 +133,7 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:gravity="center_horizontal|center_vertical"
-						android:text="🔸/system Partition"
+						android:text="🔸System [𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧]"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#F50057"
@@ -58,6 +147,75 @@
 					android:gravity="center_horizontal|center_vertical"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear41"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear42"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview40"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸System [𝐔𝐬𝐞𝐝]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/systemusage"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear39"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear40"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview38"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Data [𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧] [𝐔𝐬𝐞𝐝]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/datausage"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
@@ -89,8 +247,10 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
@@ -110,7 +270,7 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:gravity="center_horizontal|center_vertical"
-						android:text="🔸Internal Storage"
+						android:text="🔸/storage/emulated/0/ "
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#F50057"
@@ -122,8 +282,10 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
@@ -143,7 +305,7 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:gravity="center_horizontal|center_vertical"
-						android:text="🔸Delvik Cache"
+						android:text="🔸Dalvik-Cache"
 						android:textSize="14sp"
 						android:textStyle="bold"
 						android:textColor="#F50057"
@@ -155,8 +317,10 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
@@ -188,8 +352,10 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
 			<LinearLayout
@@ -228,26 +394,156 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
 					android:textSize="14sp"
 					android:textColor="#000000"
+					android:lines="1"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
-			<Button
-				android:id="@+id/Calculate"
-				android:layout_width="350dp"
+			<LinearLayout
+				android:id="@+id/linear33"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="25dp"
-				android:layout_marginTop="30dp"
-				android:layout_marginRight="25dp"
-				android:layout_marginBottom="5dp"
-				android:paddingLeft="20dp"
-				android:paddingRight="20dp"
-				android:background="#00E676"
-				android:text="💽 𝗚𝗲𝘁 𝘀𝘁𝗼𝗿𝗮𝗴𝗲 𝗨𝘀𝗮𝗴𝗲"
-				android:textSize="25sp"
-				android:textStyle="bold"
-				android:textColor="#000000"
-				android:layout_gravity="center_horizontal|center_vertical" />
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear34"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview32"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Logs [𝑬𝒙𝒕𝒆𝒏𝒕𝒊𝒐𝒏𝒔 𝒐𝒏𝒍𝒚]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+					<ImageView
+						android:id="@+id/imageview4"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ic_error_black"
+						android:scaleType="center"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/log"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:text="Calculate"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear35"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear36"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview34"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Vendor [𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/vendor"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear57"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear58"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview56"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸Vendor [𝐔𝐬𝐞𝐝]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/vendoru"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear59"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear60"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview58"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="🔸System_ext [𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧]"
+						android:textSize="14sp"
+						android:textStyle="bold"
+						android:textColor="#F50057"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<TextView
+					android:id="@+id/sysext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:lines="1"
+					android:layout_gravity="center_horizontal|center_vertical" />
+			</LinearLayout>
 			<TextView
 				android:id="@+id/result"
 				android:layout_width="wrap_content"
