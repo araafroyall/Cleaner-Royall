@@ -10,6 +10,9 @@
 [![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyall)
 
+[![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-lightgreen?logo=Download
+)](https://t.me/CleanerRoyall)
+
 
 
 
