@@ -9,134 +9,445 @@
 		android:id="@+id/vscroll1"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="#000000">
+		android:background="@android:color/transparent">
 		<LinearLayout
 			android:id="@+id/linear1"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_margin="2dp"
-			android:background="#000000"
+			android:background="@android:color/transparent"
 			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/TopLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="3dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear17"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_margin="3dp"
+					android:padding="5dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="vertical"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview12"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/selinx"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview12"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="𝗦𝗘 𝗟𝗶𝗻𝘂𝘅"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear18"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_margin="3dp"
+					android:padding="5dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="vertical"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview16"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ovum"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview13"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="𝐌𝐨𝐮𝐧𝐭 𝐝𝐚𝐭𝐚"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear19"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_margin="3dp"
+					android:padding="5dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="vertical"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview14"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/service"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview14"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="𝐅𝐢𝐱 𝐭𝐦𝐩*"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:layout_gravity="center_horizontal|center_vertical" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear20"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_margin="3dp"
+					android:padding="5dp"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="vertical"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview15"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/molecul"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview16"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="𝐅𝐢𝐱 𝐎𝐛𝐛"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+			</LinearLayout>
 			<TextView
 				android:id="@+id/textview4"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
 				android:padding="8dp"
-				android:text="🪆 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗧𝗼𝗼𝗹𝗯𝗼𝘅"
+				android:text="🪆 𝗦𝗼𝗰𝗶𝗮𝗹 𝗠𝗲𝗱𝗶𝗮"
 				android:textSize="20sp"
-				android:textColor="#FFFFFF" />
+				android:textColor="#9C27B0" />
 			<LinearLayout
-				android:id="@+id/linear5"
+				android:id="@+id/linear25"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/cleardata"
+				<LinearLayout
+					android:id="@+id/bt2"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="⛔ 𝗖𝗹𝗲𝗮𝗿 𝗗𝗮𝘁𝗮"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/cleanstatus"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="⛔ 𝐂𝐥𝐞𝐚𝐫 𝐒𝐭𝐚𝐭𝐮𝐬"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview17"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/whatsapp_1"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview18"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="WhatsApp Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/bt3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview18"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/tgg"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview19"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Telegram Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/linear6"
+				android:id="@+id/linear24"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/sharedcleaner"
+				<LinearLayout
+					android:id="@+id/bt1"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🪅 .𝐬𝐡𝐚𝐫𝐞𝐝 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/WhatsAppcleannnn"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🪅 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview6"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_5"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview6"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Facebook Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/bt4"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview7"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_6"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview20"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Instagram Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/linear13"
+				android:id="@+id/linear100"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/splitclean"
+				<LinearLayout
+					android:id="@+id/linear101"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="💫 𝐒𝐩𝐥𝐢𝐭 𝐒𝐭𝐚𝐭𝐮𝐬 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/textview7"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="@android:color/transparent"
-					android:gravity="center_horizontal|center_vertical"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview31"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_4"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview53"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Snapchat Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear102"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview32"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_3"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview55"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Twitter (X) Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear103"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear104"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview33"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_7"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview56"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="WeChat Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear105"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview34"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_2"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview57"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Reddit Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear106"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear107"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview35"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social_1"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview58"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Discord Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear108"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview36"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/social1"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview59"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Signal Cleaner"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
 			</LinearLayout>
 			<TextView
 				android:id="@+id/nouse"
@@ -145,174 +456,191 @@
 				android:padding="8dp"
 				android:text="🪆 𝗟𝘂𝗰𝗸𝘆 𝗣𝗮𝘁𝗰𝗵𝗲𝗿 𝗖𝗹𝗲𝗮𝗻𝗲𝗿"
 				android:textSize="20sp"
-				android:textColor="#FFFFFF" />
+				android:textColor="#9C27B0" />
 			<LinearLayout
-				android:id="@+id/linear8"
+				android:id="@+id/linear26"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/custompatch"
+				<LinearLayout
+					android:id="@+id/lpatcher2"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🧩 𝐂𝐮𝐬𝐭𝐨𝐦 𝐏𝐚𝐭𝐜𝐡𝐞𝐬 Cleaner"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/modifiedapp"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="⛓️ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐀𝐩𝐩𝐬 Cleaner"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview19"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/smiling"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview60"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Custom Patches"
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#000000" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/lpatcher"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview20"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/smiling"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview7"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Modified Apps"
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:textColor="#000000" />
+				</LinearLayout>
 			</LinearLayout>
 			<TextView
-				android:id="@+id/textview5"
+				android:id="@+id/textview21"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:padding="8dp"
-				android:text="🪆 𝗙𝗶𝘅𝗲𝘀 &amp; 𝐀𝐝𝐝𝐢𝐭𝐢𝐨𝐧𝐚𝐥𝐬"
+				android:text="🪆 Fixes &amp; Additionals"
 				android:textSize="20sp"
-				android:textColor="#FFFFFF" />
+				android:textStyle="bold"
+				android:textColor="#9C27B0" />
 			<LinearLayout
-				android:id="@+id/linear9"
+				android:id="@+id/linear27"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/fix_tmp"
+				<LinearLayout
+					android:id="@+id/linear28"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="📁 𝐅𝐢𝐱 /𝐝𝐚𝐭𝐚/𝐥𝐨𝐜𝐚𝐥/𝐭𝐦𝐩"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/mount"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="📂 𝐌𝐨𝐮𝐧𝐭 /𝐝𝐚𝐭𝐚"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview21"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/planet"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/textview23"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="𝐁𝐫𝐨𝐰𝐬𝐞𝐫 𝐌𝐞𝐭𝐫𝐢𝐜𝐬"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:enabled="false" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear29"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview22"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/folderr"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview24"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text=".𝐍𝐨𝐦𝐞𝐝𝐢𝐚 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
 			</LinearLayout>
 			<LinearLayout
-				android:id="@+id/linear10"
+				android:id="@+id/linear30"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
+				android:layout_marginTop="5dp"
 				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/browser"
-					android:layout_width="180dp"
-					android:layout_height="40dp"
-					android:layout_marginLeft="10dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🌎 𝐁𝐫𝐨𝐰𝐬𝐞𝐫 𝐌𝐞𝐭𝐫𝐢𝐜𝐬 𝐂𝐥𝐞𝐚𝐧"
-					android:textSize="12sp"
-					android:textColor="#000000" />
-				<TextView
-					android:id="@+id/lostdircleaner"
+				<LinearLayout
+					android:id="@+id/linear31"
 					android:layout_width="match_parent"
-					android:layout_height="40dp"
+					android:layout_height="wrap_content"
 					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="10dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="📫 𝐋𝐎𝐒𝐓.𝐃𝐈𝐑 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
-					android:textSize="12sp"
-					android:textColor="#000000"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
+					android:layout_weight="1">
+					<ImageView
+						android:id="@+id/imageview23"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/hdd"
+						android:scaleType="center"
+						android:enabled="false" />
+					<TextView
+						android:id="@+id/clear"
+						android:layout_width="wrap_content"
+						android:layout_height="40dp"
+						android:padding="8dp"
+						android:background="@android:color/transparent"
+						android:text="𝗔𝗽𝗽𝘀 𝗗𝗮𝘁𝗮"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+				</LinearLayout>
+				<LinearLayout
+					android:id="@+id/linear32"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="3dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="3dp"
+					android:padding="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="horizontal"
 					android:layout_weight="1" />
 			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/linear12"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
-				android:paddingLeft="7dp"
-				android:paddingRight="7dp"
-				android:orientation="horizontal">
-				<TextView
-					android:id="@+id/selinux"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginRight="5dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🔩 𝗦𝗘 𝗟𝗶𝗻𝘂𝘅"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-				<TextView
-					android:id="@+id/nomedia"
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginLeft="5dp"
-					android:layout_marginTop="2dp"
-					android:layout_marginBottom="1dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="🎛️ .𝐍𝐨𝐦𝐞𝐝𝐢𝐚 𝐂𝐥𝐞𝐚𝐧𝐞𝐫"
-					android:textSize="12sp"
-					android:textColor="#000000"
-					android:layout_weight="1" />
-			</LinearLayout>
-			<LinearLayout
-				android:id="@+id/layooo"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="2dp"
-				android:layout_marginBottom="2dp"
-				android:orientation="horizontal" />
 			<TextView
 				android:id="@+id/result"
 				android:layout_width="match_parent"
