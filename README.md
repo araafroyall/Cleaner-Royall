@@ -17,7 +17,7 @@
 *  Light weight but Ultra Fast & Powerful
 *  No Permission Required (Except Root)
 *  Never Collect Any Data.
-*  Super Fast Cleaner
+*  Super Fast Speed with System integrations
 
 ## Requirements 
    • Root or Magisk & Busybox only
