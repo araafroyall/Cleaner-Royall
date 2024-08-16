@@ -17,7 +17,8 @@
 *  Light weight but Ultra Fast & Powerful
 *  No Permission Required (Except Root)
 *  Never Collect Any Data.
-*  Super Fast Speed with System integrations
+*  Super Fast Speed
+*  Automatic Systemless Module Cleaner
 
 ## Requirements 
    • Root or Magisk & Busybox only
