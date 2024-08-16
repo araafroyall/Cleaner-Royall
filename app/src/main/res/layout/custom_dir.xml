@@ -15,10 +15,48 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/header"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:orientation="horizontal">
+				<ImageView
+					android:id="@+id/imageview2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/header"
+					android:scaleType="center"
+					android:layout_gravity="center_horizontal|center_vertical" />
+				<TextView
+					android:id="@+id/headL"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="𝐂𝐮𝐬𝐭𝐨𝐦 𝐂𝐥𝐞𝐚𝐧𝐞𝐫 𝐇𝐞𝐥𝐩 𝐲𝐨𝐮 𝐭𝐨 𝐑𝐞𝐦𝐨𝐯𝐞 𝐔𝐧𝐰𝐚𝐧𝐭𝐞𝐝 𝐅𝐢𝐥𝐞𝐬 &amp; 𝐃𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐢𝐞𝐬 𝐰𝐢𝐭𝐡 𝐲𝐨𝐮𝐫 𝐨𝐰𝐧 𝐑𝐮𝐥𝐞"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+			</LinearLayout>
+			<TextView
+				android:id="@+id/info"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:padding="8dp"
+				android:background="#F9FBE7"
+				android:text="..............................................................................................................................................................."
+				android:textSize="12sp"
+				android:textColor="#000000"
+				android:lines="2" />
 			<HorizontalScrollView
 				android:id="@+id/hscroll3"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp">
 				<LinearLayout
 					android:id="@+id/linear4"
 					android:layout_width="match_parent"
@@ -36,101 +74,180 @@
 						android:textStyle="bold"
 						android:textColor="#000000"
 						android:layout_gravity="center_horizontal|center_vertical" />
+					<ImageView
+						android:id="@+id/helpp"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginLeft="10dp"
+						android:layout_marginRight="3dp"
+						android:src="@drawable/help"
+						android:scaleType="fitCenter" />
 					<TextView
-						android:id="@+id/help"
+						android:id="@+id/backup0"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="👨‍💻 𝗛𝗲𝗹𝗽"
-						android:textSize="12sp"
-						android:textColor="#000000"
-						android:layout_gravity="center_horizontal|center_vertical" />
-					<Button
-						android:id="@+id/checklist"
-						android:layout_width="60dp"
-						android:layout_height="40dp"
-						android:padding="8dp"
-						android:background="#FFFF8D"
-						android:text="📜 List"
-						android:textSize="12sp"
-						android:textColor="#000000"
-						android:layout_gravity="center_horizontal|center_vertical" />
-					<TextView
-						android:id="@+id/textview2"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="📤 𝗕𝗮𝗰𝗸𝘂𝗽"
+						android:layout_marginLeft="5dp"
+						android:layout_marginRight="5dp"
+						android:padding="3dp"
+						android:background="#FFCDD2"
+						android:text=" ⬆️ BackUp "
 						android:textSize="12sp"
 						android:textColor="#000000"
 						android:layout_gravity="center_horizontal|center_vertical" />
 					<TextView
-						android:id="@+id/textview3"
+						android:id="@+id/restore0"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="📥 𝗥𝗲𝘀𝘁𝗼𝗿𝗲"
+						android:layout_marginRight="15dp"
+						android:padding="3dp"
+						android:background="#FFCDD2"
+						android:text=" ⬇️ Restore "
 						android:textSize="12sp"
 						android:textColor="#000000"
 						android:layout_gravity="center_horizontal|center_vertical" />
 				</LinearLayout>
 			</HorizontalScrollView>
 			<LinearLayout
-				android:id="@+id/linear8"
+				android:id="@+id/box"
 				android:layout_width="match_parent"
-				android:layout_height="50dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
 				android:layout_marginTop="10dp"
-				android:background="#E8F5E9"
-				android:orientation="horizontal">
-				<HorizontalScrollView
-					android:id="@+id/hscroll7"
-					android:layout_width="270dp"
-					android:layout_height="match_parent">
-					<EditText
-						android:id="@+id/customdirrr"
-						android:layout_width="match_parent"
+				android:layout_marginRight="10dp"
+				android:padding="8dp"
+				android:background="#FFFDE7"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/linear8"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:layout_marginTop="2dp"
+					android:orientation="horizontal">
+					<HorizontalScrollView
+						android:id="@+id/hscroll7"
+						android:layout_width="270dp"
+						android:layout_height="match_parent">
+						<EditText
+							android:id="@+id/customdirrr"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:padding="8dp"
+							android:gravity="top|bottom"
+							android:textSize="14sp"
+							android:textColor="#000000"
+							android:hint="📝 PasteDirectory Here (one by one) ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎  ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ "
+							android:textColorHint="#607D8B"
+							android:singleLine="true" />
+					</HorizontalScrollView>
+					<ImageView
+						android:id="@+id/paste"
+						android:layout_width="23dp"
 						android:layout_height="match_parent"
-						android:padding="8dp"
-						android:gravity="top|bottom"
-						android:textSize="14sp"
-						android:textColor="#000000"
-						android:hint="📝 PasteDirectory Here (one by one) ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎  ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ "
-						android:textColorHint="#607D8B"
-						android:singleLine="true" />
-				</HorizontalScrollView>
+						android:layout_marginLeft="5dp"
+						android:layout_marginRight="3dp"
+						android:src="@drawable/task_1"
+						android:scaleType="fitCenter" />
+					<ImageView
+						android:id="@+id/adder"
+						android:layout_width="35dp"
+						android:layout_height="match_parent"
+						android:layout_marginLeft="10dp"
+						android:layout_marginRight="3dp"
+						android:src="@drawable/flash"
+						android:scaleType="fitCenter" />
+				</LinearLayout>
 				<TextView
-					android:id="@+id/paste"
-					android:layout_width="35dp"
+					android:id="@+id/error"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
-					android:text="📋"
-					android:textSize="16sp"
-					android:textStyle="bold"
+					android:text="TextView"
+					android:textSize="14sp"
+					android:textColor="#FF1744" />
+				<LinearLayout
+					android:id="@+id/layooo"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="10dp"
+					android:layout_marginBottom="2dp"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/textview1"
+						android:layout_width="match_parent"
+						android:layout_height="40dp"
+						android:layout_marginLeft="5dp"
+						android:layout_marginTop="2dp"
+						android:layout_marginRight="5dp"
+						android:layout_marginBottom="1dp"
+						android:padding="8dp"
+						android:background="#B9F6CA"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="+ 𝗔𝗱𝗱"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:layout_weight="1" />
+					<TextView
+						android:id="@+id/clean"
+						android:layout_width="match_parent"
+						android:layout_height="40dp"
+						android:layout_marginLeft="5dp"
+						android:layout_marginTop="2dp"
+						android:layout_marginRight="10dp"
+						android:layout_marginBottom="1dp"
+						android:padding="8dp"
+						android:background="#B9F6CA"
+						android:gravity="center_horizontal|center_vertical"
+						android:text="+ 𝑨𝒅𝒅 𝒕𝒐 𝑷𝒓𝒆𝑺𝒆𝒕"
+						android:textSize="12sp"
+						android:textColor="#000000"
+						android:layout_weight="1" />
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear10"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="5dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="5dp"
+				android:padding="2dp"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/dirlist"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:padding="3dp"
+					android:background="#CCFF90"
+					android:text=" 📑 Simple Dir's List "
+					android:textSize="12sp"
 					android:textColor="#000000"
 					android:layout_gravity="center_horizontal|center_vertical" />
-				<Button
-					android:id="@+id/Modify"
-					android:layout_width="80dp"
-					android:layout_height="40dp"
-					android:layout_marginLeft="4dp"
-					android:padding="8dp"
-					android:background="#FFFF00"
-					android:gravity="center_horizontal|center_vertical"
-					android:text="⏩ 𝗡𝗲𝘅𝘁"
-					android:textSize="16sp"
+				<TextView
+					android:id="@+id/dirmanegr"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:padding="3dp"
+					android:background="#CCFF90"
+					android:text=" 🔧 Directory Manager "
+					android:textSize="12sp"
+					android:textColor="#000000"
+					android:layout_gravity="center_horizontal|center_vertical" />
+				<TextView
+					android:id="@+id/presetManager"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:padding="3dp"
+					android:background="#CCFF90"
+					android:text=" 🔧 PreSet Manager "
+					android:textSize="12sp"
 					android:textColor="#000000"
 					android:layout_gravity="center_horizontal|center_vertical" />
 			</LinearLayout>
-			<TextView
-				android:id="@+id/info"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="5dp"
-				android:padding="8dp"
-				android:background="#F9FBE7"
-				android:text="These custom directories or files will be cleared everytime when you use Custom Cleaner"
-				android:textSize="12sp"
-				android:textColor="#000000" />
 			<ScrollView
 				android:id="@+id/vscroll3"
 				android:layout_width="match_parent"
@@ -146,10 +263,11 @@
 						android:id="@+id/template"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Templates : "
-						android:textSize="14sp"
+						android:layout_marginTop="20dp"
+						android:text="𝑻𝒆𝒎𝒑𝒍𝒂𝒕𝒆𝒔 : "
+						android:textSize="16sp"
 						android:textStyle="bold"
-						android:textColor="#DD2C00" />
+						android:textColor="#6200EA" />
 					<CheckBox
 						android:id="@+id/subtitle"
 						android:layout_width="wrap_content"
@@ -199,19 +317,19 @@
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<CheckBox
-						android:id="@+id/ringtone"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="Ringtones"
-						android:textSize="12sp"
-						android:textColor="#000000" />
-					<CheckBox
 						android:id="@+id/lostdir"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:text="LOST.DIR"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+					<CheckBox
+						android:id="@+id/ringtone"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Ringtones"
 						android:textSize="12sp"
 						android:textColor="#000000" />
 					<CheckBox
@@ -244,6 +362,13 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:text="Documents"
+						android:textSize="12sp"
+						android:textColor="#000000" />
+					<TextView
+						android:id="@+id/result"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
 						android:textSize="12sp"
 						android:textColor="#000000" />
 				</LinearLayout>
