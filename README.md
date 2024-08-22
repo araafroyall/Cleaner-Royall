@@ -41,9 +41,9 @@
 
 Telegram id : @AraafRoyall
 
-Email : araafroyall@digdig.org
+Email : CleanerRoyall@gmail.com
 
-Gmail : araafroyall@gmail.com
+Gmail : AraafRoyall@gmail.com
 
 •••••••••••••••••••••••••••••••••••
 
