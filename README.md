@@ -17,7 +17,6 @@
 *  Light weight but Ultra Fast & Powerful
 *  No Permission Required (Except Root)
 *  Never Collect Any Data.
-*  Super Fast Speed
 *  Automatic Systemless Module Cleaner
 
 ## Requirements 
