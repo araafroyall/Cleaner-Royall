@@ -17,7 +17,7 @@
 *  Light weight but Ultra Fast & Powerful
 *  No Permission Required (Except Root)
 *  Never Collect Any Data.
-*  Automatic Systemless Module Cleaner
+*  Automatic Systemless Cleaner Module
 
 ## Requirements 
    • Root or Magisk & Busybox only
