@@ -40,7 +40,7 @@
 
 Telegram id : @AraafRoyall
 
-Email : CleanerRoyall@gmail.com
+Gmail : CleanerRoyall@gmail.com
 
 Gmail : AraafRoyall@gmail.com
 
