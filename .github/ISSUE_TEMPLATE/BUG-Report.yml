@@ -48,7 +48,7 @@ body:
       description: 
       multiple: true
       options:
-        - Latest
-        - v3.3
+        - Latest v3.6
+        - v3.5
     validations:
       required: false
