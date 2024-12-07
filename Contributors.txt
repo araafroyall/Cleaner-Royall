@@ -4,3 +4,5 @@ Special Thanks to Following who helped a lot in creating this app
 • Sketchware pro ( for making full App)
 • Chat Gpt (For java code structures)
 • Telegram bot API (For forums & update check)
+• FlatIcons (For Providing Logos & Icons)
+
