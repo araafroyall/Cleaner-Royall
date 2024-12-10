@@ -1,15 +1,1 @@
-
-### Version 2.9
-🚀 :  Globally .nomedia Cleaner
-🚀 : SpeedUp EmptyFolder Cleaner
-𝗙𝗶𝘅 : Custom Directories Hints
-𝗙𝗶𝘅 : Temporary Files Cleaner Output
-𝗙𝗶𝘅 : Texts & minor information
-𝗙𝗶𝘅 : Notification checkbox in custom cleaner
-𝗙𝗶𝘅 : Fstrim on Android 13
-𝗙𝗶𝘅 : Bugs & Bot Intent issue
-💬 : Bash changed to 'sh' Shell scripting to support Almost All Devices
-💬 : MultiUser EmptyFolder Cleaner now outputs 'user'
-💬 : New Custom Dirs Import Style
-💬 : Premium Price are now fixed to 3$.
-
+happy shishehe
