@@ -1,1 +1,7 @@
-find "/data/media/" -type d -empty -delete
+{
+    "id": "33847",
+    "title": "𝗘𝗺𝗽𝘁𝘆 𝗙𝗼𝗹𝗱𝗲𝗿 𝗖𝗹𝗲𝗮𝗻𝗲𝗿",
+    "description": "Cleaner All Empty Folder from $INT and MultiUser(If Any)",
+    "cmd": "find \/data\/media\/ -type d -empty -delete",
+    "enc": "0"
+}
