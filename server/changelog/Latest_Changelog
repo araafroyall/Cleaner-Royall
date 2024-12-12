@@ -7,8 +7,8 @@ Version 3.7
 🚀 : SpeedUp Compatibility Checker
 🚀 : Changelog UI Upgrade
 🚀 : Faster OneTap Option Get on Open
-🚀 : 
-🚀 : 
+🚀 : Fast & New Update Checker Mechanism
+🚀 : Update Checker - Update Changelog Provider 
 🚀 : 
 𝗙𝗶𝘅 : Proper Error Output
 𝗙𝗶𝘅 : Module - 30m not disabling on uninstall module
@@ -32,7 +32,7 @@ Version 3.7
 💬 : Github Issues integrated in Feedback Page 
 💬 : Submit directory Integrated in Feedback Page
 💬 : New Feedback Forum (Json) Method
-💬 : 
+💬 : Suspended update check using Telegram bot API
 💬 : 
 💬 : 
 💬 : 
