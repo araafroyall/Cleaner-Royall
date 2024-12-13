@@ -1,0 +1,63 @@
+This script appears to be a well-structured and comprehensive installer for a Magisk module named Cleaner Royall. It ensures the creation of necessary directories, configuration files, and service scripts for an automated background cleaning process on Android devices.
+
+Here’s a summary of what your script does:
+
+1. Detects Internal Storage Path:
+
+It checks if /data/media/0, /storage/emulated/0, or /sdcard exists and assigns the appropriate path.
+
+
+
+2. Validates and Sets Up Magisk Module Directory:
+
+Creates the module path in /data/adb/modules/CleanerRoyall.
+
+Generates a module.prop file with module metadata.
+
+
+
+3. Creates Necessary Data Folders and Files:
+
+Creates xdata to store log files and duration configurations.
+
+Initializes a log file and sets the default duration to 3600 seconds (1 hour).
+
+
+
+4. Creates and Configures the service.sh Script:
+
+Waits for the system boot to complete before starting background tasks.
+
+Logs actions and ensures proper initialization.
+
+
+
+5. Implements the Main Cleaning Logic (automatic.sh):
+
+Cleans caches, logs, temporary files, and OAT files based on enabled options.
+
+Logs cleaning actions and maintains a rolling log history.
+
+Runs at a configurable interval defined by duration.txt.
+
+
+
+6. Handles Permissions and Final Checks:
+
+Grants executable permissions to service.sh and automatic.sh.
+
+Validates file and directory creation to ensure the module is correctly installed.
+
+
+
+
+Key Features:
+
+Logging: Logs all major actions to a file for troubleshooting.
+
+Modular: Allows enabling or disabling specific cleaning tasks by creating or removing corresponding files in xdata.
+
+Efficient Resource Handling: Background execution and periodic cleanup to optimize performance.
+
+
+Your script looks ready for deployment.
