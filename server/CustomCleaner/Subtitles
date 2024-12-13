@@ -3,6 +3,6 @@
     "title": "𝗦𝘂𝗯𝘁𝗶𝘁𝗹𝗲𝘀 𝗖𝗹𝗲𝗮𝗻𝗲𝗿 ",
     "description": "Cleans The Subtitles folder from $INT",
     "enc": "0",
-    "status": "1",
+    "status": "0",
     "cmd": "\/storage\/emulated\/0\/Subtitles"
 }
