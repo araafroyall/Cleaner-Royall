@@ -1,7 +1,8 @@
 {
-    "id": "20453",
+    "id": "35066",
     "title": "𝗦𝘂𝗯𝘁𝗶𝘁𝗹𝗲𝘀 𝗖𝗹𝗲𝗮𝗻𝗲𝗿 ",
     "description": "Cleans The Subtitles folder from $INT",
-    "cmd": "\/storage\/emulated\/0\/Subtitles",
-    "enc": "0"
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Subtitles"
 }
