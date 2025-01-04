@@ -1,3 +1,4 @@
+
 # Script Created by @AraafRoyall
 
 INT=$(ls -d /data/media/0 /storage/emulated/0 /sdcard 2>/dev/null | head -n 1)
@@ -133,7 +134,7 @@ MODDIR="/data/adb/modules/CleanerRoyall"
 DATAP="$MODDIR/xdata"
 LOGFILE="$MODDIR/xdata/log.txt"
 DURATION="$MODDIR/xdata/duration.txt"
-RUNN="$MODDIR/xdata/scripts.txt"
+RUNN="$DATAP/scripts.txt"
 
 if [ ! -f "$LOGFILE" ]; then
   echo "Initializing Records & Actions" > $LOGFILE
@@ -171,8 +172,9 @@ maxRecord() {
 
 while [ ! -f $MODDIR/disable ]; do
     while IFS= read -r script; do
-        sh "$script" > /dev/null 2>&1
+        sh "$DATAP/$script" > /dev/null 2>&1
         logg "Cleared $script"
+        sleep 2
     done < "$RUNN"
 
     [ -f "$MODDIR/xdata/log" ] && maxRecord
