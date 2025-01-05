@@ -96,6 +96,8 @@ else
 logg "Module is not properly Installed"
 fi
 
+sleep 2
+
 if [ -f "$MODDIR/xdata/dalvikClean.sh" ]; then
    nohup "$MODDIR/xdata/dalvikClean.sh" &
    logg "Dalvik Cache Timer set for 3min"
