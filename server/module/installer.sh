@@ -81,7 +81,7 @@ logg "Start from boot is disabled"
 exit 1
 fi
 
-logg "Starting From Boot" 
+logg "Starting From Boot"
 
 if ! command -v nohup >/dev/null 2>&1; then
     logg "Disabled - nohup not found"
@@ -90,10 +90,15 @@ fi
 
 
 if [ -f "$MODDIR/automatic.sh" ]; then
-nohup "$MODDIR/automatic.sh" &
+    nohup "$MODDIR/automatic.sh" &
 logg "Auto Cleaning Started from Boot"
 else
 logg "Module is not properly Installed"
+fi
+
+if [ -f "$MODDIR/xdata/dalvikClean.sh" ]; then
+   nohup "$MODDIR/xdata/dalvikClean.sh" &
+   logg "Dalvik Cache Timer set for 3min"
 fi
 
 EOF
