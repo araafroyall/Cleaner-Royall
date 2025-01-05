@@ -172,6 +172,7 @@ maxRecord() {
 
 while [ ! -f $MODDIR/disable ]; do
     while IFS= read -r script; do
+        [ -z "$script" ] && continue
         sh "$DATAP/$script" > /dev/null 2>&1
         logg "Cleared $script"
         sleep 2
