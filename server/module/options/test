@@ -3,6 +3,7 @@
     "status": "1",
     "description": "This is Test File",
     "name": "xyz.sh",
-    "enc": "1",
+    "enc": "0",
+    "comment": "Happy",
     "data": "Test Data"
 }
