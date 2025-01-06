@@ -171,6 +171,14 @@ maxRecord() {
     fi
 }
 
+notify() {
+ {
+su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Background Cleaning has been performed.'" 
+} || {
+logg "Failed to Post Notification"
+}
+}
+
 # ---------------------------------
 
 while [ ! -f $MODDIR/disable ]; do
@@ -182,7 +190,7 @@ while [ ! -f $MODDIR/disable ]; do
     done < "$RUNN"
 
     [ -f "$MODDIR/xdata/log" ] && maxRecord
-
+    [ -f "$MODDIR/xdata/notify" ] && notify
     logg "Next Cycle - Waiting"
 
     [ -f $MODDIR/disable ] && break
