@@ -150,9 +150,6 @@ if [ ! -f "$DATAP/scripts.txt" ]; then
   touch "$DATAP/scripts.txt" > /dev/null 2>&1
 fi
 
-if [ ! -f "$DATAP/temporary.sh" ]; then
-  echo "echo 'temp'" > "$DATAP/temporary.sh"
-fi
 
 if ! grep -qE '^[0-9]+$' "$DURATION"; then
     echo "1800" > "$DURATION"
