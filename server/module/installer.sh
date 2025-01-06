@@ -42,9 +42,8 @@ echo "Log file created successfully"
 echo "Making duration file"
 echo "3600" > "$MDK/xdata/duration.txt"
 echo "Duration file created successfully"
-echo "temporary.sh" > "$MDK/xdata/scripts.txt"
-echo "echo 'temp'" > "$MDK/xdata/temporary.sh"
 
+touch "$MDK/xdata/scripts.txt" > /dev/null 2>&1
 
 
 # ---------------------------------------
@@ -148,7 +147,7 @@ if [ ! -f "$LOGFILE" ]; then
 fi
 
 if [ ! -f "$DATAP/scripts.txt" ]; then
-  echo "temporary.sh" > "$DATAP/scripts.txt"
+  touch "$DATAP/scripts.txt" > /dev/null 2>&1
 fi
 
 if [ ! -f "$DATAP/temporary.sh" ]; then
