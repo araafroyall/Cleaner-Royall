@@ -43,3 +43,72 @@ Manage and remove previously added directories through the Directory Manager for
 
 Whether you're decluttering storage, removing unwanted files, or managing multiple app data efficiently, this feature offers a powerful and customizable cleaning solution tailored just for you.
 
+
+
+-----------------------------
+
+FAQs for Custom Cleaner
+
+Q1: What is the Custom Cleaner feature?
+The Custom Cleaner allows you to specify directories or paths to clean automatically. These directories will be cleared every time you use the Custom Cleaner, helping to manage clutter and optimize storage.
+
+Q2: Is there a limit to the number of directories I can add?
+No, there is no limit. You can add as many directories as you need for cleaning.
+
+Q3: Can I clean subdirectories within a directory?
+Yes, you can use the '*' wildcard to include all subdirectories within a specific directory.
+
+Q4: How can I clean directories in /data?
+To clean directories in /data, enable Advanced Mode. Ensure you have the necessary permissions and access.
+
+Q5: Does this feature support multi-user environments?
+Yes, for multi-user setups, specify the directory as /data/media/USER/PATH to target specific user data.
+
+Q6: Can I use Custom Cleaner to clear app data?
+Yes, you can add directories related to specific apps to clear their data during the cleaning process.
+
+Q7: What are PreSets, and how can I use them?
+PreSets are templates for different working profiles. You can create and save these templates to quickly switch between cleaning configurations.
+
+Q8: How is this feature helpful for folders that recreate themselves?
+If certain files or folders are automatically created in internal storage, adding them to the Custom Cleaner ensures they are regularly removed.
+
+Q9: Are there any precautions while selecting directories?
+Yes, be cautious while selecting directories. You are solely responsible for the paths you add. Ensure you don’t select critical system directories unless you know what you’re doing.
+
+Q10: How often should I check for updates?
+Online patches are released regularly. Check weekly for updates to improve functionality and fix bugs.
+
+Q11: Can I remove directories that I no longer want to clean?
+Yes, use the Directory Manager to remove downloaded or unnecessary directories from the cleaning list.
+
+Q12: How do I handle directories with special cleaning requirements?
+Use Advanced Mode for directories like /data or multi-user paths. Refer to PreSets for specific profiles to handle unique cleaning tasks.
+
+Q13: Can this feature harm my device?
+Improper use, such as cleaning critical directories, may cause issues. Always double-check the directories you add to the Custom Cleaner.
+
+Q14: Does the Custom Cleaner work with external storage?
+Yes, you can add paths from both internal and external storage as long as they are accessible by the cleaner.
+
+Q15: Can I disable this feature temporarily?
+Yes, you can remove directories or disable the Custom Cleaner via its settings when not in use.
+
+Q16: How do I use the wildcard (*) properly?
+The '*' wildcard allows you to target subdirectories within a directory. For example, adding /example/* will clean all subdirectories under /example.
+
+Q17: Will cleaning these directories affect my apps or system?
+Only if you add directories containing app data or system files. Be careful not to include paths critical to app functionality or system stability.
+
+Q18: How can I check the status of the directories I added?
+Use the Directory Manager to view, edit, or remove added directories.
+
+Q19: What happens if I mistakenly add a wrong directory?
+You can always remove it from the Directory Manager and undo the change. No action will be taken on that directory after removal.
+
+Q20: Is the Custom Cleaner stable?
+Yes, the feature is stable, but regular updates are recommended to ensure optimal performance and compatibility with your device.
+
+
+-----------------------------
+
