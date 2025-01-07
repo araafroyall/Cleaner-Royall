@@ -186,6 +186,7 @@ maxRecord() {
 notify() {
  {
 su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Background Cleaning has been performed.'" 
+logg "Cleaning Notification Posted"
 } || {
 logg "Failed to Post Notification"
 }
