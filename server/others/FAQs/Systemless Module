@@ -11,7 +11,7 @@ Cleaning Patches:
 Choose and enable cleaning patches for specific tasks. These patches will execute during the automatic cleaning cycle.
 
 Boot-Time Module Activation:
-The module can start automatically at boot, ensuring functionality without manual activation.
+The module can start automatically at boot, ensuring functionality without manual activation (if Enabled Respected option)
 
 Dalvik Cache Cleaning:
 Optionally clean the Dalvik cache 3 minutes after boot to prevent potential errors.
