@@ -82,6 +82,11 @@ fi
 
 logg "Starting From Boot"
 
+if ! pm list packages | grep -q "Cleaner.Royall"; then
+    rm -rf "/data/adb/modules/CleanerRoyall"
+    exit 1
+fi
+
 if ! command -v nohup >/dev/null 2>&1; then
     logg "Disabled - nohup not found"
     exit 1
@@ -142,9 +147,16 @@ LOGFILE="$MODDIR/xdata/log.txt"
 DURATION="$MODDIR/xdata/duration.txt"
 RUNN="$DATAP/scripts.txt"
 
+if ! pm list packages | grep -q "Cleaner.Royall"; then
+    rm -rf "/data/adb/modules/CleanerRoyall"
+    exit 1
+fi
+
+
 if [ ! -f "$LOGFILE" ]; then
   echo "Initializing Records & Actions" > $LOGFILE
 fi
+
 
 if [ ! -f "$DATAP/scripts.txt" ]; then
   touch "$DATAP/scripts.txt" > /dev/null 2>&1
@@ -226,4 +238,3 @@ fi
 echo "Module Installation Sucess."
 
 echo "Now you can complete other setup"
-
