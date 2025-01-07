@@ -1,0 +1,64 @@
+Advanced Auto-Cleaning Module
+
+Take your device cleaning experience to the next level with the Automatic Cleaning Module. This powerful tool ensures your device stays clutter-free without requiring constant manual intervention.
+
+Key Features:
+
+Automatic Cleaning:
+Schedule cleaning tasks at selected time intervals, ranging from minutes to hours. Once set, the module will handle everything automatically.
+
+Cleaning Patches:
+Choose and enable cleaning patches for specific tasks. These patches will execute during the automatic cleaning cycle.
+
+Boot-Time Module Activation:
+The module can start automatically at boot, ensuring functionality without manual activation.
+
+Dalvik Cache Cleaning:
+Optionally clean the Dalvik cache 3 minutes after boot to prevent potential errors.
+
+Powerful Cleaning Engine:
+Designed for use with Magisk or KernelSU, this module delivers unparalleled cleaning performance.
+
+
+Usage Guidelines:
+
+Avoid enabling or disabling the module multiple times in quick succession to prevent overlapping script executions.
+
+Any changes to the module settings will take effect during the next cleaning cycle or interval.
+
+For optimal performance, a 1-hour or 3-hour cleaning cycle is recommended.
+
+Disabling the module from Magisk or KernelSU Manager will immediately stop the cleaning processes.
+
+
+Uninstall Instructions:
+
+Disable the module first and allow it to stop at the next cleaning cycle.
+
+If not disabled properly, it will stop cleaning automatically after the next boot.
+
+
+Monitoring and Maintenance:
+
+Check notifications, logs, and module status regularly to ensure smooth operation.
+
+Be aware that battery or memory-saving features may terminate the script. Monitor logs and notifications to verify the module's status.
+
+Stable but not Bug-Free: While the module is stable, occasional bugs may occur. Regular monitoring is recommended.
+
+
+Online Patches & Updates:
+
+Weekly online patches improve functionality and address bugs. Keep your module updated.
+
+Use the Patch Manager to remove unnecessary or downloaded patches for better resource management.
+
+
+Important Notes:
+
+This is one of the most powerful cleaning modules available, but misuse can cause issues. Use responsibly.
+
+Stay proactive in checking logs or actions to ensure the module isn’t interrupted by the Android system.
+
+
+With this robust module, you can keep your device optimized, clean, and free of unnecessary clutter without lifting a finger.
