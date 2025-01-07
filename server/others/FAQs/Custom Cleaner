@@ -1,0 +1,45 @@
+Directory Cleaner - Enhanced Customization
+
+Welcome to the Custom Cleaner! This feature empowers you to manage and clean specific directories tailored to your needs.
+
+Features & Benefits:
+
+Custom Directory Input:
+Enter the directory path you wish to add to the cleaner. These directories will be cleared each time you use the Custom Cleaner.
+
+Unlimited Directories:
+There is no limit to the number of directories you can configure.
+
+Automation:
+Useful for clearing folders or files automatically created in internal storage or specific app directories.
+
+Wildcard Support:
+Use the '*' wildcard for including subdirectories within a given path for flexible cleaning.
+
+Advanced Mode:
+Gain access to /data directories (requires special permissions).
+
+For multi-user support, specify the directory as /data/media/USER/PATH.
+
+
+PreSet Templates:
+Create and use templates for different profiles or working scenarios, ensuring efficiency and ease of use.
+
+App Data Management:
+Clear data of multiple apps by adding their respective directories to the cleaner.
+
+Safety First:
+Be cautious while selecting directories; you are solely responsible for the directories and paths used.
+
+
+Additional Tips & Updates:
+
+Online Patches:
+Stay up to date with weekly online patch releases to ensure optimal performance and bug fixes.
+
+Directory Manager:
+Manage and remove previously added directories through the Directory Manager for better control.
+
+
+Whether you're decluttering storage, removing unwanted files, or managing multiple app data efficiently, this feature offers a powerful and customizable cleaning solution tailored just for you.
+
