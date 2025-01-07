@@ -110,5 +110,101 @@ Q20: Is the Custom Cleaner stable?
 Yes, the feature is stable, but regular updates are recommended to ensure optimal performance and compatibility with your device.
 
 
------------------------------
+Output Handling
+
+Q1: Where does the output of the cleaning process go?
+All outputs are redirected to /dev/null, ensuring that no unnecessary logs or messages clutter your system.
+
+
+---
+
+Directory Management
+
+Q2: What happens if I mistakenly remove a directory in the Directory Manager?
+The Directory Manager supports an Undo option, allowing you to restore any directory you removed by mistake.
+
+Q3: Can I migrate directories from an old version of the cleaner?
+Yes, the cleaner includes a Migrate option to support users moving from an older version to the new mechanism, ensuring compatibility.
+
+Q4: Are there any restrictions on the types of directories I can add?
+Yes, the cleaner does not support directories that contain:
+
+Spaces in their names.
+
+Double asterisks (**).
+
+New line characters.
+
+
+Q5: How can I back up and restore my cleaning configurations?
+The cleaner supports backup and restore in JSON format. Backups are saved to the corresponding slot, and you can easily restore them as needed.
+
+
+---
+
+Backup and Templates
+
+Q6: Can I copy backups to another device?
+Yes, backups are fully copiable and portable. You can transfer them to another device and restore them there.
+
+Q7: Does the cleaner support templates?
+Yes, the cleaner includes Online Templates for different cleaning configurations. These templates make it easier to set up cleaning profiles for common use cases.
+
+
+---
+
+Instant Cleaning
+
+Q8: Is there an option for immediate cleaning?
+Yes, the cleaner provides an Instant Cleaning feature that allows you to clean selected directories instantly without waiting for a scheduled cycle.
+
+
+---
+
+Advanced Features
+
+Q9: How do backups work, and are they customizable?
+Backups store your directory configurations in a JSON file format. Each backup corresponds to a specific slot, and you can manage or customize the slots as needed.
+
+Q10: Can I manage multiple backups?
+Yes, the system allows you to save, restore, and switch between multiple backups using the Backup and Restore functionality.
+
+Q11: How do online templates help?
+Online templates provide predefined cleaning configurations that you can import instantly. They simplify the setup process and ensure compatibility with common cleaning needs.
+
+
+---
+
+Error Prevention and Restrictions
+
+Q12: Why are directories with spaces, **, or new lines not supported?
+These types of directories can cause errors during the cleaning process. To maintain stability and compatibility, they are not allowed.
+
+Q13: How can I ensure my directories are valid?
+Make sure directory names are free of spaces, double asterisks (**), and new line characters before adding them to the cleaner.
+
+
+---
+
+Migration
+
+Q14: What is the purpose of the migration feature?
+The Migrate option allows users transitioning from an old version of the cleaner to adapt their configurations to the updated system seamlessly.
+
+Q15: Can I migrate settings from a different cleaning app?
+No, the migration feature is specific to older versions of the Custom Cleaner and does not support configurations from third-party apps.
+
+
+---
+
+Maintenance
+
+Q16: How do I maintain a stable configuration for the cleaner?
+Regularly back up your settings, use valid directory names, and leverage online templates for predefined configurations. Monitor outputs using /dev/null redirection to ensure smooth operation.
+
+Q17: Can I revert all changes if something goes wrong?
+Yes, with the Backup and Restore feature, you can quickly revert to a previous configuration to avoid issues.
+
+
+----------------------------
 
