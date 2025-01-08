@@ -14,6 +14,8 @@ Version 3.7
 🚀 : New Module Dynamic & Stable Mechanism
 🚀 : Cache Partition now integrated in Cache Trimmer
 🚀 : Module Cleaner Patch Manager [offline]
+🚀 : "/data/system/graphicsstats" Integrated in Cache Trim
+🚀 : "/data/system/package_cache/*" Integrated in Cache Trim
 𝗙𝗶𝘅 : Proper Error Output
 𝗙𝗶𝘅 : Module - 30m not disabling on uninstall module
 𝗙𝗶𝘅 : Icons placements
