@@ -1,3 +1,10 @@
+
+The fstrim command on Android is a maintenance tool used to optimize storage performance and extend the lifespan of devices with SSD or eMMC storage. It reclaims unused space on file systems by informing the storage device which blocks are no longer in use, reducing fragmentation and preventing performance degradation over time. Typically applied to partitions like /cache, /data, and /system, fstrim ensures efficient read/write operations by clearing leftover data from deleted files. It is safe to use as it does not affect active data and is often automated by modern systems. Regularly running fstrim helps maintain device speed, particularly in scenarios where heavy app installations, updates, or data deletions occur frequently. The -v option can be used to display how much space has been reclaimed, providing transparency in its operation.
+
+
+••••••••••••••••••••••••••••••••••••
+
+
 The fstrim command is used to reclaim unused space on a mounted file system. It helps maintain the performance and longevity of storage devices like SSDs or eMMC by informing the device which blocks of data are no longer in use. Here's a breakdown of the commands:
 
 1. fstrim -v /cache
