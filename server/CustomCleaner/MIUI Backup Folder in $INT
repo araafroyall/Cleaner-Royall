@@ -1,0 +1,8 @@
+{
+    "id": "92421",
+    "title": "MIUI Backup Folder in $INT",
+    "description": "It may stores backup files in MiUi or HyperOS",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/MIUI\/backup"
+}
