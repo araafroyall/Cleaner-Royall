@@ -1,8 +1,0 @@
-{
-    "id": "56681",
-    "title": "MIUI Mirror Folder",
-    "description": "Useless Mirror folder in Redmi device",
-    "enc": "0",
-    "status": "1",
-    "cmd": "\/storage\/emulated\/0\/MIUI\/Mirror"
-}
