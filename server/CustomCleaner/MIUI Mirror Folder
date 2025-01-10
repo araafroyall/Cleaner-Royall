@@ -1,0 +1,8 @@
+{
+    "id": "04701",
+    "title": "MIUI Mirror Folder",
+    "description": "Useless mirror folder in MIUI directory in redmi phones",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/MIUI\/Mirror"
+}
