@@ -27,7 +27,7 @@ echo "Making module.prop file..."
 
 echo "id=CleanerRoyall
 name=Cleaner Royall
-version=2.1
+version=2.3
 versionCode=2
 author=Araaf Royall
 description=Ultimate Systemless Module for Automated background cleaner at set intervals
@@ -195,6 +195,9 @@ logg "Failed to Post Notification"
 # ---------------------------------
 
 while [ ! -f $MODDIR/disable ]; do
+    
+    chmod +x $DATAP/* > /dev/null 2>&1
+
     while IFS= read -r script; do
         [ -z "$script" ] && continue
         sh "$DATAP/$script" > /dev/null 2>&1
