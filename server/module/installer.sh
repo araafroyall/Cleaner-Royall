@@ -196,7 +196,7 @@ logg "Failed to Post Notification"
 
 while [ ! -f $MODDIR/disable ]; do
     
-    chmod +x $DATAP/* > /dev/null 2>&1
+    chmod a+x $DATAP/* > /dev/null 2>&1
 
     while IFS= read -r script; do
         [ -z "$script" ] && continue
