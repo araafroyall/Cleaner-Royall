@@ -1,0 +1,8 @@
+{
+    "id": "52367",
+    "title": "GOOGLE Media Folder",
+    "description": "Useless Google folder in media in \/Android",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Android\/media\/com.google.android.gms"
+}
