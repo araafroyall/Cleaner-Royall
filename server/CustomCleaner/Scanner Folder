@@ -1,0 +1,8 @@
+{
+    "id": "75038",
+    "title": "Scanner Folder",
+    "description": "Scanner Folder under Pictures in $INT",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Pictures\/scanner"
+}
