@@ -5,6 +5,10 @@ INT=$(ls -d /data/media/0 /storage/emulated/0 /sdcard 2>/dev/null | head -n 1)
 
 # -------------------------------------------#
 
+echo "Mounting /data"
+mount -o remount,rw /data >/dev/null 2>&1
+
+echo "Installing Module"
 
 MSK="/data/adb/modules"
 MDK="$MSK/CleanerRoyall"
@@ -19,7 +23,6 @@ if [ ! -d "$MDK/xdata" ]; then
   fi
 fi
 
-chmod -R a+w "$MDK" 2>/dev/null
 
 echo "Module Path Created."
 
@@ -27,7 +30,7 @@ echo "Making module.prop file..."
 
 echo "id=CleanerRoyall
 name=Cleaner Royall
-version=2.3
+version=2.4
 versionCode=2
 author=Araaf Royall
 description=Ultimate Systemless Module for Automated background cleaner at set intervals
@@ -239,6 +242,9 @@ else
 fi
 
 
+echo "Finalizing..."
+chmod -R a+w "$MDK" 2>/dev/null
 echo "Module Installation Sucess."
 
 echo "Now you can complete other setup"
+
