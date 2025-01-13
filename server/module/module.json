@@ -1,5 +1,5 @@
 {
-    "version": "2.3",
+    "version": "2.4",
     "status": "1",
-    "Changelog": "Cleaning Notification Posted in logs\nFix Permission of Patches"
+    "Changelog": "Cleaning Notification Posted in logs\nFix Permission of Patches & Module\n Fix Installation on some devices"
 }
