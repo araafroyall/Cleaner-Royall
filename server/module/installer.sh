@@ -199,6 +199,8 @@ logg "Failed to Post Notification"
 
 while [ ! -f $MODDIR/disable ]; do
     
+    [ -f $MODDIR/disable ] && break
+
     chmod a+x $DATAP/* > /dev/null 2>&1
 
     while IFS= read -r script; do
@@ -211,8 +213,6 @@ while [ ! -f $MODDIR/disable ]; do
     [ -f "$MODDIR/xdata/log" ] && maxRecord
     [ -f "$MODDIR/xdata/notify" ] && notify
     logg "Next Cycle - Waiting"
-
-    [ -f $MODDIR/disable ] && break
 
     sleep $(cat "$DURATION")
 done
