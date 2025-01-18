@@ -1,7 +1,7 @@
 name: "Premium Forum"
-description: Fill This Forum to get Activation Key
-title: "Premium Activation Key"
-labels: ["Activation Key"
+description: Fill & Submit this Forum to get Premium Acess
+title: "Premium Acess"
+labels: ["Activation Acess"
 ]
 assignees:
   - araafroyall
@@ -13,7 +13,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Fill This Forum , Wait for Review , Get Your Activation Key, For Any Help [Contact Developer](https://t.me/AraafRoyall)
+        Fill This Forum , Wait for Review , Get Your Premium Acess , For Any Help [Contact Developer](https://t.me/AraafRoyall)
 
 
   - type: dropdown
@@ -24,7 +24,7 @@ body:
       multiple: true
       options:
         - Paypal
-        - UPI
+        - Telegram Stars
         - Crypto or BTC or Binance
         - Others
     validations:
@@ -42,7 +42,7 @@ body:
   - type: input
     id: stringid
     attributes:
-      label: "📟 String from Cleaner Lite App"
+      label: "📟 String from Cleaner Royall App"
       description: Paste String text here, you can find this in cleaner lite app at premium activity page, [Example](https://graph.org/Copy-String-11-19)
       placeholder: Paste String here...
     validations:
@@ -52,9 +52,9 @@ body:
   - type: input
     id: cnts
     attributes:
-      label: "Where will you Recieve Key ?"
-      description: Enter your gamil or Telegram username or Whatsapp number with country code
-      placeholder: Your Contact Info
+      label: "📟 UserID From Cleaner Royall App"
+      description: Enter the 8 digit User Id from Cleaner Royall app (given in premium page)
+      placeholder: Enter here ... 
     validations:
       required: true
 
@@ -74,7 +74,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Click 'Submit new issue' button given below or in last to Submit this forum
+        Click 'Create' button given below or in last to Submit this forum
 
 
 
