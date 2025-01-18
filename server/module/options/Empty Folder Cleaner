@@ -3,7 +3,7 @@
     "status": "1",
     "name": "EmptyFolder",
     "enc": "1",
-    "description": "It will Clean All Empty Folders from MultiUser including Main User Internal Storage",
+    "description": "It can add Empty folder cleaner(Multi-User) support to Module",
     "data": "$IVX+\/9UIFMxumhNwBYE62hA6FYNJcC5Sw7fHuOINT9OtZjQtHez7AP4IwYfEF93XKmAxys4i7I1SR\/\n66XalsiGUfvjS3fUVv\/gCT4unrldFEg=\n",
-    "info": "It will Clean All Empty Folders from MultiUser including Main User Internal Storage"
+    "info": "none"
 }
