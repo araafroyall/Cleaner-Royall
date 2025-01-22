@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/NewIcon.png" style="width: 30%;" />
+  <img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/NewIcon.png" style="width: 30%;" />
 </p>
 
 # Cleaner Royall 
@@ -31,7 +31,7 @@
 •••••••••••••••••••••••••••••••••
 
 <p align="left">
-  <img src="assets/Screenshots/Info.png" style="width: 100%;" />
+  <img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/Info.png" style="width: 100%;" />
 </p>
 
 
@@ -50,6 +50,7 @@ Gmail : CleanerRoyall@gmail.com
 Gmail : AraafRoyall@gmail.com
 
 •••••••••••••••••••••••••••••••••••
+
 
 
 
