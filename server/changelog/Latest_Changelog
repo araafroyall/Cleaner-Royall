@@ -1,8 +1,7 @@
-Mini Update v3.8
+Changelog v4.0
 
-𝗙𝗶𝘅 : Id 12316, 20965, 85467 & 58876
-𝗙𝗶𝘅 : new payment method : Telegram stars
-𝗙𝗶𝘅 : suspended google play code payment due to country issue
-𝗙𝗶𝘅 : minor bugs & improvements
+• Initial Xposed Support
+ - Auto Clears All Type of Cache when Scoped App launch or started
+
 
 -------------------------------------
