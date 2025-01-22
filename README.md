@@ -25,8 +25,9 @@
 *  Supports Automatic Cleaner Module
 
 ## Requirements 
-   • Root or Magisk & Busybox only
-
+  • Root (Any Root solution like Magisk)
+  • Busybox (Optional)
+  • Xposed Framework (LSPosed)[Optional]
 
 •••••••••••••••••••••••••••••••••
 
