@@ -1,2 +1,3 @@
 rm -rf /data/app/*/*/oat
 rm -rf /data/app/*/oat
+echo "Sucessfully Cleared oat of all Apps"
