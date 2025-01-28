@@ -15,7 +15,7 @@
 [![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyall)
 [![Telegram Group](https://img.shields.io/badge/Telegram%20Group-lightgreen?logo=telegram
-)](https://t.me/CleanerRoyalls) ..
+)](https://t.me/CleanerRoyalls)
 
 [![Xposed Module](https://img.shields.io/badge/Xposed%20Module-✓-green.svg)]()
 [![Magisk Module](https://img.shields.io/badge/Magisk%20Module-✓-green.svg)]()
