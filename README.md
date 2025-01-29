@@ -14,7 +14,7 @@
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
 [![Telegram Channel](https://img.shields.io/badge/Tg%20Channel-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyall)
-[![Telegram Group](https://img.shields.io/badge/Telegram%20Group-lightgreen?logo=telegram
+[![Telegram Group](https://img.shields.io/badge/Tg%20Group-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyalls)
 
 [![Xposed Module](https://img.shields.io/badge/Xposed%20Module-✓-green.svg)]()
