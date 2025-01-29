@@ -12,7 +12,7 @@
 𝗧𝗵𝗲 𝗕𝗲𝘀𝘁 𝗖𝗹𝗲𝗮𝗻𝗶𝗻𝗴 𝗔𝗽𝗽 𝗘𝘃𝗲𝗿 𝗠𝗮𝗱𝗲
 
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
-[![Telegram Channel](https://img.shields.io/badge/Telegram%20Channel-lightgreen?logo=telegram
+[![Telegram Channel](https://img.shields.io/badge/Tg%20Channel-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyall)
 [![Telegram Group](https://img.shields.io/badge/Telegram%20Group-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyalls)
