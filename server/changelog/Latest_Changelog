@@ -1,11 +1,10 @@
-Changelog v4.1 + v4.2
-
-  - Fix sign problem 
-  - Fix Installation 
-
-  - Fix Telegram group link in Premium Forum
-  - Fix The lag issue in Cache Trimmer
-  - All Cleaner option in custom cleaner Activity 
-  - Fix Minor bugs & Improvements 
-  - Auto cleaning Module version Updated to v2.5
-  - Initial RAM Booster Support
+Changelog v4.3
+  - Fix Exact Error Output
+  - Fs-Trim All partitions 
+  - Fix Almost All Fs-Trim compatibility issues
+  - Now Auto Uses Busybox binaries from Magisk/KernalSU/APatch
+  - Fix : Minor bugs & improvements
+  - Fix oat cleaner for some devices
+  - Extra powered Cache Cleaner 
+  - Minor text Adjustments
+  - Fix cache cleaner lag issue in OneTap
