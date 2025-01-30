@@ -1,0 +1,2 @@
+rm -rf /data/importer
+echo "Trial Acess Reset\nclear data of App and use again"
