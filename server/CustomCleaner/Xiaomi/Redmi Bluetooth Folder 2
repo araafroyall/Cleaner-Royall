@@ -1,0 +1,8 @@
+{
+    "id": "37103",
+    "title": "Xiaomi\/Redmi Bluetooth Folder 2",
+    "description": "This folder is automatically created in Internal storage when you use bluetooth in Redmi\/xiaomi phones",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Android\/media\/com.xiaomi.bluetooth"
+}
