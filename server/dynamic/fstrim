@@ -1,6 +1,6 @@
 echo "granting permission"
 
-chmod 755 /system/xbin/fstrim
+chmod 777 /system/xbin/fstrim
 echo " permission granted"
 
 echo " Fstrimming...."
