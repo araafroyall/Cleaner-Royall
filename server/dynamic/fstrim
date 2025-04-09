@@ -1,2 +1,9 @@
+echo "granting permission"
+
+chmod 755 /system/xbin/fstrim
+echo " permission granted"
+
+echo " Fstrimming...."
+
 fstrim -v /data
 echo "Action perfomed check output above"
