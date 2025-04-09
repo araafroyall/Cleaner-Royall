@@ -1,0 +1,11 @@
+if [ -x /system/xbin/fstrim ]; then
+  echo "Permission already granted"
+else
+  echo "Granting permission"
+  chmod 755 /system/xbin/fstrim
+  echo "Permission granted"
+fi
+
+echo "Fstrimming..."
+/system/xbin/fstrim -v /data
+echo "Action performed, check output above"
