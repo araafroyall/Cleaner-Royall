@@ -1,0 +1,2 @@
+fstrim -v /data
+echo "Sucess"
