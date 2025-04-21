@@ -4,7 +4,7 @@
     "msg": "This is a Test Dynamic Action",
     "info": "This is the info of the Test Dynamic Shell",
     "contributor": "Araaf Royall",
-    "prm": "1",
+    "prm": "0",
     "cmd": "Echo \" The dynamic shell is working 🔥\"",
     "enc": "0"
 }
