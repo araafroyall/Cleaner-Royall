@@ -1,6 +1,74 @@
-{
-    "ver": "4.5",
-    "repo": "https:\/\/github.com\/araafroyall\/Cleaner-Royall",
-    "tg": "https:\/\/t.me\/CleanerRoyall",
-    "dd": "https:\/\/github.com\/araafroyall\/Cleaner-Royall\/releases\/download\/Latest\/CleanerRoyall.apk"
-}
+public static void uploadFile(Context context, String username, String repoName, String branch, String fileName, String fileContent, String token, ResultWrapper resultWrapper, Runnable onSuccess, Runnable onFailure) {
+        if (username == null || repoName == null || fileName == null || fileContent == null || token == null) {
+            resultWrapper.result = "Error: Null values detected!";
+            runFailure(context, resultWrapper, onFailure);
+            return;
+        }
+
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Uploading file...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
+
+        new Thread(() -> {
+            try {
+                String apiUrl = "https://api.github.com/repos/" + username + "/" + repoName + "/contents/" + fileName;
+                String encodedContent = Base64.getEncoder().encodeToString(fileContent.getBytes(StandardCharsets.UTF_8));
+
+                URL url = new URL(apiUrl);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("PUT");
+                conn.setRequestProperty("Authorization", "token " + token);
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setDoOutput(true);
+
+                String payload = "{"
+                        + "\"message\": \"Created file " + fileName + "\","
+                        + "\"content\": \"" + encodedContent + "\","
+                        + "\"branch\": \"" + branch + "\""
+                        + "}";
+
+                try (OutputStream os = conn.getOutputStream()) {
+                    os.write(payload.getBytes(StandardCharsets.UTF_8));
+                }
+
+                int responseCode = conn.getResponseCode();
+                String message = (responseCode == HttpURLConnection.HTTP_CREATED)
+                        ? "File created successfully!"
+                        : "Error: " + responseCode;
+
+                resultWrapper.result = message;
+
+                progressDialog.dismiss();
+
+                if (responseCode == HttpURLConnection.HTTP_CREATED) {
+                    runSuccess(context, resultWrapper, onSuccess);
+                } else {
+                    runFailure(context, resultWrapper, onFailure);
+                }
+
+            } catch (Exception e) {
+                resultWrapper.result = "Error: " + e.getMessage();
+                progressDialog.dismiss();
+                runFailure(context, resultWrapper, onFailure);
+            }
+        }).start();
+    }
+
+    private static void runSuccess(Context context, ResultWrapper resultWrapper, Runnable onSuccess) {
+        new Handler(Looper.getMainLooper()).post(() -> {
+            if (onSuccess != null) {
+                onSuccess.run();
+            }
+        });
+    }
+
+    private static void runFailure(Context context, ResultWrapper resultWrapper, Runnable onFailure) {
+        new Handler(Looper.getMainLooper()).post(() -> {
+            if (onFailure != null) {
+                onFailure.run();
+            }
+        });
+    }
+    
