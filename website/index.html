@@ -5,52 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cleaner Royall</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <header class="text-center py-10">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold text-blue-700">Cleaner Royall</div>
+      <div class="space-x-4 text-sm font-medium">
+        <a href="#about" class="text-gray-600 hover:text-blue-600">About App</a>
+        <a href="#features" class="text-gray-600 hover:text-blue-600">Features</a>
+        <a href="#usage" class="text-gray-600 hover:text-blue-600">Usage</a>
+        <a href="#premium" class="text-gray-600 hover:text-blue-600">Premium</a>
+        <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center py-10 bg-gradient-to-b from-blue-50 to-transparent">
     <h1 class="text-4xl font-bold text-gray-800">Cleaner Royall</h1>
-    <p class="text-lg mt-2 text-gray-500">Ultra Fast, Powerful & Privacy-Respecting Android Cleaner</p>
+    <p class="text-lg mt-2 text-gray-600">Fast. Smart. Privacy-Respecting Android Cleaner</p>
+    <div class="mt-4 space-x-4">
+      <a href="#premium" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Go Premium</a>
+      <a href="https://github.com/araafroyall/Cleaner-Royall/releases" target="_blank" class="border border-gray-500 px-4 py-2 rounded hover:bg-gray-100">Download</a>
+    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 space-y-8">
-    <section class="bg-white rounded-2xl shadow p-6">
+  <main class="max-w-4xl mx-auto px-4 space-y-16">
+
+    <!-- About -->
+    <section id="about" class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">About App</h2>
+      <p>Cleaner Royall is an open-source Android cleaner app built for speed, precision, and user privacy. No unnecessary permissions, no trackers. Just power.</p>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="bg-white rounded-2xl shadow p-6">
       <h2 class="text-2xl font-semibold mb-4">Features</h2>
       <ul class="list-disc pl-6 space-y-1">
-        <li>Ultra-fast lightweight performance</li>
-        <li>No permissions required (except root)</li>
-        <li>Supports Xposed / LSPosed and Magisk modules</li>
-        <li>Smart cleaner with customizable presets</li>
-        <li>WhatsApp & Telegram cleaners</li>
-        <li>Multi-user storage cleanup</li>
-        <li>Data privacy respected, no tracking</li>
+        <li>Smart Cleaner with rules</li>
+        <li>Magisk & Xposed module support</li>
+        <li>WhatsApp/Telegram data cleaner</li>
+        <li>Auto-clean scheduling</li>
+        <li>Trash & cache cleaner</li>
+        <li>No permissions needed</li>
       </ul>
     </section>
 
-    <section class="bg-white rounded-2xl shadow p-6">
-      <h2 class="text-2xl font-semibold mb-4">Latest Release</h2>
-      <p class="mb-2">Version: <strong>v4.3</strong> (Jan 30, 2025)</p>
-      <ul class="list-disc pl-6 space-y-1">
-        <li>Improved compatibility checker</li>
-        <li>MIUI deleted items support</li>
-        <li>Optimized auto-clean module</li>
-        <li>New brand theme colors</li>
-      </ul>
-      <div class="mt-4 flex flex-wrap gap-4">
-        <a href="https://github.com/araafroyall/Cleaner-Royall/releases" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Download</a>
-        <a href="https://github.com/araafroyall/Cleaner-Royall" target="_blank" class="border border-gray-400 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">GitHub</a>
-      </div>
+    <!-- Usage -->
+    <section id="usage" class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Usage</h2>
+      <p>Simply install the app and open it. No permissions needed. Root required for advanced tools like fstrim, log wiping, and custom module control.</p>
     </section>
 
-    <section class="bg-white rounded-2xl shadow p-6">
-      <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+    <!-- Premium -->
+    <section id="premium" class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Premium Version</h2>
+      <p>Unlock advanced customization, auto-clean intervals, support for more modules, and priority updates.</p>
+      <a href="https://t.me/AraafRoyall" target="_blank" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Get Premium</a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
       <p>Developer: <strong>Araaf Royall</strong></p>
       <p>Telegram: <a href="https://t.me/AraafRoyall" class="text-blue-600 hover:underline">@AraafRoyall</a></p>
       <p>Email: <a href="mailto:CleanerRoyall@gmail.com" class="text-blue-600 hover:underline">CleanerRoyall@gmail.com</a></p>
     </section>
   </main>
 
-  <footer class="text-center text-sm text-gray-500 py-6">
+  <footer class="text-center text-sm text-gray-500 py-8">
     &copy; 2025 Cleaner Royall. All rights reserved.
   </footer>
+
 </body>
 </html>
