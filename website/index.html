@@ -2,136 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cleaner Royall</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: #ecf0f1;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 0.5rem;
-      color: #2c3e50;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li::before {
-      content: "✔️ ";
-      color: #27ae60;
-    }
-    .screenshots {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .screenshots img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #2c3e50;
-      color: #ecf0f1;
-      text-align: center;
-      padding: 1rem;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Cleaner Royall</h1>
-    <p>Ultra Fast, Powerful & Privacy-Respecting Android Cleaner</p>
+<body class="bg-gray-50 text-gray-900">
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-gray-800">Cleaner Royall</h1>
+    <p class="text-lg mt-2 text-gray-500">Ultra Fast, Powerful & Privacy-Respecting Android Cleaner</p>
   </header>
-  <main>
-    <section>
-      <h2>Features</h2>
-      <ul>
-        <li>Lightweight yet ultra-fast performance</li>
+
+  <main class="max-w-4xl mx-auto px-4 space-y-8">
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Features</h2>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Ultra-fast lightweight performance</li>
         <li>No permissions required (except root)</li>
-        <li>Automatic cleaner module support</li>
-        <li>Data privacy: never collects any data</li>
-        <li>Supports Magisk & Xposed (LSPosed)</li>
+        <li>Supports Xposed / LSPosed and Magisk modules</li>
         <li>Smart cleaner with customizable presets</li>
-        <li>WhatsApp & Telegram cleanup tools</li>
-        <li>Multi-user storage cleanup support</li>
+        <li>WhatsApp & Telegram cleaners</li>
+        <li>Multi-user storage cleanup</li>
+        <li>Data privacy respected, no tracking</li>
       </ul>
     </section>
-    <section>
-      <h2>Requirements</h2>
-      <ul>
-        <li>Root access (Magisk or KernelSU)</li>
-        <li>BusyBox (optional)</li>
-        <li>Xposed Framework (LSPosed) [optional]</li>
+
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Latest Release</h2>
+      <p class="mb-2">Version: <strong>v4.3</strong> (Jan 30, 2025)</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Improved compatibility checker</li>
+        <li>MIUI deleted items support</li>
+        <li>Optimized auto-clean module</li>
+        <li>New brand theme colors</li>
       </ul>
-    </section>
-    <section>
-      <h2>Latest Release</h2>
-      <p><strong>Version:</strong> v4.3 (Jan 30, 2025)</p>
-      <p><strong>Highlights:</strong></p>
-      <ul>
-        <li>Enhanced compatibility checker</li>
-        <li>Support for deleted items in MiUI</li>
-        <li>Improved auto-cleaner module</li>
-        <li>Reduced resource usage</li>
-        <li>New brand theme & colors</li>
-      </ul>
-      <p><a href="https://github.com/araafroyall/Cleaner-Royall/releases">Download from GitHub</a></p>
-    </section>
-    <section>
-      <h2>Screenshots</h2>
-      <div class="screenshots">
-        <!-- Replace with actual image URLs -->
-        <img src="screenshot1.png" alt="Screenshot 1">
-        <img src="screenshot2.png" alt="Screenshot 2">
-        <img src="screenshot3.png" alt="Screenshot 3">
+      <div class="mt-4 flex flex-wrap gap-4">
+        <a href="https://github.com/araafroyall/Cleaner-Royall/releases" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Download</a>
+        <a href="https://github.com/araafroyall/Cleaner-Royall" target="_blank" class="border border-gray-400 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">GitHub</a>
       </div>
     </section>
-    <section>
-      <h2>Contact & Support</h2>
-      <p><strong>Developer:</strong> Araaf Royall</p>
-      <p><strong>Telegram:</strong> <a href="https://t.me/AraafRoyall">@AraafRoyall</a></p>
-      <p><strong>Email:</strong> <a href="mailto:CleanerRoyall@gmail.com">CleanerRoyall@gmail.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/araafroyall/Cleaner-Royall">Cleaner Royall Repository</a></p>
+
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+      <p>Developer: <strong>Araaf Royall</strong></p>
+      <p>Telegram: <a href="https://t.me/AraafRoyall" class="text-blue-600 hover:underline">@AraafRoyall</a></p>
+      <p>Email: <a href="mailto:CleanerRoyall@gmail.com" class="text-blue-600 hover:underline">CleanerRoyall@gmail.com</a></p>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Cleaner Royall. All rights reserved.</p>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 Cleaner Royall. All rights reserved.
   </footer>
 </body>
 </html>
