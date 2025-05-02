@@ -1,4 +1,9 @@
+Dynamic Shell works as direct Terminal Actions with advance support
 Dynamic Shell Requires Internet connection
 You are self responsible for using Dynamic shell scripts in your device
 Dynamic Shell is very powerfull like your Terminal Emulator
-You can Also use Dynamic shell as Terminal Emulator
+You can Also use Dynamic shell as Terminal Emulator or Shell script Runner
+You can Also submit your own script which will be usable by All users
+It is not guarenteed that your submitted Action will be approved
+Dynamic shell also supports User Space , in which you can use cleaning options provided by other users
+It supports save and usage of saved scripts for use of same scripts again
