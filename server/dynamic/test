@@ -3,7 +3,7 @@
     "title": "Test Title AR",
     "msg": "This is a Test Dynamic Action",
     "info": "This is the info of the Test Dynamic Shell",
-    "contributor": "Araaf Royall",
+    "contributor": "AraafRoyall",
     "prm": "0",
     "cmd": "Echo \" The dynamic shell is working 🔥\"",
     "enc": "0"
