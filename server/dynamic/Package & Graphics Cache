@@ -1,0 +1,10 @@
+{
+    "status": "1",
+    "msg": "It can clean Package and graphics cache from \/data",
+    "title": "Package & Graphics Cache",
+    "contributor": "Araaf Royall",
+    "info": "It can clean the Package and graphics cache from \/data",
+    "prm": "0",
+    "enc": "0",
+    "cmd": "\nrm -rf \/data\/system\/package_cache\nrm -rf \/data\/system\/graphicsstats\nmount -o remount,rw \/data >\/dev\/null 2>&1\nmkdir -p \/data\/system\/graphicsstats >\/dev\/null 2>&1\nmkdir -p \/data\/system\/package_cache >\/dev\/null 2>&1\n"
+}
