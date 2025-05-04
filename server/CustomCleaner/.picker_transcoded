@@ -1,1 +1,8 @@
-Result
+{
+    "id": "52763",
+    "title": ".picker_transcoded Folder in $INT",
+    "description": "The .picker_transcoded folder is auto-created by Android when apps use the system file or media picker; it stores temporary transcoded files.\nIt's safe to delete, as it only holds temporary data created during file selection.\n\n",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/.picker_transcoded"
+}
