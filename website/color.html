@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .color-box {
+            width: 300px;
+            height: 150px;
+            margin-bottom: 20px;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+            font-size: 18px;
+            line-height: 150px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider {
+            width: 100%;
+        }
+        .slider-label {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Color Slider</h1>
+    <div>
+        <div class="slider-container">
+            <label for="hue" class="slider-label">Hue (0-360):</label>
+            <input type="range" id="hue" class="slider" min="0" max="360" value="0">
+            <span id="hue-value">0</span>
+        </div>
+
+        <div class="slider-container">
+            <label for="saturation" class="slider-label">Saturation (0-100%):</label>
+            <input type="range" id="saturation" class="slider" min="0" max="100" value="100">
+            <span id="saturation-value">100</span>%
+        </div>
+
+        <div class="slider-container">
+            <label for="lightness" class="slider-label">Lightness (0-100%):</label>
+            <input type="range" id="lightness" class="slider" min="0" max="100" value="50">
+            <span id="lightness-value">50</span>%
+        </div>
+
+        <div class="color-box" id="color-box">
+            <p id="color-code">hsl(0, 100%, 50%)</p>
+        </div>
+    </div>
+
+    <script>
+        // Get references to the sliders and the elements to display the color and code
+        const hueSlider = document.getElementById('hue');
+        const saturationSlider = document.getElementById('saturation');
+        const lightnessSlider = document.getElementById('lightness');
+
+        const hueValue = document.getElementById('hue-value');
+        const saturationValue = document.getElementById('saturation-value');
+        const lightnessValue = document.getElementById('lightness-value');
+        const colorBox = document.getElementById('color-box');
+        const colorCode = document.getElementById('color-code');
+
+        // Function to update the color based on the slider values
+        function updateColor() {
+            const hue = hueSlider.value;
+            const saturation = saturationSlider.value;
+            const lightness = lightnessSlider.value;
+
+            // Set the color box background to the current HSL value
+            const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            colorBox.style.backgroundColor = hslColor;
+            colorCode.textContent = hslColor;
+
+            // Update the displayed values for each slider
+            hueValue.textContent = hue;
+            saturationValue.textContent = saturation;
+            lightnessValue.textContent = lightness;
+        }
+
+        // Add event listeners to update the color when sliders change
+        hueSlider.addEventListener('input', updateColor);
+        saturationSlider.addEventListener('input', updateColor);
+        lightnessSlider.addEventListener('input', updateColor);
+
+        // Initialize the color when the page loads
+        updateColor();
+    </script>
+</body>
+</html>
