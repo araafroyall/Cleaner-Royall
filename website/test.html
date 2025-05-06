@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit GitHub Issue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+        .message {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Submit an Issue to GitHub</h1>
+    <div class="form-container">
+        <label for="repo">GitHub Repository (owner/repo):</label>
+        <input type="text" id="repo" placeholder="e.g., user/repository" required>
+
+        <label for="title">Issue Title:</label>
+        <input type="text" id="title" placeholder="Enter issue title" required>
+
+        <label for="body">Issue Body:</label>
+        <textarea id="body" rows="5" placeholder="Enter issue description" required></textarea>
+
+        <label for="token">GitHub Token (Personal Access Token):</label>
+        <input type="text" id="token" placeholder="Enter your GitHub token" required>
+
+        <button id="submitButton">Submit Issue</button>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function () {
+            const repo = document.getElementById('repo').value;
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+            const token = document.getElementById('token').value;
+
+            if (!repo || !title || !body || !token) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const url = `https://api.github.com/repos/${repo}/issues`;
+
+            const headers = {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json',
+            };
+
+            const data = {
+                title: title,
+                body: body,
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.id) {
+                    document.getElementById('message').innerHTML = `<p style="color: green;">Issue created successfully! Issue ID: ${data.id}</p>`;
+                } else {
+                    document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${data.message}</p>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            });
+        });
+    </script>
+
+</body>
+</html>
