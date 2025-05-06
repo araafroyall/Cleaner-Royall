@@ -114,6 +114,17 @@ public class RootPro {
   
 
    
+   
+    // Error Dialog
+    
+    public static void ErrorD(Activity a, String res, String err, String cus) {
+     String title = "𝗘𝗿𝗿𝗼𝗿";
+     String msg = Error(a, res, err, cus);
+     new AlertDialog.Builder(a)
+        .setTitle(title).setMessage(msg)
+        .setIcon(R.drawable.icon_1)
+        .setPositiveButton("OK", (d, w) -> {}).show();
+    }
     
     // Error Mechanism
 
@@ -134,6 +145,8 @@ public class RootPro {
             .concat(res);
        }
     }
+    
+    
    
    
 }
