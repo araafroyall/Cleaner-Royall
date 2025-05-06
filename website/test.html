@@ -1,105 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit GitHub Issue</title>
-    <style>
-        /* Progress Dialog Styles */
-        #progressDialog {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-        }
-        #progressDialog p {
-            font-size: 18px;
-        }
-        /* Success Dialog Styles */
-        #successDialog {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 128, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit GitHub Issue</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      padding: 30px;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+    .card {
+      max-width: 450px;
+      background: white;
+      margin: auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 15px;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #006eff;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0,110,255,0.3);
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #0051c9;
+    }
+    .dialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      font-size: 16px;
+      z-index: 999;
+      text-align: center;
+      display: none;
+    }
+    .dialog.success {
+      border-left: 6px solid #28a745;
+    }
+    .dialog.progress {
+      border-left: 6px solid #17a2b8;
+    }
+  </style>
 </head>
 <body>
-    <h2>Submit Issue to GitHub</h2>
 
-    <label for="repo">Repository (owner/repo):</label><br>
-    <input type="text" id="repo" placeholder="owner/repo"><br><br>
+  <h2>Submit GitHub Issue</h2>
+  <div class="card">
+    <input type="text" id="repo" placeholder="owner/repo">
+    <input type="text" id="title" placeholder="Issue Title">
+    <textarea id="body" rows="5" placeholder="Describe the issue..."></textarea>
+    <button onclick="submitIssue()">Submit Issue</button>
+  </div>
 
-    <label for="title">Issue Title:</label><br>
-    <input type="text" id="title" placeholder="Issue title"><br><br>
+  <!-- Dialogs -->
+  <div id="progressDialog" class="dialog progress">Submitting your issue...</div>
+  <div id="successDialog" class="dialog success">Issue submitted successfully!</div>
 
-    <label for="body">Issue Body:</label><br>
-    <textarea id="body" placeholder="Describe the issue..."></textarea><br><br>
+  <script>
+    function showDialog(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function hideDialog(id) {
+      document.getElementById(id).style.display = 'none';
+    }
 
-    <button id="submitButton">Submit Issue</button>
+    function submitIssue() {
+      const repo = document.getElementById('repo').value;
+      const title = document.getElementById('title').value;
+      const body = document.getElementById('body').value;
 
-    <!-- Progress Dialog -->
-    <div id="progressDialog">
-        <p>Submitting issue...</p>
-    </div>
+      showDialog('progressDialog');
 
-    <!-- Success Dialog -->
-    <div id="successDialog">
-        <p>Issue submitted successfully!</p>
-    </div>
-
-    <script>
-        document.getElementById('submitButton').addEventListener('click', function () {
-            const repo = document.getElementById('repo').value;
-            const title = document.getElementById('title').value;
-            const body = document.getElementById('body').value;
-
-            // Show progress dialog
-            document.getElementById('progressDialog').style.display = 'block';
-
-            // Send the request to your backend
-            fetch('/create-issue', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ repo, title, body })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Hide progress dialog
-                document.getElementById('progressDialog').style.display = 'none';
-
-                if (data.message) {
-                    // Show success dialog
-                    document.getElementById('successDialog').style.display = 'block';
-
-                    // Hide success dialog after 2 seconds
-                    setTimeout(() => {
-                        document.getElementById('successDialog').style.display = 'none';
-                    }, 2000);
-                }
-            })
-            .catch(error => {
-                // Hide progress dialog
-                document.getElementById('progressDialog').style.display = 'none';
-                alert('Error submitting issue: ' + error.message);
-            });
-        });
-    </script>
+      fetch('/create-issue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ repo, title, body })
+      })
+      .then(res => res.json())
+      .then(data => {
+        hideDialog('progressDialog');
+        showDialog('successDialog');
+        setTimeout(() => hideDialog('successDialog'), 2000);
+      })
+      .catch(err => {
+        hideDialog('progressDialog');
+        alert('Error: ' + err.message);
+      });
+    }
+  </script>
 </body>
 </html>
