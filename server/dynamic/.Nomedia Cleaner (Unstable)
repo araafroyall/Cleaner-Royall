@@ -1,0 +1,10 @@
+{
+    "status": "1",
+    "prm": "0",
+    "enc": "0",
+    "title": ".Nomedia Cleaner in $All_Users",
+    "msg": "Clears All .Nomedia Files From Internal Storage of All users ,\nThese files are generally used to hide media from being detected in apps , \nCleaning it can cause All media visiblity in respective apps",
+    "info": "Clears All .Nomedia Files From Internal Storage of All users ,\nThese files are generally used to hide media from being detected in apps , \nCleaning it can cause All media visiblity in respective apps",
+    "contributor": "Maan Khan",
+    "cmd": "find \/data\/media\/0\/ -type f -name \".nomedia\" -delete"
+}
