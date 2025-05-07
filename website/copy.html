@@ -14,35 +14,7 @@
 <h2>Enter Your Text Below</h2>
 <textarea id="myText">
 
-
-
-
-
-
-
-#!/system/bin/sh
-
-get() {
-  du -hcs "$@" | grep total | cut -f1 | sed 's/[[:space:]]*//g'
-}
-
-app_oat="$(get /data/app/*/{*,}/oat)"
-dalvik_cache="$(get /data/dalvik-cache)"
-adb="$(get /data/adb)"
-media="$(get /data/media/)"
-media0="$(get /data/media/0/)"
-
-echo "{\"app_oat\":\"$app_oat\",\"dalvik_cache\":\"$dalvik_cache\",\"adb\":\"$adb\",\"media\":\"$media\",\"media0\":\"$media0\"}"
-
-
-
-
-
-
-
-
-
-
+find /data -type f -name "*.log" -exec du -csh {} + | awk 'END {print}'
 
 
 </textarea>
