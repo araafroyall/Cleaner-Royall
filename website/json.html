@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Input Builder</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-pair {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    pre {
+      background: #eef;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>JSON Builder</h2>
+    <div id="inputs"></div>
+    <div class="input-pair">
+      <input id="key" placeholder="Key" />
+      <input id="value" placeholder="Value" />
+      <button onclick="addPair()">Add</button>
+    </div>
+    <button onclick="generateJSON()">Generate JSON</button>
+    <pre id="output"></pre>
+  </div>  <script>
+    const data = {};
+    function addPair() {
+      const key = document.getElementById('key').value.trim();
+      const value = document.getElementById('value').value.trim();
+      if (key) {
+        data[key] = value;
+        document.getElementById('inputs').innerHTML += `<div class='input-pair'><b>${key}</b>: ${value}</div>`;
+        document.getElementById('key').value = '';
+        document.getElementById('value').value = '';
+      }
+    }
+    function generateJSON() {
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+  </script></body>
+</html>
