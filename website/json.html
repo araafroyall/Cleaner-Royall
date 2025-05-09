@@ -1,157 +1,123 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JSON Input Builder</title>
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f6fa;
     }
     .container {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      color: #333;
     }
-    .input-section {
+    .pair-list {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .input-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
-    .input-section input {
-      flex: 1 1 40%;
+    .input-row input {
+      flex: 1;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    .input-section button {
-      flex: 1 1 15%;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
+    .input-row button {
+      padding: 10px 16px;
       background-color: #007bff;
       color: white;
-      cursor: pointer;
-    }
-    .input-section button:hover {
-      background-color: #0056b3;
-    }
-    .json-controls {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .json-controls button {
-      flex: 1;
-      padding: 10px;
       border: none;
       border-radius: 8px;
-      background-color: #28a745;
-      color: white;
       cursor: pointer;
     }
-    .json-controls button:nth-child(2) {
-      background-color: #ffc107;
-    }
-    .json-controls button:nth-child(3) {
-      background-color: #dc3545;
-    }
-    .json-controls button:hover {
-      opacity: 0.9;
+    .input-row button:hover {
+      background-color: #0056b3;
     }
     pre {
-      background: #eef;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 20px;
+      background: #eaf1ff;
+      padding: 12px;
+      border-radius: 10px;
       overflow-x: auto;
     }
-    .toast {
-      visibility: hidden;
-      min-width: 120px;
-      margin-left: -60px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 4px;
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    .actions button {
+      background: #28a745;
+      color: white;
+      border: none;
       padding: 10px;
-      position: fixed;
-      z-index: 1;
-      left: 50%;
-      bottom: 30px;
-      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    .toast.show {
-      visibility: visible;
-      animation: fadein 0.5s, fadeout 0.5s 2s;
-    }
-    @keyframes fadein {
-      from { bottom: 10px; opacity: 0; }
-      to { bottom: 30px; opacity: 1; }
-    }
-    @keyframes fadeout {
-      from { bottom: 30px; opacity: 1; }
-      to { bottom: 10px; opacity: 0; }
+    .actions button.clear {
+      background: #dc3545;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>JSON Builder</h2>
-    <div class="input-section">
-      <input id="key" placeholder="Key" />
-      <input id="value" placeholder="Value" />
+    <div id="pairs" class="pair-list"></div>
+    <div class="input-row">
+      <input type="text" id="key" placeholder="Key">
+      <input type="text" id="value" placeholder="Value">
       <button onclick="addPair()">Add</button>
     </div>
-    <div class="json-controls">
-      <button onclick="generateJSON()">Generate JSON</button>
+    <div class="actions">
       <button onclick="copyJSON()">Copy</button>
-      <button onclick="clearAll()">Clear</button>
+      <button class="clear" onclick="clearJSON()">Clear</button>
     </div>
-    <pre id="output"></pre>
+    <pre id="jsonOutput">{
+}</pre>
   </div>
-  <div id="toast" class="toast">Copied!</div>
   <script>
-    let data = {};function addPair() {
-  const key = document.getElementById('key').value.trim();
-  const value = document.getElementById('value').value.trim();
-  if (key) {
+    const data = {};function updateOutput() {
+  document.getElementById("jsonOutput").textContent = JSON.stringify(data, null, 2);
+  displayPairs();
+}
+
+function displayPairs() {
+  const pairDiv = document.getElementById("pairs");
+  pairDiv.innerHTML = Object.entries(data).map(([k, v]) => `<div><b>${k}</b> : ${v}</div>`).join('');
+}
+
+function addPair() {
+  const key = document.getElementById("key").value.trim();
+  const value = document.getElementById("value").value.trim();
+  if (key && value) {
     data[key] = value;
-    generateJSON();
-    document.getElementById('key').value = '';
-    document.getElementById('value').value = '';
+    document.getElementById("key").value = "";
+    document.getElementById("value").value = "";
+    updateOutput();
   }
 }
 
-function generateJSON() {
-  document.getElementById('output').textContent = JSON.stringify(data, null, 2);
-}
-
 function copyJSON() {
-  const jsonText = document.getElementById('output').textContent;
-  navigator.clipboard.writeText(jsonText).then(() => showToast());
+  navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+  alert("Copied!");
 }
 
-function showToast() {
-  const toast = document.getElementById("toast");
-  toast.className = "toast show";
-  setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
-}
-
-function clearAll() {
-  data = {};
-  document.getElementById('output').textContent = '';
+function clearJSON() {
+  for (let key in data) delete data[key];
+  updateOutput();
 }
 
   </script>
