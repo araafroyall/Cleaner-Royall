@@ -1,0 +1,67 @@
+su
+Switches to root user (superuser) for executing privileged commands.
+If not found: Root access won’t be possible; many commands requiring root will fail.
+
+rm
+Removes files or directories. Powerful with -rf flags.
+If not found: Cannot delete files; cleanup or uninstall scripts will fail.
+
+which
+Finds the full path of a command.
+If not found: Scripts may fail to detect binaries or verify tool availability.
+
+find
+Searches files/directories recursively based on conditions.
+If not found: File locating in scripts (e.g., for cleanup or backups) won’t work.
+
+du
+Shows disk usage of files/folders.
+If not found: Can’t calculate size, impacting cleaners, storage stats.
+
+pm
+Package manager for Android apps (install, uninstall, list).
+If not found: App management functions will fail.
+
+getenforce
+Displays current SELinux mode (Enforcing/Permissive).
+If not found: Cannot verify SELinux status, may affect root behavior.
+
+setenforce
+Changes SELinux mode temporarily.
+If not found: Can’t switch to permissive; some root tools may fail.
+
+echo
+Prints text to standard output or files.
+If not found: Scripts can’t display info, write values, or create config.
+
+nohup
+Runs a command immune to hangups (in background).
+If not found: Background persistent scripts may stop when the shell closes.
+
+mkdir
+Creates directories.
+If not found: Scripts can’t make folders, affecting logging/output.
+
+touch
+Creates empty files or updates file timestamps.
+If not found: Cannot prepare dummy files or signal files for processes.
+
+cat
+Displays or reads file content.
+If not found: Scripts can’t read files or display logs/configs.
+
+sed
+Stream editor to find/replace or transform text.
+If not found: Scripts can't modify files inline; many automation fails.
+
+wc
+Counts lines, words, characters in text.
+If not found: Scripts can’t measure output size or logs.
+
+tail
+Displays the end part of files (last lines).
+If not found: Can't fetch recent logs or monitor live output.
+
+getprop
+Reads Android system properties (e.g., device info).
+If not found: Apps/scripts can’t detect Android-specific properties.
