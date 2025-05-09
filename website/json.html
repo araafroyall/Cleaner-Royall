@@ -77,12 +77,38 @@
       margin-top: 20px;
       overflow-x: auto;
     }
+    .toast {
+      visibility: hidden;
+      min-width: 120px;
+      margin-left: -60px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 10px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 14px;
+    }
+    .toast.show {
+      visibility: visible;
+      animation: fadein 0.5s, fadeout 0.5s 2s;
+    }
+    @keyframes fadein {
+      from { bottom: 10px; opacity: 0; }
+      to { bottom: 30px; opacity: 1; }
+    }
+    @keyframes fadeout {
+      from { bottom: 30px; opacity: 1; }
+      to { bottom: 10px; opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>JSON Builder</h2>
-    <div id="inputs"></div>
     <div class="input-section">
       <input id="key" placeholder="Key" />
       <input id="value" placeholder="Value" />
@@ -94,33 +120,40 @@
       <button onclick="clearAll()">Clear</button>
     </div>
     <pre id="output"></pre>
-  </div>  <script>
-    let data = {};
+  </div>
+  <div id="toast" class="toast">Copied!</div>
+  <script>
+    let data = {};function addPair() {
+  const key = document.getElementById('key').value.trim();
+  const value = document.getElementById('value').value.trim();
+  if (key) {
+    data[key] = value;
+    generateJSON();
+    document.getElementById('key').value = '';
+    document.getElementById('value').value = '';
+  }
+}
 
-    function addPair() {
-      const key = document.getElementById('key').value.trim();
-      const value = document.getElementById('value').value.trim();
-      if (key) {
-        data[key] = value;
-        document.getElementById('inputs').innerHTML += `<div class='input-pair'><b>${key}</b> : ${value}</div>`;
-        document.getElementById('key').value = '';
-        document.getElementById('value').value = '';
-      }
-    }
+function generateJSON() {
+  document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+}
 
-    function generateJSON() {
-      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
-    }
+function copyJSON() {
+  const jsonText = document.getElementById('output').textContent;
+  navigator.clipboard.writeText(jsonText).then(() => showToast());
+}
 
-    function copyJSON() {
-      const jsonText = document.getElementById('output').textContent;
-      navigator.clipboard.writeText(jsonText);
-    }
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.className = "toast show";
+  setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
+}
 
-    function clearAll() {
-      data = {};
-      document.getElementById('inputs').innerHTML = '';
-      document.getElementById('output').textContent = '';
-    }
-  </script></body>
+function clearAll() {
+  data = {};
+  document.getElementById('output').textContent = '';
+}
+
+  </script>
+</body>
 </html>
