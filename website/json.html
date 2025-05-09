@@ -28,22 +28,26 @@
     }
     .input-row {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       margin: 10px 0;
     }
     .input-row input {
-      flex: 1;
+      flex: 1 1 45%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
+      min-width: 100px;
     }
     .input-row button {
-      padding: 10px 16px;
+      flex: 1 1 25%;
+      padding: 10px;
       background-color: #007bff;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      min-width: 80px;
     }
     .input-row button:hover {
       background-color: #0056b3;
@@ -56,10 +60,13 @@
     }
     .actions {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 15px;
+      gap: 10px;
     }
     .actions button {
+      flex: 1 1 48%;
       background: #28a745;
       color: white;
       border: none;
