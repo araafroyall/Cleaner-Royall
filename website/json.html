@@ -23,27 +23,52 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    .input-pair {
+    .input-section {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 10px;
     }
-    input {
-      flex: 1;
+    .input-section input {
+      flex: 1 1 40%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    button {
-      padding: 10px 20px;
+    .input-section button {
+      flex: 1 1 15%;
+      padding: 10px;
       border: none;
       border-radius: 8px;
       background-color: #007bff;
       color: white;
       cursor: pointer;
     }
-    button:hover {
+    .input-section button:hover {
       background-color: #0056b3;
+    }
+    .json-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .json-controls button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+    .json-controls button:nth-child(2) {
+      background-color: #ffc107;
+    }
+    .json-controls button:nth-child(3) {
+      background-color: #dc3545;
+    }
+    .json-controls button:hover {
+      opacity: 0.9;
     }
     pre {
       background: #eef;
@@ -58,27 +83,44 @@
   <div class="container">
     <h2>JSON Builder</h2>
     <div id="inputs"></div>
-    <div class="input-pair">
+    <div class="input-section">
       <input id="key" placeholder="Key" />
       <input id="value" placeholder="Value" />
       <button onclick="addPair()">Add</button>
     </div>
-    <button onclick="generateJSON()">Generate JSON</button>
+    <div class="json-controls">
+      <button onclick="generateJSON()">Generate JSON</button>
+      <button onclick="copyJSON()">Copy</button>
+      <button onclick="clearAll()">Clear</button>
+    </div>
     <pre id="output"></pre>
   </div>  <script>
-    const data = {};
+    let data = {};
+
     function addPair() {
       const key = document.getElementById('key').value.trim();
       const value = document.getElementById('value').value.trim();
       if (key) {
         data[key] = value;
-        document.getElementById('inputs').innerHTML += `<div class='input-pair'><b>${key}</b>: ${value}</div>`;
+        document.getElementById('inputs').innerHTML += `<div class='input-pair'><b>${key}</b> : ${value}</div>`;
         document.getElementById('key').value = '';
         document.getElementById('value').value = '';
       }
     }
+
     function generateJSON() {
       document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+
+    function copyJSON() {
+      const jsonText = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(jsonText);
+    }
+
+    function clearAll() {
+      data = {};
+      document.getElementById('inputs').innerHTML = '';
+      document.getElementById('output').textContent = '';
     }
   </script></body>
 </html>
