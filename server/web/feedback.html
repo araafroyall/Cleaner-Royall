@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram Feedback</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      margin: 0;
+    }
+    .form-container {
+      max-width: 450px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      margin-top: 12px;
+      display: block;
+      font-weight: bold;
+      color: #444;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .radio-group {
+      margin-top: 8px;
+    }
+    .radio-group label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input[type="file"] {
+      margin-top: 8px;
+    }
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .dialog {
+      margin-top: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Telegram Feedback</h2>
+
+  <label for="title">Title</label>
+  <input type="text" id="title" placeholder="Feedback title">
+
+  <label>Category</label>
+  <div class="radio-group">
+    <label><input type="radio" name="category" value="Bug Report" checked> Bug Report</label>
+    <label><input type="radio" name="category" value="Feature Request"> Feature Request</label>
+    <label><input type="radio" name="category" value="Feedback or Suggestion"> Feedback or Suggestion</label>
+    <label><input type="radio" name="category" value="Other Problem"> Other Problem</label>
+    <label><input type="radio" name="category" value="Submit Directory"> Submit Directory</label>
+  </div>
+
+  <label for="message">Message</label>
+  <textarea id="message" rows="5" placeholder="Write your feedback..."></textarea>
+
+  <label for="fileInput">Attach File (optional)</label>
+  <input type="file" id="fileInput">
+
+  <button onclick="sendToTelegram()">Submit Feedback</button>
+
+  <div class="dialog" id="resultBox"></div>
+</div>
+
+<script>
+  const BOT_TOKEN = "7602603409:AAHuEnZg9RLyNhj2Md3WxHz-QUk_v1oC2c8";
+  const CHAT_ID = "@CleanerRoyalls";
+
+  function sendToTelegram() {
+    const title = document.getElementById("title").value.trim();
+    const messageText = document.getElementById("message").value.trim();
+    const fileInput = document.getElementById("fileInput").files[0];
+    const resultBox = document.getElementById("resultBox");
+    const category = document.querySelector('input[name="category"]:checked').value;
+
+    if (!title || !messageText) {
+      resultBox.style.color = "red";
+      resultBox.innerText = "Please fill out both title and message.";
+      return;
+    }
+
+    resultBox.style.color = "#444";
+    resultBox.innerText = "Submitting your feedback...";
+
+    const finalMessage = `*${category}*\n*Title:* ${title}\n*Message:* ${messageText}`;
+    const formData = new FormData();
+    formData.append("chat_id", CHAT_ID);
+    formData.append("caption", finalMessage);
+    formData.append("parse_mode", "Markdown");
+
+    if (fileInput) {
+      formData.append("document", fileInput);
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          resultBox.style.color = "green";
+          resultBox.innerText = "Feedback submitted successfully!";
+        } else {
+          resultBox.style.color = "red";
+          resultBox.innerText = "Error: " + data.description;
+        }
+      })
+      .catch(error => {
+        resultBox.style.color = "red";
+        resultBox.innerText = "Request failed: " + error.message;
+      });
+    } else {
+      const textData = new URLSearchParams();
+      textData.append("chat_id", CHAT_ID);
+      textData.append("text", finalMessage);
+      textData.append("parse_mode", "Markdown");
+
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        body: textData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          resultBox.style.color = "green";
+          resultBox.innerText = "Feedback submitted successfully!";
+        } else {
+          resultBox.style.color = "red";
+          resultBox.innerText = "Error: " + data.description;
+        }
+      })
+      .catch(error => {
+        resultBox.style.color = "red";
+        resultBox.innerText = "Request failed: " + error.message;
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
