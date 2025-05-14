@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Upload File to Telegram</title>
+  <title>Send Feedback to Telegram</title>
   <style>
     body { font-family: Arial; padding: 20px; }
     .form-container {
@@ -23,23 +23,24 @@
       font-weight: bold; border: none; border-radius: 5px;
     }
     .dialog {
-      display: none; text-align: center;
       margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
 <div class="form-container">
-  <h3>Send File & Text to Telegram</h3>
+  <h3>Submit Feedback</h3>
 
   <label>Message:</label>
-  <textarea id="message" rows="5" placeholder="Write your message..."></textarea>
+  <textarea id="message" rows="5" placeholder="Write your feedback..."></textarea>
 
   <label>Select File:</label>
   <input type="file" id="fileInput">
 
-  <button onclick="sendToTelegram()">Send</button>
+  <button onclick="sendToTelegram()">Submit Feedback</button>
 
   <div class="dialog" id="resultBox"></div>
 </div>
@@ -54,15 +55,17 @@
     const resultBox = document.getElementById("resultBox");
 
     if (!fileInput) {
-      resultBox.style.display = "block";
       resultBox.style.color = "red";
-      resultBox.innerText = "Please select a file to upload.";
+      resultBox.innerText = "Please select a file.";
       return;
     }
 
+    resultBox.style.color = "#333";
+    resultBox.innerText = "Submitting your feedback...";
+
     const formData = new FormData();
     formData.append("chat_id", CHAT_ID);
-    formData.append("caption", message || "Uploaded via web form");
+    formData.append("caption", message || "Uploaded via feedback form");
     formData.append("document", fileInput);
 
     fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
@@ -71,17 +74,15 @@
     })
     .then(res => res.json())
     .then(data => {
-      resultBox.style.display = "block";
       if (data.ok) {
         resultBox.style.color = "green";
-        resultBox.innerText = "File sent successfully!";
+        resultBox.innerText = "Feedback submitted successfully!";
       } else {
         resultBox.style.color = "red";
         resultBox.innerText = "Error: " + data.description;
       }
     })
     .catch(error => {
-      resultBox.style.display = "block";
       resultBox.style.color = "red";
       resultBox.innerText = "Request failed: " + error.message;
     });
