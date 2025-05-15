@@ -7,35 +7,45 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      background: #f8f9fa;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1em;
+      background: #f9f9f9;
       color: #333;
-      padding: 16px;
     }
     h1 {
+      font-size: 1.8em;
       text-align: center;
-      color: #174ea6;
+      color: #1d4ed8;
+      margin-bottom: 0.2em;
     }
-    p.note {
+    .note {
       text-align: center;
-      color: #888;
       font-size: 0.9em;
-      margin-bottom: 24px;
+      color: #888;
+      margin-bottom: 1.5em;
     }
     h2 {
-      color: #174ea6;
       font-size: 1.2em;
-      margin-top: 24px;
+      color: #1d4ed8;
+      margin-top: 1.5em;
     }
     pre {
+      background: #2d2d2d;
+      color: #ccc;
+      padding: 0.8em;
       border-radius: 8px;
+      font-size: 0.75em;
       overflow-x: auto;
-      font-size: 0.3em;
+    }
+    code {
+      font-family: monospace;
+      font-size: 0.75em;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-
   <h1>Xyz Tweaks</h1>
   <p class="note">Provided by someone and developer is not responsible</p>
 
@@ -70,6 +80,6 @@ rm -rf /cache/logs/*
 echo "Logs removed."</code></pre>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-shell-session.min.js"></script>
 </body>
 </html>
