@@ -1,67 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shell Script Viewer</title>
-  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xyz Tweaks</title>
+<style>
+  body {
+    margin: 0;
+    padding: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    color: #0b7285;
+  }
+  .info {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .script-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  .script-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+  }
+  pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+  @media (max-width: 600px) {
     body {
-      background: #2d2d2d;
-      color: #ccc;
-      font-family: monospace;
-      padding: 20px;
+      padding: 10px;
     }
-    pre {
-      border-radius: 10px;
-      padding: 15px;
-      overflow-x: auto;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-<h2 style="color:white;">Shell Script Viewer</h2>
-<pre><code class="language-bash">
+<h1>Xyz Tweaks</h1>
+<div class="info">Provided by someone and developer is not responsible</div>
+
+<div class="script-box">
+  <div class="script-title">Script Viewer 1</div>
+  <pre>
 #!/bin/sh
+echo "Cleaning cache..."
+rm -rf /data/cache/*
+sync
+echo "Done!"
+  </pre>
+</div>
 
-# Pre-define game choice: 1 for BGMI, 2 for Global
-choice=1
+<div class="script-box">
+  <div class="script-title">Script Viewer 2</div>
+  <pre>
+#!/bin/sh
+echo "Flushing DNS..."
+ndc resolver flushdefaultif
+echo "DNS flushed!"
+sleep 1
+  </pre>
+</div>
 
-case "$choice" in
-    1) PACKAGE_NAME="com.pubg.imobile" ;;
-    2) PACKAGE_NAME="com.tencent.ig" ;;
-    *) echo "Invalid selection." ; exit 1 ;;
-esac
+<div class="script-box">
+  <div class="script-title">Script Viewer 3</div>
+  <pre>
+#!/bin/sh
+echo "Optimizing RAM..."
+echo 3 > /proc/sys/vm/drop_caches
+sync
+echo "Optimization done!"
+  </pre>
+</div>
 
-TARGET_DIR1="/data/data/$PACKAGE_NAME/"
-TARGET_DIR2="/storage/emulated/0/Android/data/$PACKAGE_NAME/cache/"
-TARGET_DIR3="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/"
-TARGET_DIR4="$TARGET_DIR3/UE4Game/ShadowTrackerExtra/"
-TARGET_DIR5="$TARGET_DIR4/ShadowTrackerExtra/Saved/"
-TARGET_DIR6="$TARGET_DIR5/Paks/"
+<div class="script-box">
+  <div class="script-title">Script Viewer 4</div>
+  <pre>
+#!/bin/sh
+echo "Wiping logs..."
+rm -rf /data/logs/*
+rm -rf /cache/logs/*
+echo "Logs wiped"
+  </pre>
+</div>
 
-[ -d "$TARGET_DIR1" ] &amp;&amp; for dir in "$TARGET_DIR1"*/; do [ -d "$dir" ] &amp;&amp; rm -rf "$dir"; done
-
-[ -d "$TARGET_DIR2" ] &amp;&amp; rm -rf "$TARGET_DIR2"
-
-[ -d "$TARGET_DIR3" ] &amp;&amp; find "$TARGET_DIR3" -mindepth 1 -maxdepth 1 \
-    ! -name 'UE4Game' ! -name 'ProgramBinaryCache' -exec rm -rf {} \;
-
-[ -d "$TARGET_DIR4" ] &amp;&amp; find "$TARGET_DIR4" -mindepth 1 -maxdepth 1 \
-    ! -name 'ShadowTrackerExtra' -exec rm -rf {} \;
-
-[ -d "$TARGET_DIR5" ] &amp;&amp; find "$TARGET_DIR5" -mindepth 1 -maxdepth 1 \
-    ! -name 'Config' ! -name 'Paks' ! -name 'SaveGames' ! -name 'SrcVersion.ini' \
-    -exec rm -rf {} \;
-
-[ -d "$TARGET_DIR6" ] &amp;&amp; for cache in eifsCache1 eifsCache2 eifsCache3 eifsCache5; do
-    [ -d "$TARGET_DIR6/$cache" ] &amp;&amp; rm -rf "$TARGET_DIR6/$cache"
-done
-
-echo "Cleanup completed for $PACKAGE_NAME."
-</code></pre>
-
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
 </body>
 </html>
