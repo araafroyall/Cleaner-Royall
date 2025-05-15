@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Xyz Tweaks</title>
   <style>
     body {
       margin: 0;
       padding: 16px;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
+      font-family: monospace;
+      background: #f5f5f5;
       color: #333;
     }
     h1 {
       text-align: center;
       color: #0d47a1;
-      margin-bottom: 10px;
+      font-size: 24px;
     }
     .info {
       font-size: 13px;
@@ -23,41 +23,23 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    .script-box {
-      border: 1px solid #ccc;
-      border-left: 4px solid #0d47a1;
-      background: #fff;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-    }
-    .script-title {
-      font-size: 15px;
-      font-weight: bold;
-      background: #0d47a1;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 8px;
+    h2 {
+      font-size: 18px;
+      color: #0d47a1;
+      margin-top: 24px;
     }
     pre {
       background: #1e1e1e;
-      color: #dcdcdc;
-      padding: 12px;
-      border-radius: 5px;
-      font-size: 13px;
+      color: #c5c8c6;
+      padding: 10px;
+      border-radius: 6px;
       overflow-x: auto;
+      font-size: 13px;
     }
     code {
+      display: block;
       color: #c3e88d;
-      font-family: monospace;
       white-space: pre-wrap;
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
     }
   </style>
 </head>
@@ -66,43 +48,35 @@
   <h1>Xyz Tweaks</h1>
   <div class="info">Provided by someone and developer is not responsible</div>
 
-  <div class="script-box">
-    <div class="script-title">Script Viewer 1</div>
-    <pre><code>#!/bin/sh
-echo "Cleaning cache..."
-rm -rf /data/cache/*
+  <h2>Script Viewer 1</h2>
+  <pre><code>#!/bin/sh
+echo "Cleaning system cache..."
 rm -rf /cache/*
+rm -rf /data/cache/*
 sync
-echo "Cache cleared!"</code></pre>
-  </div>
+echo "Cache cleaned!"</code></pre>
 
-  <div class="script-box">
-    <div class="script-title">Script Viewer 2</div>
-    <pre><code>#!/bin/sh
-echo "Restarting network..."
+  <h2>Script Viewer 2</h2>
+  <pre><code>#!/bin/sh
+echo "Resetting WiFi..."
 svc wifi disable
-sleep 1
+sleep 2
 svc wifi enable
-echo "Network restarted!"</code></pre>
-  </div>
+echo "WiFi restarted."</code></pre>
 
-  <div class="script-box">
-    <div class="script-title">Script Viewer 3</div>
-    <pre><code>#!/bin/sh
-echo "Dropping RAM cache..."
+  <h2>Script Viewer 3</h2>
+  <pre><code>#!/bin/sh
+echo "Freeing RAM..."
 echo 3 > /proc/sys/vm/drop_caches
 sync
-echo "RAM cache dropped!"</code></pre>
-  </div>
+echo "RAM optimization complete."</code></pre>
 
-  <div class="script-box">
-    <div class="script-title">Script Viewer 4</div>
-    <pre><code>#!/bin/sh
-echo "Wiping logs..."
+  <h2>Script Viewer 4</h2>
+  <pre><code>#!/bin/sh
+echo "Removing logs..."
 rm -rf /data/logs/*
 rm -rf /cache/logs/*
-echo "Logs wiped successfully"</code></pre>
-  </div>
+echo "Logs removed."</code></pre>
 
 </body>
 </html>
