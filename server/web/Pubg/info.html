@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGMI Tweak Details</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1em;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      font-size: 1.8em;
+      text-align: center;
+      color: #1d4ed8;
+      margin-bottom: 0.2em;
+    }
+    .note {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 1.5em;
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #1d4ed8;
+      margin-top: 1.5em;
+    }
+    pre {
+      background: #2d2d2d;
+      color: #ccc;
+      padding: 0.3em;
+      border-radius: 8px;
+      font-size: 0.75em;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+      font-size: 0.3em;
+      line-height: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>BGMI Tweak Details</h1>
+  <p class="note">These Given Shell scripts are provided by one user of Cleaner Royall , Developer has not checked their working and sideEffects use of these scripts are completely at your own Risk + Developer is Not Responsible for using or interacting with these scripts in anyway or using their Respective options in Cleaner Royall App. These options supports only Packages : com.pubg.imobile and com.tencent.ig</p>
+
+  <h2>Ban CleanUp.sh</h2>
+  <pre><code class="language-bash">
+#!/bin/bash
+
+echo "Select your game:"
+echo "1) BGMI"
+echo "2) Global"
+echo -n "Enter 1 or 2: "
+read choice
+
+if [ "$choice" == "1" ]; then
+    PACKAGE_NAME="com.pubg.imobile"
+elif [ "$choice" == "2" ]; then
+    PACKAGE_NAME="com.tencent.ig"
+else
+    echo "Invalid selection. Exiting."
+    exit 1
+fi
+
+# Define target directories based on selected package
+TARGET_DIR1="/data/data/$PACKAGE_NAME/"
+TARGET_DIR2="/storage/emulated/0/Android/data/$PACKAGE_NAME/cache/"
+TARGET_DIR3="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/"
+TARGET_DIR4="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/"
+TARGET_DIR5="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/"
+TARGET_DIR6="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/"
+TARGET_DIR7="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/ProgramBinaryCache/"
+TARGET_DIR8="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/SaveGames/"
+TARGET_DIR9="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/"
+TARGET_DIR10="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/avatarpaks/"
+
+# Start cleanup
+
+if [ ! -d "$TARGET_DIR1" ]; then
+    echo "Directory not found: $TARGET_DIR1"
+    exit 1
+fi
+
+echo "Deleting all subdirectories in $TARGET_DIR1..."
+for dir in "$TARGET_DIR1"*/; do
+    [ -d "$dir" ] && rm -rf "$dir"
+done
+
+[ -d "$TARGET_DIR2" ] && rm -rf "$TARGET_DIR2"
+[ -d "$TARGET_DIR7" ] && rm -rf "$TARGET_DIR7"
+[ -d "$TARGET_DIR8" ] && rm -rf "$TARGET_DIR8"
+[ -d "$TARGET_DIR9" ] && rm -rf "$TARGET_DIR9"
+[ -d "$TARGET_DIR10" ] && rm -rf "$TARGET_DIR10"
+
+if [ -d "$TARGET_DIR3" ]; then
+    echo "Cleaning $TARGET_DIR3 except UE4Game and ProgramBinaryCache..."
+    find "$TARGET_DIR3" -mindepth 1 -maxdepth 1 ! -name 'UE4Game' ! -name 'ProgramBinaryCache' -exec rm -rf {} \;
+fi
+
+if [ -d "$TARGET_DIR4" ]; then
+    echo "Cleaning $TARGET_DIR4 except ShadowTrackerExtra..."
+    find "$TARGET_DIR4" -mindepth 1 -maxdepth 1 ! -name 'ShadowTrackerExtra' -exec rm -rf {} \;
+fi
+
+if [ -d "$TARGET_DIR5" ]; then
+    echo "Cleaning $TARGET_DIR5 while keeping Config, Paks, SaveGames, and SrcVersion.ini..."
+    find "$TARGET_DIR5" -mindepth 1 -maxdepth 1 \
+        ! -name 'Config' ! -name 'Paks' ! -name 'SaveGames' ! -name 'SrcVersion.ini' \
+        -exec rm -rf {} \;
+fi
+
+if [ -d "$TARGET_DIR6" ]; then
+    echo "Removing specific eifsCache folders from $TARGET_DIR6..."
+    for cache in eifsCache1 eifsCache2 eifsCache3 eifsCache5; do
+        [ -d "$TARGET_DIR6/$cache" ] && rm -rf "$TARGET_DIR6/$cache"
+    done
+fi
+
+echo "Cleanup complete for $PACKAGE_NAME."
+</code></pre>
+
+  <h2>Clean Logs.sh</h2>
+  <pre><code class="language-bash">
+#!/bin/bash
+
+echo "Select your game:"
+echo "1) BGMI"
+echo "2) Global"
+echo -n "Enter 1 or 2: "
+read choice
+
+if [ "$choice" == "1" ]; then
+    PACKAGE_NAME="com.pubg.imobile"
+elif [ "$choice" == "2" ]; then
+    PACKAGE_NAME="com.tencent.ig"
+else
+    echo "Invalid selection. Exiting."
+    exit 1
+fi
+
+# Define dynamic paths
+TARGET_DIR1="/data/data/$PACKAGE_NAME/"
+TARGET_DIR2="/storage/emulated/0/Android/data/$PACKAGE_NAME/cache/"
+TARGET_DIR3="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/"
+TARGET_DIR4="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/"
+TARGET_DIR5="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/"
+TARGET_DIR6="/storage/emulated/0/Android/data/$PACKAGE_NAME/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks/"
+
+# 1. Delete all subdirectories in data/data
+if [ ! -d "$TARGET_DIR1" ]; then
+    echo "Directory not found: $TARGET_DIR1"
+    exit 1
+fi
+
+echo "Deleting all subdirectories in $TARGET_DIR1..."
+for dir in "$TARGET_DIR1"*/; do
+    [ -d "$dir" ] && echo "Removing: $dir" && rm -rf "$dir"
+done
+
+# 2. Delete the cache folder
+if [ -d "$TARGET_DIR2" ]; then
+    echo "Deleting cache directory: $TARGET_DIR2"
+    rm -rf "$TARGET_DIR2"
+else
+    echo "Cache directory not found: $TARGET_DIR2"
+fi
+
+# 3. Delete everything in files except UE4Game and ProgramBinaryCache
+if [ -d "$TARGET_DIR3" ]; then
+    echo "Cleaning $TARGET_DIR3, keeping UE4Game and ProgramBinaryCache..."
+    find "$TARGET_DIR3" -mindepth 1 -maxdepth 1 ! -name 'UE4Game' ! -name 'ProgramBinaryCache' -exec rm -rf {} \;
+else
+    echo "Directory not found: $TARGET_DIR3"
+fi
+
+# 4. Delete everything in UE4Game/ShadowTrackerExtra except ShadowTrackerExtra
+if [ -d "$TARGET_DIR4" ]; then
+    echo "Cleaning $TARGET_DIR4, keeping ShadowTrackerExtra..."
+    find "$TARGET_DIR4" -mindepth 1 -maxdepth 1 ! -name 'ShadowTrackerExtra' -exec rm -rf {} \;
+else
+    echo "Directory not found: $TARGET_DIR4"
+fi
+
+# 5. Delete everything in Saved/ except Config, Paks, SaveGames, and SrcVersion.ini
+if [ -d "$TARGET_DIR5" ]; then
+    echo "Cleaning $TARGET_DIR5, keeping Config, Paks, SaveGames, and SrcVersion.ini..."
+    find "$TARGET_DIR5" -mindepth 1 -maxdepth 1 \
+        ! -name 'Config' ! -name 'Paks' ! -name 'SaveGames' ! -name 'SrcVersion.ini' \
+        -exec rm -rf {} \;
+else
+    echo "Directory not found: $TARGET_DIR5"
+fi
+
+# 6. Delete specific cache folders in Paks
+if [ -d "$TARGET_DIR6" ]; then
+    echo "Deleting specific eifsCache folders in $TARGET_DIR6..."
+    for cache in eifsCache1 eifsCache2 eifsCache3 eifsCache5; do
+        if [ -d "$TARGET_DIR6/$cache" ]; then
+            echo "Removing: $TARGET_DIR6/$cache"
+            rm -rf "$TARGET_DIR6/$cache"
+        else
+            echo "Not found: $TARGET_DIR6/$cache"
+        fi
+    done
+else
+    echo "Directory not found: $TARGET_DIR6"
+fi
+
+echo "Cleanup completed for $PACKAGE_NAME."
+</code></pre>
+
+  <h2>Device id.sh</h2>
+  <pre><code class="language-bash">
+#!/bin/bash
+
+echo "Select your game:"
+echo "1) BGMI"
+echo "2) Global"
+echo -n "Enter 1 or 2: "
+read choice
+
+if [ "$choice" == "1" ]; then
+    PKG=com.pubg.imobile
+elif [ "$choice" == "2" ]; then
+    PKG=com.tencent.ig
+else
+    echo "Invalid choice. Exiting."
+    exit 1
+fi
+
+ID=$(grep $PKG /data/system/users/0/settings_ssaid.xml | awk -F'"' '{print $6}')
+
+P=""
+for i in $(seq 16); do
+    P=$P$(uuidgen | head -c 1 | tr -d '-')
+done
+
+sed -i s/$ID/$P/g /data/system/users/0/settings_ssaid.xml
+
+echo -e "\033[41m--- Android ID changed successfully ---\033[0m"
+echo -e "\033[41m--- Will take effect after reboot ---\033[0m"
+echo -e "\033[41m--- Make sure to install and open the game once before the ID change takes effect! ---\033[0m"
+echo -e "\033[41m--- After modification, run the game cleaning script again and reboot the device ---\033[0m"
+</code></pre>
+
+  <h2>Fresh Start.sh</h2>
+  <pre><code class="language-bash">
+#!/bin/bash
+
+echo "Select your game:"
+echo "1) BGMI"
+echo "2) Global"
+echo -n "Enter 1 or 2: "
+read choice
+
+if [ "$choice" == "1" ]; then
+    PACKAGE_NAME="com.pubg.imobile"
+elif [ "$choice" == "2" ]; then
+    PACKAGE_NAME="com.tencent.ig"
+else
+    echo "Invalid selection. Exiting."
+    exit 1
+fi
+
+# Target directories based on package
+TARGET_DIR1="/data/data/$PACKAGE_NAME/"
+TARGET_DIR2="/storage/emulated/0/Android/data/$PACKAGE_NAME/"
+
+# Check if TARGET_DIR1 exists
+if [ ! -d "$TARGET_DIR1" ]; then
+    echo "Target directory not found: $TARGET_DIR1"
+    exit 1
+fi
+
+# Delete all subdirectories in TARGET_DIR1
+echo "Deleting all subdirectories in $TARGET_DIR1..."
+for dir in "$TARGET_DIR1"*/; do
+    [ -d "$dir" ] && echo "Removing: $dir" && rm -rf "$dir"
+done
+
+# Delete TARGET_DIR2 (cache and full folder)
+if [ -d "$TARGET_DIR2" ]; then
+    echo "Deleting entire folder: $TARGET_DIR2"
+    rm -rf "$TARGET_DIR2"
+else
+    echo "Directory not found: $TARGET_DIR2"
+fi
+
+echo "Aggressive cleanup complete for $PACKAGE_NAME."
+</code></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+</body>
+</html>
