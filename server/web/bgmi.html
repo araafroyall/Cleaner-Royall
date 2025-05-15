@@ -40,7 +40,7 @@
   <p class="note">Provided by someone and developer is not responsible</p>
 
   <h2>Script Viewer 1</h2>
-  <pre><code class="language-bash">#!/bin/sh
+  <pre><code class="language-sh">#!/bin/sh
 echo "Cleaning system cache..."
 rm -rf /cache/*
 rm -rf /data/cache/*
@@ -48,7 +48,7 @@ sync
 echo "Cache cleaned!"</code></pre>
 
   <h2>Script Viewer 2</h2>
-  <pre><code class="language-bash">#!/bin/sh
+  <pre><code class="language-sh">#!/bin/sh
 echo "Resetting WiFi..."
 svc wifi disable
 sleep 2
@@ -56,14 +56,14 @@ svc wifi enable
 echo "WiFi restarted."</code></pre>
 
   <h2>Script Viewer 3</h2>
-  <pre><code class="language-bash">#!/bin/sh
+  <pre><code class="language-sh">#!/bin/sh
 echo "Freeing RAM..."
 echo 3 > /proc/sys/vm/drop_caches
 sync
 echo "RAM optimization complete."</code></pre>
 
   <h2>Script Viewer 4</h2>
-  <pre><code class="language-bash">#!/bin/sh
+  <pre><code class="language-sh">#!/bin/sh
 echo "Removing logs..."
 rm -rf /data/logs/*
 rm -rf /cache/logs/*
