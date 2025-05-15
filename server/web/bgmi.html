@@ -2,54 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xyz Tweaks</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      padding: 16px;
-      font-family: monospace;
-      background: #f5f5f5;
+      font-family: system-ui, sans-serif;
+      background: #f8f9fa;
       color: #333;
+      padding: 16px;
     }
     h1 {
       text-align: center;
-      color: #0d47a1;
-      font-size: 24px;
+      color: #174ea6;
     }
-    .info {
-      font-size: 13px;
-      color: #777;
+    p.note {
       text-align: center;
-      margin-bottom: 20px;
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 24px;
     }
     h2 {
-      font-size: 18px;
-      color: #0d47a1;
+      color: #174ea6;
+      font-size: 1.2em;
       margin-top: 24px;
     }
     pre {
-      background: #1e1e1e;
-      color: #c5c8c6;
-      padding: 10px;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow-x: auto;
-      font-size: 13px;
-    }
-    code {
-      display: block;
-      color: #c3e88d;
-      white-space: pre-wrap;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
   <h1>Xyz Tweaks</h1>
-  <div class="info">Provided by someone and developer is not responsible</div>
+  <p class="note">Provided by someone and developer is not responsible</p>
 
   <h2>Script Viewer 1</h2>
-  <pre><code>#!/bin/sh
+  <pre><code class="language-bash">#!/bin/sh
 echo "Cleaning system cache..."
 rm -rf /cache/*
 rm -rf /data/cache/*
@@ -57,7 +48,7 @@ sync
 echo "Cache cleaned!"</code></pre>
 
   <h2>Script Viewer 2</h2>
-  <pre><code>#!/bin/sh
+  <pre><code class="language-bash">#!/bin/sh
 echo "Resetting WiFi..."
 svc wifi disable
 sleep 2
@@ -65,18 +56,20 @@ svc wifi enable
 echo "WiFi restarted."</code></pre>
 
   <h2>Script Viewer 3</h2>
-  <pre><code>#!/bin/sh
+  <pre><code class="language-bash">#!/bin/sh
 echo "Freeing RAM..."
 echo 3 > /proc/sys/vm/drop_caches
 sync
 echo "RAM optimization complete."</code></pre>
 
   <h2>Script Viewer 4</h2>
-  <pre><code>#!/bin/sh
+  <pre><code class="language-bash">#!/bin/sh
 echo "Removing logs..."
 rm -rf /data/logs/*
 rm -rf /cache/logs/*
 echo "Logs removed."</code></pre>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </body>
 </html>
