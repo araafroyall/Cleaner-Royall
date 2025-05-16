@@ -38,5 +38,9 @@ else
     echo "Directory not found: $TDIR2"
 fi
 
+# cleaning package data
+
+pm clear $PNAME
+
 
 echo "Aggressive cleanup complete for $PNAME."
