@@ -1,1 +1,4 @@
-# Test file
+{
+    "ban": "1",
+    "Reason": "Test Reason"
+}
