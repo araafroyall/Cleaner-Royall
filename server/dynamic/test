@@ -1,10 +1,10 @@
 {
     "status": "1",
-    "title": "Test Title AR",
-    "msg": "This is a Test Dynamic Action",
-    "info": "This is the info of the Test Dynamic Shell",
-    "contributor": "Araaf Royall",
     "prm": "0",
-    "cmd": "Echo \" The dynamic shell is working 🔥\"",
-    "enc": "0"
+    "enc": "1",
+    "title": "Test",
+    "msg": "Test hai",
+    "info": "Test hai bhai",
+    "contributor": "Araaf royall",
+    "cmd": "zNV1UqUQH2grAmF0aEmaI9EyXp79Ehme3vlTiOxKAa0="
 }
