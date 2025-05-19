@@ -3,45 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      background: #f4f4f4;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
     }
     h1 {
-      margin-top: 30px;
-      color: #333;
+      color: #222;
     }
     #board {
       display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-gap: 10px;
-      justify-content: center;
-      margin: 30px auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 90vmin;
+      margin: 20px auto;
     }
     .cell {
-      width: 100px;
-      height: 100px;
-      font-size: 36px;
       background: #fff;
-      border: 2px solid #333;
+      border: 2px solid #444;
+      aspect-ratio: 1 / 1;
+      font-size: 8vmin;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      user-select: none;
     }
+    .cell.x { color: #2196f3; }  /* Blue X */
+    .cell.o { color: #f44336; }  /* Red O */
     .cell.winner {
-      background: #8f8;
+      background: #c8f7c5;
     }
     #status {
-      font-size: 20px;
-      margin-top: 20px;
+      font-size: 5vmin;
+      margin-top: 10px;
     }
     button {
+      font-size: 4vmin;
       padding: 10px 20px;
-      font-size: 16px;
       margin-top: 15px;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 6px;
       cursor: pointer;
     }
   </style>
@@ -75,6 +83,7 @@
   function handleClick(index) {
     if (gameOver || cells[index].textContent) return;
     cells[index].textContent = currentPlayer;
+    cells[index].classList.add(currentPlayer.toLowerCase());
     if (checkWinner()) {
       status.textContent = `Player ${currentPlayer} wins!`;
       gameOver = true;
@@ -89,15 +98,16 @@
 
   function checkWinner() {
     const winPatterns = [
-      [0,1,2], [3,4,5], [6,7,8], // rows
-      [0,3,6], [1,4,7], [2,5,8], // cols
-      [0,4,8], [2,4,6]           // diagonals
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
     ];
-    for (const pattern of winPatterns) {
-      const [a, b, c] = pattern;
-      if (cells[a].textContent &&
-          cells[a].textContent === cells[b].textContent &&
-          cells[a].textContent === cells[c].textContent) {
+    for (const [a, b, c] of winPatterns) {
+      if (
+        cells[a].textContent &&
+        cells[a].textContent === cells[b].textContent &&
+        cells[a].textContent === cells[c].textContent
+      ) {
         cells[a].classList.add("winner");
         cells[b].classList.add("winner");
         cells[c].classList.add("winner");
