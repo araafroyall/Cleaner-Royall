@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    .slider-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type=range] {
+      width: 100%;
+    }
+    #colorPreview {
+      width: 100%;
+      height: 100px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    #hexCode {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="colorPreview"></div>
+    <div class="slider-group">
+      <label for="r">Red</label>
+      <input type="range" id="r" min="0" max="255" value="255">
+    </div>
+    <div class="slider-group">
+      <label for="g">Green</label>
+      <input type="range" id="g" min="0" max="255" value="255">
+    </div>
+    <div class="slider-group">
+      <label for="b">Blue</label>
+      <input type="range" id="b" min="0" max="255" value="255">
+    </div>
+    <div id="hexCode">#FFFFFF</div>
+    <button onclick="copyHex()">Copy Hex Code</button>
+  </div>  <script>
+    const r = document.getElementById('r');
+    const g = document.getElementById('g');
+    const b = document.getElementById('b');
+    const hexCode = document.getElementById('hexCode');
+    const preview = document.getElementById('colorPreview');
+
+    function updateColor() {
+      const red = parseInt(r.value);
+      const green = parseInt(g.value);
+      const blue = parseInt(b.value);
+      const hex = '#' + [red, green, blue].map(x => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+      }).join('').toUpperCase();
+
+      preview.style.backgroundColor = hex;
+      hexCode.textContent = hex;
+    }
+
+    function copyHex() {
+      navigator.clipboard.writeText(hexCode.textContent);
+      alert('Copied: ' + hexCode.textContent);
+    }
+
+    r.addEventListener('input', updateColor);
+    g.addEventListener('input', updateColor);
+    b.addEventListener('input', updateColor);
+
+    updateColor();
+  </script></body>
+</html>
