@@ -80,47 +80,56 @@
     <div id="colorPreview"></div>
     <div class="slider-group">
       <label for="r">Red</label>
-      <input type="range" id="r" min="0" max="255" value="0">
+      <input type="range" id="r" min="0" max="255" value="255">
     </div>
     <div class="slider-group">
       <label for="g">Green</label>
-      <input type="range" id="g" min="0" max="255" value="0">
+      <input type="range" id="g" min="0" max="255" value="255">
     </div>
     <div class="slider-group">
       <label for="b">Blue</label>
-      <input type="range" id="b" min="0" max="255" value="0">
+      <input type="range" id="b" min="0" max="255" value="255">
     </div>
-    <div id="hexCode">#FFFFFF</div>
+    <div class="slider-group">
+      <label for="a">Alpha</label>
+      <input type="range" id="a" min="0" max="255" value="255">
+    </div>
+    <div id="hexCode">#FFFFFFFF</div>
     <button onclick="copyHex()">Copy Hex Code</button>
     <div class="footer">This feature is Provided by Araaf Royall ❂</div>
   </div>  <script>
     const r = document.getElementById('r');
     const g = document.getElementById('g');
     const b = document.getElementById('b');
+    const a = document.getElementById('a');
     const hexCode = document.getElementById('hexCode');
     const preview = document.getElementById('colorPreview');
+
+    function toHex(value) {
+      const hex = value.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    }
 
     function updateColor() {
       const red = parseInt(r.value);
       const green = parseInt(g.value);
       const blue = parseInt(b.value);
-      const hex = '#' + [red, green, blue].map(x => {
-        const hex = x.toString(16);
-        return hex.length === 1 ? '0' + hex : hex;
-      }).join('').toUpperCase();
+      const alpha = parseInt(a.value);
 
-      preview.style.backgroundColor = hex;
+      const hex = '#' + [red, green, blue, alpha].map(toHex).join('').toUpperCase();
+      preview.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${alpha / 255})`;
       hexCode.textContent = hex;
     }
 
     function copyHex() {
       navigator.clipboard.writeText(hexCode.textContent);
-      alert('Copied to Clipboard : ' + hexCode.textContent);
+      alert('Copied: ' + hexCode.textContent);
     }
 
     r.addEventListener('input', updateColor);
     g.addEventListener('input', updateColor);
     b.addEventListener('input', updateColor);
+    a.addEventListener('input', updateColor);
 
     updateColor();
   </script></body>
