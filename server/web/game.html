@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+    }
+    h1 {
+      margin-top: 30px;
+      color: #333;
+    }
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin: 30px auto;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+      background: #fff;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .cell.winner {
+      background: #8f8;
+    }
+    #status {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tic Tac Toe</h1>
+<div id="board"></div>
+<div id="status">Player X's turn</div>
+<button onclick="resetGame()">Restart</button>
+
+<script>
+  const board = document.getElementById("board");
+  const status = document.getElementById("status");
+  let cells = [];
+  let currentPlayer = "X";
+  let gameOver = false;
+
+  function createBoard() {
+    board.innerHTML = "";
+    cells = [];
+    for (let i = 0; i < 9; i++) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      cell.addEventListener("click", () => handleClick(i));
+      board.appendChild(cell);
+      cells.push(cell);
+    }
+  }
+
+  function handleClick(index) {
+    if (gameOver || cells[index].textContent) return;
+    cells[index].textContent = currentPlayer;
+    if (checkWinner()) {
+      status.textContent = `Player ${currentPlayer} wins!`;
+      gameOver = true;
+    } else if (cells.every(cell => cell.textContent)) {
+      status.textContent = "It's a draw!";
+      gameOver = true;
+    } else {
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      status.textContent = `Player ${currentPlayer}'s turn`;
+    }
+  }
+
+  function checkWinner() {
+    const winPatterns = [
+      [0,1,2], [3,4,5], [6,7,8], // rows
+      [0,3,6], [1,4,7], [2,5,8], // cols
+      [0,4,8], [2,4,6]           // diagonals
+    ];
+    for (const pattern of winPatterns) {
+      const [a, b, c] = pattern;
+      if (cells[a].textContent &&
+          cells[a].textContent === cells[b].textContent &&
+          cells[a].textContent === cells[c].textContent) {
+        cells[a].classList.add("winner");
+        cells[b].classList.add("winner");
+        cells[c].classList.add("winner");
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function resetGame() {
+    currentPlayer = "X";
+    gameOver = false;
+    status.textContent = `Player ${currentPlayer}'s turn`;
+    createBoard();
+  }
+
+  createBoard();
+</script>
+
+</body>
+</html>
