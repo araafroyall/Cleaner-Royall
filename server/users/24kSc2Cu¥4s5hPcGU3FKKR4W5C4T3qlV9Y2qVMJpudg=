@@ -1,1 +1,7 @@
-.
+{
+    "RemovePremium": "0",
+    "TransferredPremium": "1",
+    "expired": "0",
+    "cmd": "mkdir -p /data/media/0/RRR",
+    "Msg": "Your premium has been transferred"
+}
