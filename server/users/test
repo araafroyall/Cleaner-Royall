@@ -1,8 +1,6 @@
 {
     "RemovePremium": "value",
     "TransferredPremium": "value",
-    "AdminMsg": "value",
-    "RemoveMsg": "value",
-    "TransferMsg": "value",
+    "Msg": "value",
     "expired": "value"
 }
