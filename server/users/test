@@ -1,1 +1,8 @@
-#test
+{
+    "RemovePremium": "value",
+    "TransferredPremium": "value",
+    "AdminMsg": "value",
+    "RemoveMsg": "value",
+    "TransferMsg": "value",
+    "expired": "value"
+}
