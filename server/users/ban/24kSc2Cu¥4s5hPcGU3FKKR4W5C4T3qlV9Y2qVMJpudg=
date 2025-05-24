@@ -1,6 +1,6 @@
 {
     "feedback": "1",
-    "pforum": "0",
-    "reqUnban": "0",
+    "pforum": "1",
+    "reqUnban": "1",
     "DynamicAction": "0"
 }
