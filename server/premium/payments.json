@@ -1,5 +1,6 @@
 {
-  "paypal": "1",
+  "paypal": "0",
+  "price": "4$",
   "ppweb": "https://www.paypal.me/araafroyalls",
   "ppuser": "@araafroyalls",
   "ppgmail": "araaafroyalls@gmail.com",
