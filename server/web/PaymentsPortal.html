@@ -36,6 +36,7 @@
     label {
       display: block;
       margin-bottom: 8px;
+      cursor: pointer;
     }
     button, .copy-button {
       background-color: #0d9488;
@@ -47,6 +48,7 @@
       margin-top: 10px;
       width: 100%;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
     }
     .qr-img {
       margin-top: 15px;
@@ -68,15 +70,16 @@
     </div>
     <div id="loading">Loading payment info...</div>
     <div id="content" style="display:none">
-      <div class="price-tag">Payment Price: <span id="price">4$</span></div><div class="section">
-    <label for="methods">Select your Payment Method</label>
-    <div id="methods"></div>
+      <div class="price-tag">Payment Price: <span id="price">4$</span></div>
+      <div class="section">
+        <label for="methods">Select your Payment Method</label>
+        <div id="methods"></div>
+      </div>
+      <div id="details"></div>
+    </div>
   </div>
 
-  <div id="details"></div>
-</div>
-
-  </div>  <script>
+  <script>
     const dataUrl = "https://raw.githubusercontent.com/araafroyall/Cleaner-Royall/main/server/web/premium/Payment.json";
     const methods = ["Paypal", "Binance", "Crypto Currency", "Telegram stars", "Others"];
 
@@ -98,36 +101,47 @@
       ]
     };
 
-    fetch(dataUrl).then(res => res.json()).then(data => {
-      document.getElementById("loading").style.display = "none";
-      document.getElementById("content").style.display = "block";
-      document.getElementById("price").textContent = data.price;
+    fetch(dataUrl)
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
+        return res.json();
+      })
+      .then(data => {
+        console.log("Payment data loaded:", data);
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("price").textContent = data.price;
 
-      const methodsContainer = document.getElementById("methods");
-      methods.forEach(method => {
-        const radio = document.createElement("input");
-        radio.type = "radio";
-        radio.name = "paymethod";
-        radio.id = method;
-        radio.value = method;
+        const methodsContainer = document.getElementById("methods");
+        methods.forEach(method => {
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "paymethod";
+          radio.id = method;
+          radio.value = method;
 
-        // Disable if suspended
-        if ((method === "Paypal" && data.paypal !== "1") ||
-            (method === "Binance" && data.binance !== "1")) {
-          radio.disabled = true;
-          radio.addEventListener("click", () => alert(method + " is currently suspended."));
-        }
+          // Disable if suspended
+          if ((method === "Paypal" && data.paypal !== "1") ||
+              (method === "Binance" && data.binance !== "1")) {
+            radio.disabled = true;
+            radio.addEventListener("click", () => alert(method + " is currently suspended."));
+          }
 
-        const label = document.createElement("label");
-        label.textContent = method;
-        label.htmlFor = method;
+          const label = document.createElement("label");
+          label.textContent = method;
+          label.htmlFor = method;
 
-        methodsContainer.appendChild(radio);
-        methodsContainer.appendChild(label);
+          methodsContainer.appendChild(radio);
+          methodsContainer.appendChild(label);
 
-        radio.addEventListener("change", () => showDetails(method, data));
+          radio.addEventListener("change", () => showDetails(method, data));
+        });
+      })
+      .catch(err => {
+        console.error("Error loading payment data:", err);
+        document.getElementById("loading").textContent = "Failed to load payment info.";
+        alert("Failed to load payment info: " + err.message);
       });
-    });
 
     function showDetails(method, data) {
       const container = document.getElementById("details");
@@ -151,12 +165,14 @@
           btn.onclick = () => window.open(data[item.key], '_blank');
         } else {
           btn.onclick = () => {
-            navigator.clipboard.writeText(data[item.key]);
-            alert("Copied to clipboard");
+            navigator.clipboard.writeText(data[item.key])
+              .then(() => alert("Copied to clipboard"))
+              .catch(() => alert("Failed to copy"));
           };
         }
         container.appendChild(btn);
       });
     }
-  </script></body>
+  </script>
+</body>
 </html>
