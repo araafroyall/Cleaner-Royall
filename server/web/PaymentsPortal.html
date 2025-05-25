@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <title>Cleaner Royall Payments Portal</title>
   <style>
     body {
@@ -11,181 +10,153 @@
       background-color: #f0fdfc;
       color: #073b3a;
     }
-
     .container {
+      padding: 20px;
       max-width: 480px;
       margin: auto;
-      padding: 20px;
     }
-
     .header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
-
     .header h1 {
       color: #065f46;
-      margin: 0;
     }
-
-    .price-info {
+    .price-tag {
       background: #ccfbf1;
       border-left: 5px solid #0f766e;
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 20px;
-      font-weight: bold;
       color: #047857;
     }
-
-    .section-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #065f46;
-    }
-
-    .radio-group {
+    .section {
       margin-bottom: 20px;
     }
-
-    .radio-group label {
+    label {
       display: block;
       margin-bottom: 8px;
     }
-
-    .buttons-area {
-      margin-bottom: 20px;
-    }
-
-    .buttons-area button, .buttons-area a {
-      display: block;
-      width: 100%;
-      margin: 6px 0;
-      padding: 10px;
+    button, .copy-button {
       background-color: #0d9488;
       color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    .crypto-section {
-      margin-top: 10px;
-    }
-
-    .copy-dialog {
-      display: none;
-      text-align: center;
-      background-color: #ccfbf1;
-      color: #0f766e;
       padding: 10px;
+      border: none;
       border-radius: 8px;
       font-weight: bold;
       margin-top: 10px;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .qr-img {
+      margin-top: 15px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    #loading {
+      text-align: center;
+      margin: 40px 0;
+      color: #0f766e;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Cleaner Royall<br><b>Payments Portal</b></h1>
+      <h1>Cleaner Royall <b>Payments Portal</b></h1>
     </div>
-
-    <div class="price-info" id="priceInfo">
-      Payment Price: $4
-    </div>
-
-    <div class="section-title">Select your Payment Method</div>
-
-    <div class="radio-group">
-      <label><input type="radio" name="method" value="paypal" id="radioPaypal"> Paypal</label>
-      <label><input type="radio" name="method" value="binance" id="radioBinance"> Binance</label>
-      <label><input type="radio" name="method" value="crypto"> Crypto Currency</label>
-      <label><input type="radio" name="method" value="telegram"> Telegram Stars</label>
-      <label><input type="radio" name="method" value="others"> Others</label>
-    </div>
-
-    <div class="buttons-area" id="paypal" style="display:none">
-      <a href="#" target="_blank" id="ppweb">Pay at PayPal Web</a>
-      <button onclick="copyToClipboard(ppuser)">Copy PayPal Username</button>
-      <button onclick="copyToClipboard(ppgmail)">Copy PayPal Gmail</button>
-    </div>
-
-    <div class="buttons-area" id="binance" style="display:none">
-      <button onclick="copyToClipboard(buid)">Copy Binance UID</button>
-      <button onclick="copyToClipboard(bgmail)">Copy Binance Gmail</button>
-    </div>
-
-    <div class="buttons-area crypto-section" id="crypto" style="display:none">
-      <button onclick="copyToClipboard(btc)">Copy BTC Address</button>
-      <button onclick="copyToClipboard(c20)">Copy USDT BEP20</button>
-      <button onclick="copyToClipboard('PolygonWallet123')">Copy Polygon Address</button>
-      <button onclick="copyToClipboard(c20)">Copy ETH-20 Address</button>
-      <button onclick="copyToClipboard(trx)">Copy TRX Address</button>
-    </div>
-
-    <div class="copy-dialog" id="copyDialog">Copied to clipboard</div>
+    <div id="loading">Loading payment info...</div>
+    <div id="content" style="display:none">
+      <div class="price-tag">Payment Price: <span id="price">4$</span></div><div class="section">
+    <label for="methods">Select your Payment Method</label>
+    <div id="methods"></div>
   </div>
 
-  <script>
-    let ppweb = '', ppuser = '', ppgmail = '', btc = '', c20 = '', trx = '', buid = '', bgmail = '';
+  <div id="details"></div>
+</div>
 
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const dialog = document.getElementById('copyDialog');
-        dialog.style.display = 'block';
-        setTimeout(() => {
-          dialog.style.display = 'none';
-        }, 1500);
-      });
-    }
+  </div>  <script>
+    const dataUrl = "https://araafroyall.github.io/Cleaner-Royall/server/web/premium/Payment.json";
+    const methods = ["Paypal", "Binance", "Crypto Currency", "Telegram stars", "Others"];
 
-    function showSuspended() {
-      alert("This method is currently suspended");
-    }
+    const ids = {
+      Paypal: [
+        { label: "Pay at PayPal Web", action: "link", key: "ppweb" },
+        { label: "Copy PayPal Username", key: "ppuser" },
+        { label: "Copy PayPal Gmail", key: "ppgmail" }
+      ],
+      Binance: [
+        { label: "Copy Binance UID", key: "buid" },
+        { label: "Copy Binance Gmail", key: "bgmail" },
+        { label: "Binance QR", image: "https://raw.githubusercontent.com/araafroyall/Cleaner-Royall/main/server/web/images/payments/BinanceQR.jpg" }
+      ],
+      "Crypto Currency": [
+        { label: "Copy BTC Address", key: "btc" },
+        { label: "Copy BEP-20 (USDT) Address", key: "c20" },
+        { label: "Copy TRX Address", key: "trx" }
+      ]
+    };
 
-    document.querySelectorAll('input[name="method"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        ['paypal', 'binance', 'crypto'].forEach(id => {
-          document.getElementById(id).style.display = (radio.value === id) ? 'block' : 'none';
-        });
+    fetch(dataUrl).then(res => res.json()).then(data => {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("price").textContent = data.price;
+
+      const methodsContainer = document.getElementById("methods");
+      methods.forEach(method => {
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "paymethod";
+        radio.id = method;
+        radio.value = method;
+
+        // Disable if suspended
+        if ((method === "Paypal" && data.paypal !== "1") ||
+            (method === "Binance" && data.binance !== "1")) {
+          radio.disabled = true;
+          radio.addEventListener("click", () => alert(method + " is currently suspended."));
+        }
+
+        const label = document.createElement("label");
+        label.textContent = method;
+        label.htmlFor = method;
+
+        methodsContainer.appendChild(radio);
+        methodsContainer.appendChild(label);
+
+        radio.addEventListener("change", () => showDetails(method, data));
       });
     });
 
-    fetch('https://araafroyall.github.io/Cleaner-Royall/server/premium/Payment.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('priceInfo').innerText = 'Payment Price: ' + data.price;
-        ppweb = data.ppweb;
-        ppuser = data.ppuser;
-        ppgmail = data.ppgmail;
-        btc = data.btc;
-        c20 = data.c20;
-        trx = data.trx;
-        buid = data.buid;
-        bgmail = data.bgmail;
+    function showDetails(method, data) {
+      const container = document.getElementById("details");
+      container.innerHTML = "";
+      const list = ids[method];
+      if (!list) return;
 
-        document.getElementById('ppweb').href = ppweb;
+      list.forEach(item => {
+        if (item.image) {
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.className = "qr-img";
+          container.appendChild(img);
+          return;
+        }
 
-        if (data.paypal !== "1") {
-          const r = document.getElementById('radioPaypal');
-          r.disabled = true;
-          r.addEventListener('click', e => {
-            e.preventDefault();
-            showSuspended();
-          });
+        const btn = document.createElement("button");
+        btn.textContent = item.label;
+
+        if (item.action === "link") {
+          btn.onclick = () => window.open(data[item.key], '_blank');
+        } else {
+          btn.onclick = () => {
+            navigator.clipboard.writeText(data[item.key]);
+            alert("Copied to clipboard");
+          };
         }
-        if (data.binance !== "1") {
-          const r = document.getElementById('radioBinance');
-          r.disabled = true;
-          r.addEventListener('click', e => {
-            e.preventDefault();
-            showSuspended();
-          });
-        }
+        container.appendChild(btn);
       });
-  </script>
-</body>
+    }
+  </script></body>
 </html>
