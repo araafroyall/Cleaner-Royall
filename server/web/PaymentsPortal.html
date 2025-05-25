@@ -33,22 +33,18 @@
     .section {
       margin-bottom: 20px;
     }
-    label {
-  display: block;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-#methods input[type="radio"] {
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-#methods label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
+    #methods label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      gap: 8px;
+    }
+    #methods input[type="radio"] {
+      accent-color: #0d9488;
+      transform: scale(1.1);
+    }
     button, .copy-button {
       background-color: #0d9488;
       color: white;
@@ -139,10 +135,13 @@
           }
 
           const label = document.createElement("label");
-          label.textContent = method;
           label.htmlFor = method;
 
-          methodsContainer.appendChild(radio);
+          const text = document.createElement("span");
+          text.textContent = method;
+
+          label.appendChild(radio);
+          label.appendChild(text);
           methodsContainer.appendChild(label);
 
           radio.addEventListener("change", () => showDetails(method, data));
