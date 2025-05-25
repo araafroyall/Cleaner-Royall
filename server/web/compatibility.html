@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cleaner Royall Compatibility</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdfc;
+      color: #073b3a;
       padding: 20px;
     }
 
     .card {
-      max-width: 450px;
+      max-width: 480px;
       margin: auto;
-      background: #fff;
+      background: #ccfbf1;
+      border-left: 5px solid #0f766e;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 25px;
       box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
     }
 
     h2 {
       text-align: center;
-      color: #333;
+      color: #065f46;
       margin-bottom: 10px;
     }
 
     .subtitle {
       text-align: center;
-      color: #555;
-      font-size: 14px;
+      color: #047857;
+      font-size: 15px;
       margin-bottom: 20px;
       padding: 0 10px;
     }
@@ -45,60 +47,73 @@
       display: block;
       padding: 13px;
       font-size: 16px;
-      background-color: #009688;
+      background-color: #14b8a6;
       color: white;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: bold;
+      font-weight: 600;
       transition: background 0.3s;
       box-sizing: border-box;
+      text-align: center;
     }
 
     .tool-btn:hover {
-      background-color: #00796b;
+      background-color: #0f766e;
     }
 
     .desc {
       font-size: 13px;
-      color: #666;
+      color: #065f46;
       margin-top: 6px;
       text-align: center;
     }
 
     .footer {
       margin-top: 25px;
-      font-size: 13px;
-      color: #888;
+      font-size: 14px;
+      color: #065f46;
       text-align: center;
+    }
+
+    .notice {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #ff0000;
+      text-align: center;
+      font-weight: 600;
     }
 
     @media (prefers-color-scheme: dark) {
       body {
-        background: #121212;
-        color: #ddd;
+        background: #0f2928;
+        color: #a6f0e4;
       }
       .card {
-        background: #1e1e1e;
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+        background: #134a48;
+        border-left-color: #26a69a;
+        box-shadow: 0 4px 12px rgba(38, 166, 154, 0.5);
       }
       h2 {
-        color: #eee;
+        color: #a0f0e2;
       }
       .subtitle {
-        color: #bbb;
+        color: #8de3d7;
       }
       .desc {
-        color: #aaa;
+        color: #99d4ce;
       }
       .tool-btn {
         background-color: #26a69a;
-        color: white;
+        color: #e0f7f4;
       }
       .tool-btn:hover {
         background-color: #1e8e82;
       }
       .footer {
-        color: #aaa;
+        color: #8de3d7;
+      }
+      .notice {
+        color: #ff5c5c;
       }
     }
   </style>
@@ -136,7 +151,11 @@
     </div>
 
     <div class="footer">
-      This feature is provided by Araaf Royall
+      This feature is provided by Araaf Royall ❂
+    </div>
+
+    <div class="notice">
+      Disclaimer: This software is provided “as is,” without warranty of any kind.
     </div>
   </div>
 </body>
