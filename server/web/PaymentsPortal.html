@@ -1,1 +1,55 @@
-Under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Construction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom right, #004d40, #26a69a);
+      height: 100vh;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-shadow: 1px 1px 3px #00332f;
+    }
+    p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #4db6ac, 0 0 10px #4db6ac;
+      }
+      to {
+        text-shadow: 0 0 20px #80cbc4, 0 0 30px #80cbc4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glow">This Page Is Currently Under Construction</h1>
+    <p>We’re working hard to bring you something amazing. Please check back soon.</p>
+  </div>
+</body>
+</html>
