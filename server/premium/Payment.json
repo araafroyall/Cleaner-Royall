@@ -1,6 +1,9 @@
 {
   "paypal": "1",
   "price": "4$",
+  "evm": "xx",
+  "ton": "xxx",
+  "near": "araafroyall.tg",
   "ppweb": "https://www.paypal.me/araafroyalls",
   "ppuser": "@araafroyalls",
   "ppgmail": "araaafroyalls@gmail.com",
