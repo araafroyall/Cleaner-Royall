@@ -1,0 +1,11 @@
+{
+    "status": "1",
+    "prm": "0",
+    "enc": "0",
+    "title": "WLAN Logs Cleaner",
+    "msg": "It Can Cleans the WLAN Logs",
+    "info": "It Can Cleans the WLAN Logs at \"\/data\/vendor\/wlan_logs\"\nThis option is also found in Enhanced mode of logs cleaner.",
+    "contributor": "Maan Khan",
+    "cmd": "rm -rf \/data\/vendor\/wlan_logs",
+    "pid": "24kSc2Cu¥4s5hPcGU3FKKR4W5C4T3qlV9Y2qVMJpudg="
+}
