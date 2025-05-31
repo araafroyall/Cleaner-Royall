@@ -1,1 +1,49 @@
-#tmp file
+#!/system/bin/sh
+
+life_path="/sys/block/mmcblk0/device/life_time"
+eol_path="/sys/block/mmcblk0/device/pre_eol_info"
+
+life=$(cat $life_path 2>/dev/null)
+eol=$(cat $eol_path 2>/dev/null)
+
+slc=$(printf "%d" 0x$(echo $life | awk '{print $1}'))
+mlc=$(printf "%d" 0x$(echo $life | awk '{print $2}'))
+eol_d=$(printf "%d" 0x$eol)
+
+echo "============================="
+echo " 📊 eMMC Health Monitor"
+echo "============================="
+echo "📦 SLC Life Used : $slc (0x$(echo $life | awk '{print $1}'))"
+echo "📦 MLC Life Used : $mlc (0x$(echo $life | awk '{print $2}'))"
+
+# Interpret lifetime level
+if [ $slc -lt 5 ] && [ $mlc -lt 5 ]; then
+  echo "✅ Life Status    : Excellent"
+elif [ $slc -lt 10 ] && [ $mlc -lt 10 ]; then
+  echo "🟡 Life Status    : Moderate Usage"
+elif [ $slc -lt 12 ] && [ $mlc -lt 12 ]; then
+  echo "⚠️  Life Status    : High Wear (80-90%)"
+else
+  echo "❌ Life Status    : Near Failure (>90%)"
+fi
+
+# Pre-EOL interpretation
+case "$eol_d" in
+  1)
+    echo "⏳ Pre-EOL Info   : 01 (Normal)"
+    echo "✅ eMMC Status    : Currently working normal"
+    ;;
+  2)
+    echo "⏳ Pre-EOL Info   : 02 (Warning)"
+    echo "⚠️  eMMC Status    : Warning, nearing end-of-life"
+    ;;
+  3)
+    echo "⏳ Pre-EOL Info   : 03 (Critical)"
+    echo "❌ eMMC Status    : Critical, failure imminent"
+    ;;
+  *)
+    echo "⏳ Pre-EOL Info   : Unknown"
+    echo "❓ eMMC Status    : Unable to read"
+    ;;
+esac
+echo "============================="
