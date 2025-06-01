@@ -38,14 +38,22 @@ else
 fi
 
 case "$eol_d" in
-  1) echo "⏳ Pre-EOL Info   : 01 (Normal)
-✅ eMMC Status    : Currently working normal" ;;
-  2) echo "⏳ Pre-EOL Info   : 02 (Warning)
-⚠️  eMMC Status    : Warning, nearing end-of-life" ;;
-  3) echo "⏳ Pre-EOL Info   : 03 (Critical)
-❌ eMMC Status    : Critical, failure imminent" ;;
-  *) echo "⏳ Pre-EOL Info   : Unknown (Raw: $eol_fmt | Dec: $eol_d)
-❓ eMMC Status    : Unable to interpret pre-eol value" ;;
+  1)
+    echo "⏳ Pre-EOL Info   : 01 (Normal)"
+    echo "✅ eMMC Status    : Currently working normal"
+    ;;
+  2)
+    echo "⏳ Pre-EOL Info   : 02 (Warning)"
+    echo "⚠️  eMMC Status    : Warning, nearing end-of-life"
+    ;;
+  3)
+    echo "⏳ Pre-EOL Info   : 03 (Critical)"
+    echo "❌ eMMC Status    : Critical, failure imminent"
+    ;;
+  *)
+    echo "⏳ Pre-EOL Info   : Unknown (Raw: 0x$eol | Dec: $eol_d)"
+    echo "❓ eMMC Status    : Unable to interpret pre-eol value: raw=0x$eol dec=$eol_d"
+    ;;
 esac
 
 
