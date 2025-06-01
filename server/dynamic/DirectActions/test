@@ -60,13 +60,17 @@ esac
 echo ""
 echo "------------------------------"
 echo "📍 eMMC Info:"
+
 model=$(cat /sys/block/mmcblk0/device/name 2>/dev/null)
 vendor=$(cat /sys/block/mmcblk0/device/manfid 2>/dev/null)
 size=$(cat /sys/block/mmcblk0/size 2>/dev/null)
 
-model=${model:-Unknown}
-vendor=${vendor:-Unknown}
-size_gb=$(awk "BEGIN { printf \"%.2f\", (${size:-0} * 512) / (1024*1024*1024) }")
+# Show (empty) if no data read
+[ -z "$model" ] && model="(empty)"
+[ -z "$vendor" ] && vendor="(empty)"
+[ -z "$size" ] && size=0
+
+size_gb=$(awk "BEGIN { printf \"%.2f\", ($size * 512) / (1024*1024*1024) }")
 
 echo "📌 Model   : $model"
 echo "🏷️  Vendor  : $vendor"
