@@ -59,13 +59,14 @@ esac
 
 echo ""
 echo "------------------------------"
+#!/system/bin/sh
+
 echo "📍 eMMC Info:"
 
 model=$(cat /sys/block/mmcblk0/device/name 2>/dev/null)
 vendor=$(cat /sys/block/mmcblk0/device/manfid 2>/dev/null)
 size=$(cat /sys/block/mmcblk0/size 2>/dev/null)
 
-# Show (empty) if no data read
 [ -z "$model" ] && model="(empty)"
 [ -z "$vendor" ] && vendor="(empty)"
 [ -z "$size" ] && size=0
@@ -75,6 +76,17 @@ size_gb=$(awk "BEGIN { printf \"%.2f\", ($size * 512) / (1024*1024*1024) }")
 echo "📌 Model   : $model"
 echo "🏷️  Vendor  : $vendor"
 echo "💾 Capacity: ${size_gb} GB"
+
+echo "------------------------------"
+echo "📁 Partition Sizes:"
+
+for part in /sys/block/mmcblk0/mmcblk0p*; do
+  part_name=$(basename "$part")
+  part_size=$(cat "$part/size" 2>/dev/null)
+  [ -z "$part_size" ] && part_size=0
+  size_gb=$(awk "BEGIN { printf \"%.2f\", ($part_size * 512) / (1024*1024*1024) }")
+  echo "🔹 $part_name: ${size_gb} GB"
+done
 
 
 echo "============================="
