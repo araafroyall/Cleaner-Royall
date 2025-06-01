@@ -77,17 +77,6 @@ echo "📌 Model   : $model"
 echo "🏷️  Vendor  : $vendor"
 echo "💾 Capacity: ${size_gb} GB"
 
-echo "------------------------------"
-echo "📁 Partition Sizes:"
-
-for part in /sys/block/mmcblk0/mmcblk0p*; do
-  part_name=$(basename "$part")
-  part_size=$(cat "$part/size" 2>/dev/null)
-  [ -z "$part_size" ] && part_size=0
-  size_gb=$(awk "BEGIN { printf \"%.2f\", ($part_size * 512) / (1024*1024*1024) }")
-  echo "🔹 $part_name: ${size_gb} GB"
-done
-
 
 echo "============================="
 echo "Feature is provided by Araaf Royall"
