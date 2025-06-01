@@ -16,10 +16,16 @@ echo "============================="
 echo "📦 SLC Life Used : $slc (0x$(echo "$life" | awk '{print $1}'))"
 echo "📦 MLC Life Used : $mlc (0x$(echo "$life" | awk '{print $2}'))"
 
-[ "$slc" -lt 5 ] && [ "$mlc" -lt 5 ] && echo "✅ Life Status    : Excellent" ||
-[ "$slc" -lt 10 ] && [ "$mlc" -lt 10 ] && echo "🟡 Life Status    : Moderate Usage" ||
-[ "$slc" -lt 12 ] && [ "$mlc" -lt 12 ] && echo "⚠️  Life Status    : High Wear (80-90%)" ||
-echo "❌ Life Status    : Near Failure (>90%)"
+# Life interpretation - only one output
+if [ "$slc" -lt 5 ] && [ "$mlc" -lt 5 ]; then
+  echo "✅ Life Status    : Excellent"
+elif [ "$slc" -lt 10 ] && [ "$mlc" -lt 10 ]; then
+  echo "🟡 Life Status    : Moderate Usage"
+elif [ "$slc" -lt 12 ] && [ "$mlc" -lt 12 ]; then
+  echo "⚠️  Life Status    : High Wear (80-90%)"
+else
+  echo "❌ Life Status    : Near Failure (>90%)"
+fi
 
 case "$eol_d" in
   1) echo "⏳ Pre-EOL Info   : 01 (Normal)
