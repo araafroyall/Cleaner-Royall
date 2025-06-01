@@ -77,6 +77,24 @@ echo "📌 Model   : $model"
 echo "🏷️  Vendor  : $vendor"
 echo "💾 Capacity: ${size_gb} GB"
 
+echo "------------------------------"
+echo "📋 Additional eMMC Info:"
+
+serial=$(cat /sys/block/mmcblk0/device/serial 2>/dev/null)
+fwver=$(cat /sys/block/mmcblk0/device/fwrev 2>/dev/null)
+hwrev=$(cat /sys/block/mmcblk0/device/hwrev 2>/dev/null)
+man_name=$(cat /sys/block/mmcblk0/device/manufacturer 2>/dev/null)
+date_code=$(cat /sys/block/mmcblk0/device/date 2>/dev/null)
+wp_status=$(cat /sys/block/mmcblk0/ro 2>/dev/null)
+poh=$(cat /sys/block/mmcblk0/device/power_on_hours 2>/dev/null)
+
+echo "🔢 Serial Number : ${serial:-Unknown}"
+echo "📟 Firmware Ver  : ${fwver:-Unknown}"
+echo "🔧 Hardware Rev : ${hwrev:-Unknown}"
+echo "🏭 Manufacturer : ${man_name:-Unknown}"
+echo "📅 Date Code    : ${date_code:-Unknown}"
+echo "🔒 Write Protect: $( [ "$wp_status" = "1" ] && echo "Enabled" || echo "Disabled" )"
+echo "⏰ Power-On Hours: ${poh:-Unknown}"
 
 echo "============================="
 echo "Feature is provided by Araaf Royall"
