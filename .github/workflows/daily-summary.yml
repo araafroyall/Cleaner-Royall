@@ -62,7 +62,7 @@ jobs:
 
           # Format the message with proper MarkdownV2 escaping and real newlines
           MSG="*Cleaner\\-Royall GitHub Repo Summary*"
- MSG+=$'\n'
+          MSG+=$'\n'
           MSG+="- Repo: [${ESCAPED_REPO}](${ESCAPED_REPO_URL})"$'\n'
           MSG+="- Stars: ${STARS}"$'\n'
           MSG+="- Codespace size: ${SIZE} KB"$'\n'
