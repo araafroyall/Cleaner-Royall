@@ -86,9 +86,9 @@ jobs:
             FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
             MSG+="*Commit message:* ${SAFE_COMMIT_MSG}"$'\n'
             MSG+="*Author:* ${SAFE_COMMIT_AUTHOR}"$'\n'
-            MSG+="*Added files:*\n${FILES_ADDED}"$'\n'
-            MSG+="*Modified files:*\n${FILES_MODIFIED}"$'\n'
-            MSG+="*Removed files:*\n${FILES_REMOVED}"$'\n'
+            MSG+="*Added files:*${FILES_ADDED}"$'\n'
+            MSG+="*Modified files:*${FILES_MODIFIED}"$'\n'
+            MSG+="*Removed files:*${FILES_REMOVED}"$'\n'
           fi
 
           # Issues
@@ -99,7 +99,7 @@ jobs:
             SAFE_ISSUE_TITLE=$(escape_md2 "$ISSUE_TITLE")
             SAFE_ISSUE_BODY=$(escape_md2 "$ISSUE_BODY")
             MSG+="*Issue Title:* ${SAFE_ISSUE_TITLE}"$'\n'
-            MSG+="*Issue Body:*\n${SAFE_ISSUE_BODY}"$'\n'
+            MSG+="*Issue Body:*${SAFE_ISSUE_BODY}"$'\n'
             EVENT_URL="$ISSUE_URL"
           fi
 
@@ -114,7 +114,7 @@ jobs:
             SAFE_COMMENT_AUTHOR=$(escape_md2 "$COMMENT_AUTHOR")
             MSG+="*Issue Title:* ${SAFE_ISSUE_TITLE}"$'\n'
             MSG+="*Comment Author:* ${SAFE_COMMENT_AUTHOR}"$'\n'
-            MSG+="*Comment:*\n${SAFE_COMMENT_BODY}"$'\n'
+            MSG+="*Comment:*${SAFE_COMMENT_BODY}"$'\n'
             EVENT_URL="$COMMENT_URL"
           fi
 
@@ -129,7 +129,7 @@ jobs:
             SAFE_PR_STATE=$(escape_md2 "$PR_STATE")
             MSG+="*Pull Request Title:* ${SAFE_PR_TITLE}"$'\n'
             MSG+="*PR State:* ${SAFE_PR_STATE}"$'\n'
-            MSG+="*PR Body:*\n${SAFE_PR_BODY}"$'\n'
+            MSG+="*PR Body:*${SAFE_PR_BODY}"$'\n'
             EVENT_URL="$PR_URL"
           fi
 
@@ -144,7 +144,7 @@ jobs:
             SAFE_REL_BODY=$(escape_md2 "$REL_BODY")
             MSG+="*Release Name:* ${SAFE_REL_NAME}"$'\n'
             MSG+="*Release Tag:* ${SAFE_REL_TAG}"$'\n'
-            MSG+="*Release Notes:*\n${SAFE_REL_BODY}"$'\n'
+            MSG+="*Release Notes:*${SAFE_REL_BODY}"$'\n'
             EVENT_URL="$REL_URL"
           fi
 
@@ -173,8 +173,8 @@ jobs:
             SAFE_DISC_BODY=$(escape_md2 "$DISC_BODY")
             SAFE_COMMENT_BODY=$(escape_md2 "$COMMENT_BODY")
             MSG+="*Discussion Title:* ${SAFE_DISC_TITLE}"$'\n'
-            MSG+="*Discussion Body:*\n${SAFE_DISC_BODY}"$'\n'
-            MSG+="*Comment:*\n${SAFE_COMMENT_BODY}"$'\n'
+            MSG+="*Discussion Body:*${SAFE_DISC_BODY}"$'\n'
+            MSG+="*Comment:*${SAFE_COMMENT_BODY}"$'\n'
           fi
 
           # Repository Dispatch
