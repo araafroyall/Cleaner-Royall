@@ -1,3 +1,22 @@
-update later
-Magisk-Modules
-Magisk-Modules
+{
+  "cleaners": [
+    {
+      "name": "Cache",
+      "path": "$Cache",
+      "title": "Cache Cleaner",
+      "runTitle": "Cleaning Cache"
+    },
+    {
+      "name": "Logs",
+      "path": "$Logs",
+      "title": "Logs Cleaner",
+      "runTitle": "Cleaning Logs"
+    },
+    {
+      "name": "Trash",
+      "path": "$Trash",
+      "title": "Trash Cleaner",
+      "runTitle": "Cleaning Trash"
+    }
+  ]
+}
