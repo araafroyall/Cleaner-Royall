@@ -42,9 +42,7 @@ jobs:
           }
 
           # Fetch repository info
-          REPO_DATA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-            https://api.github.com/repos/$REPO)
-
+          REPO_DATA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/$REPO)
           OPEN_ISSUES=$(echo "$REPO_DATA" | jq '.open_issues_count')
           STARS=$(echo "$REPO_DATA" | jq '.stargazers_count')
           SIZE=$(echo "$REPO_DATA" | jq '.size')
@@ -55,7 +53,7 @@ jobs:
           CLOSED_ISSUES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
             "https://api.github.com/search/issues?q=repo:$REPO+is:issue+is:closed" | jq '.total_count')
 
-          # Safely escape all dynamic values for MarkdownV2
+          # MarkdownV2 escapes
           ESCAPED_HEADER=$(escape_md2 "Cleaner-Royall GitHub Repo Summary")
           ESCAPED_REPO=$(escape_md2 "$REPO")
           ESCAPED_REPO_URL=$(escape_md2 "$REPO_URL")
@@ -65,16 +63,15 @@ jobs:
           ESCAPED_OPEN_ISSUES=$(escape_md2 "$OPEN_ISSUES")
           ESCAPED_CLOSED_ISSUES=$(escape_md2 "$CLOSED_ISSUES")
 
-          # Format the message with proper MarkdownV2 escaping and newlines
+          # Build the message line by line, escaping every dash!
           MSG="*${ESCAPED_HEADER}*"$'\n'
-          MSG+=$(escape_md2 "- Repo: ")"["${ESCAPED_REPO}"](${REPO_URL})"$'\n'
-          MSG+=$(escape_md2 "- Stars: ${STARS}")$'\n'
-          MSG+=$(escape_md2 "- Codespace size: ${SIZE} KB")$'\n'
-          MSG+=$(escape_md2 "- Language: ${LANGUAGE}")$'\n'
-          MSG+=$(escape_md2 "- Open issues: ${OPEN_ISSUES}")$'\n'
-          MSG+=$(escape_md2 "- Closed issues: ${CLOSED_ISSUES}")
+          MSG+="\- Repo: [${ESCAPED_REPO}](${REPO_URL})"$'\n'
+          MSG+="\- Stars: ${ESCAPED_STARS}"$'\n'
+          MSG+="\- Codespace size: ${ESCAPED_SIZE} KB"$'\n'
+          MSG+="\- Language: ${ESCAPED_LANGUAGE}"$'\n'
+          MSG+="\- Open issues: ${ESCAPED_OPEN_ISSUES}"$'\n'
+          MSG+="\- Closed issues: ${ESCAPED_CLOSED_ISSUES}"
 
-          # Send to Telegram
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
             --data-urlencode text="$MSG" \
