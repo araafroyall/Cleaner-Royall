@@ -17,74 +17,107 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+
     steps:
     - name: Send Telegram Notification
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
+        sanitize_markdown() {
+          echo "$1" | sed \
+            -e 's/&/\&amp;/g' \
+            -e 's/</\&lt;/g' \
+            -e 's/>/\&gt;/g' \
+            -e 's/_/\\_/g' \
+            -e 's/\*/\\*/g' \
+            -e 's//\/g' \
+            -e 's//\/g' \
+            -e 's/(/\/g' \
+            -e 's/)/\/g'
+        }
+
         EVENT_NAME="${{ github.event_name }}"
         ACTION="${{ github.event.action }}"
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
 
-        # Base URL fallback
+        # Extract URLs safely
         EVENT_URL="https://github.com/${REPO}"
 
-        # For push event, show commit url and file changes
-        if [ "$EVENT_NAME" = "push" ]; then
-          # Grab last commit info
-          COMMIT_ID="${{ github.event.head_commit.id }}"
-          COMMIT_URL="${{ github.event.head_commit.url }}"
-          COMMIT_MSG="${{ github.event.head_commit.message }}"
-          COMMIT_AUTHOR="${{ github.event.head_commit.author.name }}"
-
-          EVENT_URL="$COMMIT_URL"
-
-          # Collect added, removed, modified files for last commit
-          ADDED_FILES="${{ toJson(github.event.head_commit.added) }}"
-          REMOVED_FILES="${{ toJson(github.event.head_commit.removed) }}"
-          MODIFIED_FILES="${{ toJson(github.event.head_commit.modified) }}"
-
-          # Format file lists to human-readable strings (strip JSON brackets/quotes)
-          format_files() {
-            echo "$1" | sed 's/[][]//g' | sed 's/"//g' | sed 's/,/, /g'
-          }
-
-          ADDED=$(format_files "$ADDED_FILES")
-          REMOVED=$(format_files "$REMOVED_FILES")
-          MODIFIED=$(format_files "$MODIFIED_FILES")
-
-          DETAILS="*Commit message:* $COMMIT_MSG\n*Author:* $COMMIT_AUTHOR\n"
-
-          if [ -n "$ADDED" ]; then
-            DETAILS="$DETAILS\n*Added files:* $ADDED"
-          fi
-          if [ -n "$REMOVED" ]; then
-            DETAILS="$DETAILS\n*Removed files:* $REMOVED"
-          fi
-          if [ -n "$MODIFIED" ]; then
-            DETAILS="$DETAILS\n*Modified files:* $MODIFIED"
-          fi
-        else
-          # For other events fallback URL logic
-          if [ -n "${{ github.event.pull_request.html_url }}" ]; then
-            EVENT_URL="${{ github.event.pull_request.html_url }}"
-          elif [ -n "${{ github.event.issue.html_url }}" ]; then
-            EVENT_URL="${{ github.event.issue.html_url }}"
-          elif [ -n "${{ github.event.comment.html_url }}" ]; then
-            EVENT_URL="${{ github.event.comment.html_url }}"
-          elif [ -n "${{ github.event.release.html_url }}" ]; then
-            EVENT_URL="${{ github.event.release.html_url }}"
-          elif [ -n "${{ github.event.discussion.html_url }}" ]; then
-            EVENT_URL="${{ github.event.discussion.html_url }}"
-          fi
-          DETAILS=""
+        # Choose best URL based on event type
+        if [ "${EVENT_NAME}" = "push" ]; then
+          EVENT_URL="${{ github.event.head_commit.url }}"
+          # List files changed, created, deleted
+          FILES_CHANGED="${{ github.event.head_commit.modified }}"
+          FILES_ADDED="${{ github.event.head_commit.added }}"
+          FILES_REMOVED="${{ github.event.head_commit.removed }}"
+        elif [ "${EVENT_NAME}" = "pull_request" ]; then
+          EVENT_URL="${{ github.event.pull_request.html_url }}"
+        elif [ "${EVENT_NAME}" = "issues" ]; then
+          EVENT_URL="${{ github.event.issue.html_url }}"
+        elif [ "${EVENT_NAME}" = "issue_comment" ]; then
+          EVENT_URL="${{ github.event.comment.html_url }}"
+        elif [ "${EVENT_NAME}" = "release" ]; then
+          EVENT_URL="${{ github.event.release.html_url }}"
+        elif [ "${EVENT_NAME}" = "discussion_comment" ]; then
+          EVENT_URL="${{ github.event.discussion.html_url }}"
         fi
 
-        MSG=$(echo -e "🚀 *GitHub Action Report*\n\n*Event:* $EVENT_NAME\n*Action:* $ACTION\n*Repo:* $REPO\n*By:* $ACTOR\n\n$DETAILS\n[🔗 View on GitHub]($EVENT_URL)")
+        # Sanitize dynamic text for Telegram Markdown
+        SAFE_ACTOR=$(sanitize_markdown "$ACTOR")
+        SAFE_REPO=$(sanitize_markdown "$REPO")
+        SAFE_ACTION=$(sanitize_markdown "$ACTION")
 
+        # Prepare extra details for push event files
+        FILES_MSG=""
+        if [ "${EVENT_NAME}" = "push" ]; then
+          # Compose file lists only if not empty
+          if [ -n "$FILES_ADDED" ]; then
+            FILES_MSG+="\n*Added files:* $(echo "$FILES_ADDED" | tr ',' '\n' | sed 's/^/- /')"
+          fi
+          if [ -n "$FILES_CHANGED" ]; then
+            FILES_MSG+="\n*Modified files:* $(echo "$FILES_CHANGED" | tr ',' '\n' | sed 's/^/- /')"
+          fi
+          if [ -n "$FILES_REMOVED" ]; then
+            FILES_MSG+="\n*Removed files:* $(echo "$FILES_REMOVED" | tr ',' '\n' | sed 's/^/- /')"
+          fi
+        fi
+
+        # Handle issue / comment body if present
+        SAFE_ISSUE_TITLE=""
+        SAFE_COMMENT_BODY=""
+        if [ "${EVENT_NAME}" = "issues" ]; then
+          ISSUE_TITLE_RAW="${{ github.event.issue.title }}"
+          SAFE_ISSUE_TITLE=$(sanitize_markdown "$ISSUE_TITLE_RAW")
+        fi
+        if [ "${EVENT_NAME}" = "issue_comment" ]; then
+          COMMENT_BODY_RAW="${{ github.event.comment.body }}"
+          SAFE_COMMENT_BODY=$(sanitize_markdown "$COMMENT_BODY_RAW")
+        fi
+
+        # Compose message base
+        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${SAFE_ACTION}\n*Repo:* ${SAFE_REPO}\n*By:* ${SAFE_ACTOR}\n"
+
+        # Add issue title if present
+        if [ -n "$SAFE_ISSUE_TITLE" ]; then
+          MSG+="\n*Issue Title:* ${SAFE_ISSUE_TITLE}\n"
+        fi
+
+        # Add comment body if present
+        if [ -n "$SAFE_COMMENT_BODY" ]; then
+          MSG+="\n*Comment:* ${SAFE_COMMENT_BODY}\n"
+        fi
+
+        # Add files changed info if push event
+        if [ -n "$FILES_MSG" ]; then
+          MSG+="${FILES_MSG}\n"
+        fi
+
+        MSG+="\n[🔗 View on GitHub](${EVENT_URL})"
+
+        # Send Telegram message
         curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
-          -d text="$MSG" \
+          -d text="${MSG}" \
           -d parse_mode=Markdown || echo "❌ Failed to send Telegram message"
