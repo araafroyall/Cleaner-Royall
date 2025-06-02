@@ -39,10 +39,9 @@ jobs:
             -e 's/\+/\\+/g' \
             -e 's/-/\\-/g' \
             -e 's/=//g' \
-            -e 's/\|/\\|/g' \
+            -e 's/|/\\|/g' \
             -e 's/{/\\{/g' \
-            -e 's/}/\\}/g' \
-            -e 's/./&/g'
+            -e 's/}/\\}/g'
         }
 
         EVENT_NAME="${{ github.event_name }}"
@@ -115,7 +114,14 @@ jobs:
 
         MSG+="\n[🔗 View on GitHub](${EVENT_URL})"
 
-        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+        RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
           -d text="${MSG}" \
-          -d parse_mode=MarkdownV2 || echo "❌ Failed to send Telegram message"
+          -d parse_mode=MarkdownV2)
+
+        echo "Telegram response: $RESPONSE"
+
+        if echo "$RESPONSE" | grep -q '"ok":false'; then
+          echo "❌ Telegram API error detected, failing the job."
+          exit 1
+        fi
