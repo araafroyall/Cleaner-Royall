@@ -1,0 +1,79 @@
+name: Daily Telegram Repo Summary
+
+on:
+  schedule:
+    - cron: '*/3 * * * *'
+
+jobs:
+  send-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Get repo stats and send to Telegram
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REPO: araafroyall/Cleaner-Royall
+        run: |
+          escape_md2() {
+            echo "$1" | sed \
+              -e 's/\\/\\\\/g' \
+              -e 's/_/\\_/g' \
+              -e 's/\*/\\*/g' \
+              -e 's/\[/\\[/g' \
+              -e 's/\]/\\]/g' \
+              -e 's/(/\\(/g' \
+              -e 's/)/\\)/g' \
+              -e 's/~/\\~/g' \
+              -e 's/`/\\`/g' \
+              -e 's/>/\\>/g' \
+              -e 's/#/\\#/g' \
+              -e 's/\+/\\+/g' \
+              -e 's/-/\\-/g' \
+              -e 's/=/\\=/g' \
+              -e 's/|/\\|/g' \
+              -e 's/{/\\{/g' \
+              -e 's/}/\\}/g' \
+              -e 's/\./\\./g' \
+              -e 's/!/\\!/g'
+          }
+
+          # Fetch repository info
+          REPO_DATA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/$REPO)
+          OPEN_ISSUES=$(echo "$REPO_DATA" | jq '.open_issues_count')
+          STARS=$(echo "$REPO_DATA" | jq '.stargazers_count')
+          SIZE=$(echo "$REPO_DATA" | jq '.size')
+          LANGUAGE=$(echo "$REPO_DATA" | jq -r '.language')
+          REPO_URL=$(echo "$REPO_DATA" | jq -r '.html_url')
+
+          CLOSED_ISSUES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/search/issues?q=repo:$REPO+is:issue+is:closed" | jq '.total_count')
+
+          SAFE_REPO=$(escape_md2 "$REPO")
+          SAFE_STARS=$(escape_md2 "$STARS")
+          SAFE_SIZE=$(escape_md2 "$SIZE")
+          SAFE_LANGUAGE=$(escape_md2 "$LANGUAGE")
+          SAFE_OPEN_ISSUES=$(escape_md2 "$OPEN_ISSUES")
+          SAFE_CLOSED_ISSUES=$(escape_md2 "$CLOSED_ISSUES")
+
+          MSG="*Cleaner-Royall GitHub Repo Repo: [${SAFE_REPO}](${REPO_URL})"$'\n'
+          MSG+="- Stars: ${SAFE_STARS}"$'\n'
+          MSG+="- Codespace size: ${SAFE_SIZE} KB"$'\n'
+          MSG+="- Language: ${SAFE_LANGUAGE}"$'\n'
+          MSG+="- Open issues: ${SAFE_OPEN_ISSUES}"$'\n'
+          MSG+="- Closed issues: ${SAFE_CLOSED_ISSUES}"
+
+          RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode text="$MSG" \
+            -d parse_mode=MarkdownV2 \
+            -d disable_web_page_preview=true)
+
+          echo "Telegram response: $RESPONSE"
+          if echo "$RESPONSE" | grep -q '"ok":false'; then
+            echo "❌ Telegram API error detected, failing the job."
+            exit 1
+          fi
