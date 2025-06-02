@@ -28,23 +28,43 @@ jobs:
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
         ACTION="${{ github.event.action }}"
+        URL=""
 
-        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}"
+        if [ "$EVENT_NAME" = "push" ]; then
+          URL="${{ github.event.head_commit.url }}"
+        elif [ "$EVENT_NAME" = "pull_request" ]; then
+          URL="${{ github.event.pull_request.html_url }}"
+        elif [ "$EVENT_NAME" = "issues" ]; then
+          URL="${{ github.event.issue.html_url }}"
+        elif [ "$EVENT_NAME" = "issue_comment" ]; then
+          URL="${{ github.event.comment.html_url }}"
+        elif [ "$EVENT_NAME" = "release" ]; then
+          URL="${{ github.event.release.html_url }}"
+        elif [ "$EVENT_NAME" = "discussion_comment" ]; then
+          URL="${{ github.event.discussion.html_url }}"
+        fi
 
-        echo "Sending message to chat_id: $TELEGRAM_CHAT_ID"
-        echo "Message content:"
-        echo "$MSG"
+        if [ -z "$URL" ]; then
+          URL="https://github.com/${REPO}"
+        fi
+
+        MSG="🚀 *GitHub Action Report*
+
+*Event:* ${EVENT_NAME}
+*Action:* ${ACTION}
+*Repo:* ${REPO}
+*By:* ${ACTOR}
+
+[🔗 View on GitHub](${URL})"
 
         RESPONSE=$(curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id="$TELEGRAM_CHAT_ID" \
           -d text="$MSG" \
           -d parse_mode=Markdown)
 
-        echo "Telegram API response:"
-        echo "$RESPONSE"
-
         OK=$(echo "$RESPONSE" | grep -o '"ok":true')
         if [ -z "$OK" ]; then
           echo "❌ Telegram API call failed!"
+          echo "$RESPONSE"
           exit 1
         fi
