@@ -28,8 +28,8 @@ jobs:
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
         ACTION="${{ github.event.action }}"
-        URL="https://github.com/${REPO}"
-        MSG="🚀 *GitHub Event Triggered*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 Open Repo](${URL})"
+
+        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}"
 
         echo "Sending message to chat_id: $TELEGRAM_CHAT_ID"
         echo "Message content:"
@@ -43,7 +43,6 @@ jobs:
         echo "Telegram API response:"
         echo "$RESPONSE"
 
-        # Fail if Telegram API returns ok: false
         OK=$(echo "$RESPONSE" | grep -o '"ok":true')
         if [ -z "$OK" ]; then
           echo "❌ Telegram API call failed!"
