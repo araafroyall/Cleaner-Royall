@@ -23,56 +23,33 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
-        EVENT_NAME=$(echo "$GITHUB_CONTEXT" | jq -r '.event_name')
-        ACTION=$(echo "$GITHUB_CONTEXT" | jq -r '.event.action // empty')
-        ACTOR=$(echo "$GITHUB_CONTEXT" | jq -r '.actor')
-        REPO=$(echo "$GITHUB_CONTEXT" | jq -r '.repository.full_name')
+        EVENT_NAME="$GITHUB_EVENT_NAME"
+        ACTION="${{ github.event.action }}"
+        ACTOR="${{ github.actor }}"
+        REPO="${{ github.repository }}"
 
-        URL=""
-        case "$EVENT_NAME" in
-          push)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.head_commit.url // empty')
-            ;;
-          pull_request)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.pull_request.html_url // empty')
-            ;;
-          issues)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.issue.html_url // empty')
-            ;;
-          issue_comment)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.comment.html_url // empty')
-            ;;
-          release)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.release.html_url // empty')
-            ;;
-          discussion_comment)
-            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.discussion.html_url // empty')
-            ;;
-        esac
+        # Default URL fallback
+        EVENT_URL="https://github.com/${REPO}"
 
-        if [ -z "$URL" ]; then
-          URL="https://github.com/$REPO"
+        # Try to extract useful URL from known types
+        if [ -n "${{ github.event.head_commit.url }}" ]; then
+          EVENT_URL="${{ github.event.head_commit.url }}"
+        elif [ -n "${{ github.event.pull_request.html_url }}" ]; then
+          EVENT_URL="${{ github.event.pull_request.html_url }}"
+        elif [ -n "${{ github.event.issue.html_url }}" ]; then
+          EVENT_URL="${{ github.event.issue.html_url }}"
+        elif [ -n "${{ github.event.comment.html_url }}" ]; then
+          EVENT_URL="${{ github.event.comment.html_url }}"
+        elif [ -n "${{ github.event.release.html_url }}" ]; then
+          EVENT_URL="${{ github.event.release.html_url }}"
+        elif [ -n "${{ github.event.discussion.html_url }}" ]; then
+          EVENT_URL="${{ github.event.discussion.html_url }}"
         fi
 
-        MSG="🚀 *GitHub Action Report*
+        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 View on GitHub](${EVENT_URL})"
 
-*Event:* $EVENT_NAME
-*Action:* $ACTION
-*Repo:* $REPO
-*By:* $ACTOR
-
-[🔗 View on GitHub]($URL)"
-
-        RESPONSE=$(curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
-          -d chat_id="$TELEGRAM_CHAT_ID" \
-          -d text="$MSG" \
-          -d parse_mode=Markdown)
-
-        OK=$(echo "$RESPONSE" | grep -o '"ok":true')
-        if [ -z "$OK" ]; then
-          echo "❌ Telegram API call failed!"
-          echo "$RESPONSE"
-          exit 1
-        fi
+        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
+          -d chat_id="${TELEGRAM_CHAT_ID}" \
+          -d text="${MSG}" \
+          -d parse_mode=Markdown || echo "❌ Failed to send Telegram message"
