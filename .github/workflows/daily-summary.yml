@@ -2,8 +2,7 @@ name: Daily Telegram Repo Summary
 
 on:
   schedule:
-    - cron: '0 22 * * *'  # Every day at 10 PM UTC
-
+    - cron: '16 8 * * *'  # Runs every day at 1:46 PM IST
 jobs:
   send-summary:
     runs-on: ubuntu-latest
