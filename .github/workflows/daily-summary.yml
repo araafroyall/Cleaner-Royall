@@ -13,7 +13,7 @@ jobs:
 
       - name: Get repo stats and send to Telegram
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Built-in token, no need to create
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           REPO: araafroyall/Cleaner-Royall
@@ -56,19 +56,23 @@ jobs:
             "https://api.github.com/search/issues?q=repo:$REPO+is:issue+is:closed" | jq '.total_count')
 
           # Safely escape all dynamic values for MarkdownV2
+          ESCAPED_HEADER=$(escape_md2 "Cleaner-Royall GitHub Repo Summary")
           ESCAPED_REPO=$(escape_md2 "$REPO")
           ESCAPED_REPO_URL=$(escape_md2 "$REPO_URL")
+          ESCAPED_STARS=$(escape_md2 "$STARS")
+          ESCAPED_SIZE=$(escape_md2 "$SIZE")
           ESCAPED_LANGUAGE=$(escape_md2 "$LANGUAGE")
+          ESCAPED_OPEN_ISSUES=$(escape_md2 "$OPEN_ISSUES")
+          ESCAPED_CLOSED_ISSUES=$(escape_md2 "$CLOSED_ISSUES")
 
-          # Format the message with proper MarkdownV2 escaping and real newlines
-          MSG="*Cleaner\\-Royall GitHub Repo Summary*"
-          MSG+=$'\n'
-          MSG+="- Repo: [${ESCAPED_REPO}](${ESCAPED_REPO_URL})"$'\n'
-          MSG+="- Stars: ${STARS}"$'\n'
-          MSG+="- Codespace size: ${SIZE} KB"$'\n'
-          MSG+="- Language: ${ESCAPED_LANGUAGE}"$'\n'
-          MSG+="- Open issues: ${OPEN_ISSUES}"$'\n'
-          MSG+="- Closed issues: ${CLOSED_ISSUES}"
+          # Format the message with proper MarkdownV2 escaping and newlines
+          MSG="*${ESCAPED_HEADER}*"$'\n'
+          MSG+=$(escape_md2 "- Repo: ")"["${ESCAPED_REPO}"](${REPO_URL})"$'\n'
+          MSG+=$(escape_md2 "- Stars: ${STARS}")$'\n'
+          MSG+=$(escape_md2 "- Codespace size: ${SIZE} KB")$'\n'
+          MSG+=$(escape_md2 "- Language: ${LANGUAGE}")$'\n'
+          MSG+=$(escape_md2 "- Open issues: ${OPEN_ISSUES}")$'\n'
+          MSG+=$(escape_md2 "- Closed issues: ${CLOSED_ISSUES}")
 
           # Send to Telegram
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
