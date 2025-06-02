@@ -23,39 +23,47 @@ jobs:
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
-        EVENT_NAME="${{ github.event_name }}"
-        ACTOR="${{ github.actor }}"
-        REPO="${{ github.repository }}"
-        ACTION="${{ github.event.action }}"
-        URL=""
+        EVENT_NAME=$(echo "$GITHUB_CONTEXT" | jq -r '.event_name')
+        ACTION=$(echo "$GITHUB_CONTEXT" | jq -r '.event.action // empty')
+        ACTOR=$(echo "$GITHUB_CONTEXT" | jq -r '.actor')
+        REPO=$(echo "$GITHUB_CONTEXT" | jq -r '.repository.full_name')
 
-        if [ "$EVENT_NAME" = "push" ]; then
-          URL="${{ github.event.head_commit.url }}"
-        elif [ "$EVENT_NAME" = "pull_request" ]; then
-          URL="${{ github.event.pull_request.html_url }}"
-        elif [ "$EVENT_NAME" = "issues" ]; then
-          URL="${{ github.event.issue.html_url }}"
-        elif [ "$EVENT_NAME" = "issue_comment" ]; then
-          URL="${{ github.event.comment.html_url }}"
-        elif [ "$EVENT_NAME" = "release" ]; then
-          URL="${{ github.event.release.html_url }}"
-        elif [ "$EVENT_NAME" = "discussion_comment" ]; then
-          URL="${{ github.event.discussion.html_url }}"
-        fi
+        URL=""
+        case "$EVENT_NAME" in
+          push)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.head_commit.url // empty')
+            ;;
+          pull_request)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.pull_request.html_url // empty')
+            ;;
+          issues)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.issue.html_url // empty')
+            ;;
+          issue_comment)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.comment.html_url // empty')
+            ;;
+          release)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.release.html_url // empty')
+            ;;
+          discussion_comment)
+            URL=$(echo "$GITHUB_CONTEXT" | jq -r '.event.discussion.html_url // empty')
+            ;;
+        esac
 
         if [ -z "$URL" ]; then
-          URL="https://github.com/${REPO}"
+          URL="https://github.com/$REPO"
         fi
 
         MSG="🚀 *GitHub Action Report*
 
-*Event:* ${EVENT_NAME}
-*Action:* ${ACTION}
-*Repo:* ${REPO}
-*By:* ${ACTOR}
+*Event:* $EVENT_NAME
+*Action:* $ACTION
+*Repo:* $REPO
+*By:* $ACTOR
 
-[🔗 View on GitHub](${URL})"
+[🔗 View on GitHub]($URL)"
 
         RESPONSE=$(curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
           -d chat_id="$TELEGRAM_CHAT_ID" \
