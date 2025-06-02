@@ -42,76 +42,77 @@ jobs:
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
 
-        # Extract URLs safely
+        # Default URL fallback
         EVENT_URL="https://github.com/${REPO}"
 
-        # Choose best URL based on event type
+        # Push event commit details
         if [ "${EVENT_NAME}" = "push" ]; then
           EVENT_URL="${{ github.event.head_commit.url }}"
-          # List files changed, created, deleted
-          FILES_CHANGED="${{ github.event.head_commit.modified }}"
-          FILES_ADDED="${{ github.event.head_commit.added }}"
-          FILES_REMOVED="${{ github.event.head_commit.removed }}"
-        elif [ "${EVENT_NAME}" = "pull_request" ]; then
+          COMMIT_MSG_RAW="${{ github.event.head_commit.message }}"
+          COMMIT_AUTHOR_RAW="${{ github.event.head_commit.author.name }}"
+          FILES_ADDED_RAW="${{ github.event.head_commit.added }}"
+          FILES_MODIFIED_RAW="${{ github.event.head_commit.modified }}"
+          FILES_REMOVED_RAW="${{ github.event.head_commit.removed }}"
+        fi
+
+        # Pull request URL
+        if [ "${EVENT_NAME}" = "pull_request" ]; then
           EVENT_URL="${{ github.event.pull_request.html_url }}"
-        elif [ "${EVENT_NAME}" = "issues" ]; then
+        fi
+
+        # Issues URL
+        if [ "${EVENT_NAME}" = "issues" ]; then
           EVENT_URL="${{ github.event.issue.html_url }}"
-        elif [ "${EVENT_NAME}" = "issue_comment" ]; then
+        fi
+
+        # Issue comment URL
+        if [ "${EVENT_NAME}" = "issue_comment" ]; then
           EVENT_URL="${{ github.event.comment.html_url }}"
-        elif [ "${EVENT_NAME}" = "release" ]; then
+        fi
+
+        # Release URL
+        if [ "${EVENT_NAME}" = "release" ]; then
           EVENT_URL="${{ github.event.release.html_url }}"
-        elif [ "${EVENT_NAME}" = "discussion_comment" ]; then
+        fi
+
+        # Discussion comment URL
+        if [ "${EVENT_NAME}" = "discussion_comment" ]; then
           EVENT_URL="${{ github.event.discussion.html_url }}"
         fi
 
-        # Sanitize dynamic text for Telegram Markdown
+        # Sanitize all dynamic fields
         SAFE_ACTOR=$(sanitize_markdown "$ACTOR")
         SAFE_REPO=$(sanitize_markdown "$REPO")
         SAFE_ACTION=$(sanitize_markdown "$ACTION")
+        SAFE_COMMIT_MSG=$(sanitize_markdown "$COMMIT_MSG_RAW")
+        SAFE_COMMIT_AUTHOR=$(sanitize_markdown "$COMMIT_AUTHOR_RAW")
 
-        # Prepare extra details for push event files
-        FILES_MSG=""
+        # Prepare file lists for push event, show "None" if empty
+        list_files() {
+          if [ -z "$1" ] || [ "$1" = "null" ]; then
+            echo "None"
+          else
+            echo "$1" | tr ',' '\n' | sed 's/^/- /'
+          fi
+        }
+
+        FILES_ADDED=$(list_files "$FILES_ADDED_RAW")
+        FILES_MODIFIED=$(list_files "$FILES_MODIFIED_RAW")
+        FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
+
+        # Compose message
+        MSG="🚀 *GitHub Action Report*\n\n"
+        MSG+="*Event:* ${EVENT_NAME}\n"
+        MSG+="*Action:* ${SAFE_ACTION}\n"
+        MSG+="*Repo:* ${SAFE_REPO}\n"
+        MSG+="*By:* ${SAFE_ACTOR}\n"
+
         if [ "${EVENT_NAME}" = "push" ]; then
-          # Compose file lists only if not empty
-          if [ -n "$FILES_ADDED" ]; then
-            FILES_MSG+="\n*Added files:* $(echo "$FILES_ADDED" | tr ',' '\n' | sed 's/^/- /')"
-          fi
-          if [ -n "$FILES_CHANGED" ]; then
-            FILES_MSG+="\n*Modified files:* $(echo "$FILES_CHANGED" | tr ',' '\n' | sed 's/^/- /')"
-          fi
-          if [ -n "$FILES_REMOVED" ]; then
-            FILES_MSG+="\n*Removed files:* $(echo "$FILES_REMOVED" | tr ',' '\n' | sed 's/^/- /')"
-          fi
-        fi
-
-        # Handle issue / comment body if present
-        SAFE_ISSUE_TITLE=""
-        SAFE_COMMENT_BODY=""
-        if [ "${EVENT_NAME}" = "issues" ]; then
-          ISSUE_TITLE_RAW="${{ github.event.issue.title }}"
-          SAFE_ISSUE_TITLE=$(sanitize_markdown "$ISSUE_TITLE_RAW")
-        fi
-        if [ "${EVENT_NAME}" = "issue_comment" ]; then
-          COMMENT_BODY_RAW="${{ github.event.comment.body }}"
-          SAFE_COMMENT_BODY=$(sanitize_markdown "$COMMENT_BODY_RAW")
-        fi
-
-        # Compose message base
-        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${SAFE_ACTION}\n*Repo:* ${SAFE_REPO}\n*By:* ${SAFE_ACTOR}\n"
-
-        # Add issue title if present
-        if [ -n "$SAFE_ISSUE_TITLE" ]; then
-          MSG+="\n*Issue Title:* ${SAFE_ISSUE_TITLE}\n"
-        fi
-
-        # Add comment body if present
-        if [ -n "$SAFE_COMMENT_BODY" ]; then
-          MSG+="\n*Comment:* ${SAFE_COMMENT_BODY}\n"
-        fi
-
-        # Add files changed info if push event
-        if [ -n "$FILES_MSG" ]; then
-          MSG+="${FILES_MSG}\n"
+          MSG+="*Commit message:* ${SAFE_COMMIT_MSG}\n"
+          MSG+="*Author:* ${SAFE_COMMIT_AUTHOR}\n"
+          MSG+="*Added files:*\n${FILES_ADDED}\n"
+          MSG+="*Modified files:*\n${FILES_MODIFIED}\n"
+          MSG+="*Removed files:*\n${FILES_REMOVED}\n"
         fi
 
         MSG+="\n[🔗 View on GitHub](${EVENT_URL})"
