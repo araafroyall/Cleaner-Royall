@@ -60,13 +60,13 @@ jobs:
           ESCAPED_LANGUAGE=$(escape_md2 "$LANGUAGE")
           
           # Format the message with proper MarkdownV2 escaping
-          MSG="*Cleaner\\-Royall GitHub Repo Summary*\n"
-          MSG="${MSG}- Repo: [${ESCAPED_REPO}](${ESCAPED_REPO_URL})\n"
-          MSG="${MSG}- Stars: ${STARS}\n"
-          MSG="${MSG}- Codespace size: ${SIZE} KB\n"
-          MSG="${MSG}- Language: ${ESCAPED_LANGUAGE}\n"
-          MSG="${MSG}- Open issues: ${OPEN_ISSUES}\n"
-          MSG="${MSG}- Closed issues: ${CLOSED_ISSUES}"
+          MSG=$'*Cleaner\\-Royall GitHub Repo Summary*\n'\
+'- Repo: ['"${ESCAPED_REPO}"']('"${ESCAPED_REPO_URL}"')\n'\
+'- Stars: '"${STARS}"'\n'\
+'- Codespace size: '"${SIZE}"' KB\n'\
+'- Language: '"${ESCAPED_LANGUAGE}"'\n'\
+'- Open issues: '"${OPEN_ISSUES}"'\n'\
+'- Closed issues: '"${CLOSED_ISSUES}"
 
           # Send to Telegram
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
