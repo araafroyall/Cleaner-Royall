@@ -61,12 +61,12 @@ jobs:
           
           # Format the message with proper MarkdownV2 escaping
           MSG=$'*Cleaner\\-Royall GitHub Repo Summary*\n'\
-'- Repo: ['"${ESCAPED_REPO}"']('"${ESCAPED_REPO_URL}"')\n'\
-'- Stars: '"${STARS}"'\n'\
-'- Codespace size: '"${SIZE}"' KB\n'\
-'- Language: '"${ESCAPED_LANGUAGE}"'\n'\
-'- Open issues: '"${OPEN_ISSUES}"'\n'\
-'- Closed issues: '"${CLOSED_ISSUES}"
+          '- Repo: ['"${ESCAPED_REPO}"']('"${ESCAPED_REPO_URL}"')\n'\
+          '- Stars: '"${STARS}"'\n'\
+          '- Codespace size: '"${SIZE}"' KB\n'\
+          '- Language: '"${ESCAPED_LANGUAGE}"'\n'\
+          '- Open issues: '"${OPEN_ISSUES}"'\n'\
+          '- Closed issues: '"${CLOSED_ISSUES}"
 
           # Send to Telegram
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
