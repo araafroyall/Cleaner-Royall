@@ -1,4 +1,4 @@
-name: GitHub to Telegram Notifications
+name: Events Update to Tg
 
 on:
   push:
