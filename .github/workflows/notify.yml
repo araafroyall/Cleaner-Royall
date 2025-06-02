@@ -17,7 +17,6 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-
     steps:
     - name: Send Telegram Notification
       env:
@@ -29,10 +28,8 @@ jobs:
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
 
-        # Default URL fallback
         EVENT_URL="https://github.com/${REPO}"
 
-        # Try to extract useful URL from known types
         if [ -n "${{ github.event.head_commit.url }}" ]; then
           EVENT_URL="${{ github.event.head_commit.url }}"
         elif [ -n "${{ github.event.pull_request.html_url }}" ]; then
@@ -47,9 +44,9 @@ jobs:
           EVENT_URL="${{ github.event.discussion.html_url }}"
         fi
 
-        MSG="🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 View on GitHub](${EVENT_URL})"
+        MSG=$(echo -e "🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 View on GitHub](${EVENT_URL})")
 
         curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
-          -d text="${MSG}" \
+          -d text="$MSG" \
           -d parse_mode=Markdown || echo "❌ Failed to send Telegram message"
