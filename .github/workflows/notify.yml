@@ -23,28 +23,66 @@ jobs:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-        EVENT_NAME="$GITHUB_EVENT_NAME"
+        EVENT_NAME="${{ github.event_name }}"
         ACTION="${{ github.event.action }}"
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
 
+        # Base URL fallback
         EVENT_URL="https://github.com/${REPO}"
 
-        if [ -n "${{ github.event.head_commit.url }}" ]; then
-          EVENT_URL="${{ github.event.head_commit.url }}"
-        elif [ -n "${{ github.event.pull_request.html_url }}" ]; then
-          EVENT_URL="${{ github.event.pull_request.html_url }}"
-        elif [ -n "${{ github.event.issue.html_url }}" ]; then
-          EVENT_URL="${{ github.event.issue.html_url }}"
-        elif [ -n "${{ github.event.comment.html_url }}" ]; then
-          EVENT_URL="${{ github.event.comment.html_url }}"
-        elif [ -n "${{ github.event.release.html_url }}" ]; then
-          EVENT_URL="${{ github.event.release.html_url }}"
-        elif [ -n "${{ github.event.discussion.html_url }}" ]; then
-          EVENT_URL="${{ github.event.discussion.html_url }}"
+        # For push event, show commit url and file changes
+        if [ "$EVENT_NAME" = "push" ]; then
+          # Grab last commit info
+          COMMIT_ID="${{ github.event.head_commit.id }}"
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          COMMIT_AUTHOR="${{ github.event.head_commit.author.name }}"
+
+          EVENT_URL="$COMMIT_URL"
+
+          # Collect added, removed, modified files for last commit
+          ADDED_FILES="${{ toJson(github.event.head_commit.added) }}"
+          REMOVED_FILES="${{ toJson(github.event.head_commit.removed) }}"
+          MODIFIED_FILES="${{ toJson(github.event.head_commit.modified) }}"
+
+          # Format file lists to human-readable strings (strip JSON brackets/quotes)
+          format_files() {
+            echo "$1" | sed 's/[][]//g' | sed 's/"//g' | sed 's/,/, /g'
+          }
+
+          ADDED=$(format_files "$ADDED_FILES")
+          REMOVED=$(format_files "$REMOVED_FILES")
+          MODIFIED=$(format_files "$MODIFIED_FILES")
+
+          DETAILS="*Commit message:* $COMMIT_MSG\n*Author:* $COMMIT_AUTHOR\n"
+
+          if [ -n "$ADDED" ]; then
+            DETAILS="$DETAILS\n*Added files:* $ADDED"
+          fi
+          if [ -n "$REMOVED" ]; then
+            DETAILS="$DETAILS\n*Removed files:* $REMOVED"
+          fi
+          if [ -n "$MODIFIED" ]; then
+            DETAILS="$DETAILS\n*Modified files:* $MODIFIED"
+          fi
+        else
+          # For other events fallback URL logic
+          if [ -n "${{ github.event.pull_request.html_url }}" ]; then
+            EVENT_URL="${{ github.event.pull_request.html_url }}"
+          elif [ -n "${{ github.event.issue.html_url }}" ]; then
+            EVENT_URL="${{ github.event.issue.html_url }}"
+          elif [ -n "${{ github.event.comment.html_url }}" ]; then
+            EVENT_URL="${{ github.event.comment.html_url }}"
+          elif [ -n "${{ github.event.release.html_url }}" ]; then
+            EVENT_URL="${{ github.event.release.html_url }}"
+          elif [ -n "${{ github.event.discussion.html_url }}" ]; then
+            EVENT_URL="${{ github.event.discussion.html_url }}"
+          fi
+          DETAILS=""
         fi
 
-        MSG=$(echo -e "🚀 *GitHub Action Report*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 View on GitHub](${EVENT_URL})")
+        MSG=$(echo -e "🚀 *GitHub Action Report*\n\n*Event:* $EVENT_NAME\n*Action:* $ACTION\n*Repo:* $REPO\n*By:* $ACTOR\n\n$DETAILS\n[🔗 View on GitHub]($EVENT_URL)")
 
         curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
