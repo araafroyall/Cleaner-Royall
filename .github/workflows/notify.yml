@@ -24,17 +24,25 @@ jobs:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-        sanitize_markdown() {
+        escape_md2() {
           echo "$1" | sed \
-            -e 's/&/\&amp;/g' \
-            -e 's/</\&lt;/g' \
-            -e 's/>/\&gt;/g' \
             -e 's/_/\\_/g' \
             -e 's/\*/\\*/g' \
             -e 's//\/g' \
             -e 's//\/g' \
             -e 's/(/\/g' \
-            -e 's/)/\/g'
+            -e 's/)/\/g' \
+            -e 's/~//g' \
+            -e 's/`/\\`/g' \
+            -e 's/>/\\>/g' \
+            -e 's/#/\\#/g' \
+            -e 's/\+/\\+/g' \
+            -e 's/-/\\-/g' \
+            -e 's/=//g' \
+            -e 's/\|/\\|/g' \
+            -e 's/{/\\{/g' \
+            -e 's/}/\\}/g' \
+            -e 's/./&/g'
         }
 
         EVENT_NAME="${{ github.event_name }}"
@@ -42,11 +50,9 @@ jobs:
         ACTOR="${{ github.actor }}"
         REPO="${{ github.repository }}"
 
-        # Default URL fallback
         EVENT_URL="https://github.com/${REPO}"
 
-        # Push event commit details
-        if [ "${EVENT_NAME}" = "push" ]; then
+        if [ "$EVENT_NAME" = "push" ]; then
           EVENT_URL="${{ github.event.head_commit.url }}"
           COMMIT_MSG_RAW="${{ github.event.head_commit.message }}"
           COMMIT_AUTHOR_RAW="${{ github.event.head_commit.author.name }}"
@@ -55,39 +61,32 @@ jobs:
           FILES_REMOVED_RAW="${{ github.event.head_commit.removed }}"
         fi
 
-        # Pull request URL
-        if [ "${EVENT_NAME}" = "pull_request" ]; then
+        if [ "$EVENT_NAME" = "pull_request" ]; then
           EVENT_URL="${{ github.event.pull_request.html_url }}"
         fi
 
-        # Issues URL
-        if [ "${EVENT_NAME}" = "issues" ]; then
+        if [ "$EVENT_NAME" = "issues" ]; then
           EVENT_URL="${{ github.event.issue.html_url }}"
         fi
 
-        # Issue comment URL
-        if [ "${EVENT_NAME}" = "issue_comment" ]; then
+        if [ "$EVENT_NAME" = "issue_comment" ]; then
           EVENT_URL="${{ github.event.comment.html_url }}"
         fi
 
-        # Release URL
-        if [ "${EVENT_NAME}" = "release" ]; then
+        if [ "$EVENT_NAME" = "release" ]; then
           EVENT_URL="${{ github.event.release.html_url }}"
         fi
 
-        # Discussion comment URL
-        if [ "${EVENT_NAME}" = "discussion_comment" ]; then
+        if [ "$EVENT_NAME" = "discussion_comment" ]; then
           EVENT_URL="${{ github.event.discussion.html_url }}"
         fi
 
-        # Sanitize all dynamic fields
-        SAFE_ACTOR=$(sanitize_markdown "$ACTOR")
-        SAFE_REPO=$(sanitize_markdown "$REPO")
-        SAFE_ACTION=$(sanitize_markdown "$ACTION")
-        SAFE_COMMIT_MSG=$(sanitize_markdown "$COMMIT_MSG_RAW")
-        SAFE_COMMIT_AUTHOR=$(sanitize_markdown "$COMMIT_AUTHOR_RAW")
+        SAFE_ACTOR=$(escape_md2 "$ACTOR")
+        SAFE_REPO=$(escape_md2 "$REPO")
+        SAFE_ACTION=$(escape_md2 "$ACTION")
+        SAFE_COMMIT_MSG=$(escape_md2 "$COMMIT_MSG_RAW")
+        SAFE_COMMIT_AUTHOR=$(escape_md2 "$COMMIT_AUTHOR_RAW")
 
-        # Prepare file lists for push event, show "None" if empty
         list_files() {
           if [ -z "$1" ] || [ "$1" = "null" ]; then
             echo "None"
@@ -100,14 +99,13 @@ jobs:
         FILES_MODIFIED=$(list_files "$FILES_MODIFIED_RAW")
         FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
 
-        # Compose message
         MSG="🚀 *GitHub Action Report*\n\n"
         MSG+="*Event:* ${EVENT_NAME}\n"
         MSG+="*Action:* ${SAFE_ACTION}\n"
         MSG+="*Repo:* ${SAFE_REPO}\n"
         MSG+="*By:* ${SAFE_ACTOR}\n"
 
-        if [ "${EVENT_NAME}" = "push" ]; then
+        if [ "$EVENT_NAME" = "push" ]; then
           MSG+="*Commit message:* ${SAFE_COMMIT_MSG}\n"
           MSG+="*Author:* ${SAFE_COMMIT_AUTHOR}\n"
           MSG+="*Added files:*\n${FILES_ADDED}\n"
@@ -117,8 +115,7 @@ jobs:
 
         MSG+="\n[🔗 View on GitHub](${EVENT_URL})"
 
-        # Send Telegram message
-        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
+        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
           -d chat_id="${TELEGRAM_CHAT_ID}" \
           -d text="${MSG}" \
-          -d parse_mode=Markdown || echo "❌ Failed to send Telegram message"
+          -d parse_mode=MarkdownV2 || echo "❌ Failed to send Telegram message"
