@@ -1,27 +1,39 @@
-name: Telegram Notification
+name: GitHub to Telegram Notifications
 
 on:
   push:
   pull_request:
   issues:
+  issue_comment:
   release:
+  create:
+  delete:
+  discussions:
+  discussion_comment:
+  workflow_dispatch:
+  repository_dispatch:
+  fork:
+  star:
+  watch:
 
 jobs:
   notify:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Send Telegram Message
+    - name: Send Telegram Notification
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        MESSAGE: |
-          🔔 GitHub Action Triggered
-          Repo: ${{ github.repository }}
-          Event: ${{ github.event_name }}
-          Actor: ${{ github.actor }}
-          Commit: ${{ github.sha }}
-          Branch: ${{ github.ref_name }}
       run: |
-        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage \
-        -d chat_id="${TELEGRAM_CHAT_ID}" \
-        -d text="$MESSAGE"
+        EVENT_NAME="${{ github.event_name }}"
+        ACTOR="${{ github.actor }}"
+        REPO="${{ github.repository }}"
+        ACTION="${{ github.event.action }}"
+        URL="https://github.com/${REPO}"
+        MSG="🚀 *GitHub Event Triggered*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 Open Repo](${URL})"
+
+        curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
+        -d chat_id="$TELEGRAM_CHAT_ID" \
+        -d text="$MSG" \
+        -d parse_mode=Markdown
