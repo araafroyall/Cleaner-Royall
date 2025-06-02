@@ -1,95 +1,109 @@
 name: GitHub to Telegram Notifications
 
-on: push: pull_request: issues: issue_comment: release: create: delete: discussion_comment: workflow_dispatch: repository_dispatch: fork: watch:
+on:
+  push:
+  pull_request:
+  issues:
+  issue_comment:
+  release:
+  create:
+  delete:
+  discussion_comment:
+  workflow_dispatch:
+  repository_dispatch:
+  fork:
+  watch:
 
-jobs: notify: runs-on: ubuntu-latest
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Notification
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          escape_md2() {
+            echo "$1" | sed \
+              -e 's/\\/\\\\/g' \
+              -e 's/_/\\_/g' \
+              -e 's/\*/\\*/g' \
+              -e 's/\[/\\[/g' \
+              -e 's/\]/\\]/g' \
+              -e 's/(/\\(/g' \
+              -e 's/)/\\)/g' \
+              -e 's/~/\\~/g' \
+              -e 's/`/\\`/g' \
+              -e 's/>/\\>/g' \
+              -e 's/#/\\#/g' \
+              -e 's/\+/\\+/g' \
+              -e 's/-/\\-/g' \
+              -e 's/=/\\=/g' \
+              -e 's/|/\\|/g' \
+              -e 's/{/\\{/g' \
+              -e 's/}/\\}/g' \
+              -e 's/\./\\./g' \
+              -e 's/!/\\!/g'
+          }
 
-steps:
-  - name: Send Telegram Notification
-    env:
-      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-    run: |
-      escape_md2() {
-        echo "$1" | sed \
-          -e 's/\\/\\\\/g' \
-          -e 's/_/\\_/g' \
-          -e 's/\*/\\*/g' \
-          -e 's//\/g' \
-          -e 's//\/g' \
-          -e 's/(\/g' \
-          -e 's/)/\/g' \
-          -e 's/~\\/\\~/g' \
-          -e 's/`/\\`/g' \
-          -e 's/>/\\>/g' \
-          -e 's/#/\\#/g' \
-          -e 's/\+/\\+/g' \
-          -e 's/-/\\-/g' \
-          -e 's/=/\\=/g' \
-          -e 's/|/\\|/g' \
-          -e 's/{/\\{/g' \
-          -e 's/}/\\}/g' \
-          -e 's/\./\\./g' \
-          -e 's/!/\\!/g'
-      }
+          EVENT_NAME="${{ github.event_name }}"
+          ACTION="${{ github.event.action }}"
+          ACTOR="${{ github.actor }}"
+          REPO="${{ github.repository }}"
+          EVENT_URL="https://github.com/${REPO}"
 
-      EVENT_NAME="${{ github.event_name }}"
-      ACTION="${{ github.event.action }}"
-      ACTOR="${{ github.actor }}"
-      REPO="${{ github.repository }}"
-      EVENT_URL="https://github.com/${REPO}"
+          SAFE_ACTOR=$(escape_md2 "$ACTOR")
+          SAFE_REPO=$(escape_md2 "$REPO")
+          SAFE_ACTION=$(escape_md2 "$ACTION")
+          SAFE_EVENT_NAME=$(escape_md2 "$EVENT_NAME")
 
-      SAFE_ACTOR=$(escape_md2 "$ACTOR")
-      SAFE_REPO=$(escape_md2 "$REPO")
-      SAFE_ACTION=$(escape_md2 "$ACTION")
+          MSG="🚀 *GitHub Action Report*"$'\n'
+          MSG+="*Event:* ${SAFE_EVENT_NAME}"$'\n'
+          MSG+="*Action:* ${SAFE_ACTION}"$'\n'
+          MSG+="*Repo:* ${SAFE_REPO}"$'\n'
+          MSG+="*By:* ${SAFE_ACTOR}"$'\n'
 
-      MSG="🚀 *GitHub Action Report*\n"
-      MSG+="\n*Event:* ${EVENT_NAME}"
-      MSG+="\n*Action:* ${SAFE_ACTION}"
-      MSG+="\n*Repo:* ${SAFE_REPO}"
-      MSG+="\n*By:* ${SAFE_ACTOR}"
+          if [ "$EVENT_NAME" = "push" ]; then
+            COMMIT_MSG_RAW="${{ github.event.head_commit.message }}"
+            COMMIT_AUTHOR_RAW="${{ github.event.head_commit.author.name }}"
+            FILES_ADDED_RAW="${{ toJson(github.event.head_commit.added) }}"
+            FILES_MODIFIED_RAW="${{ toJson(github.event.head_commit.modified) }}"
+            FILES_REMOVED_RAW="${{ toJson(github.event.head_commit.removed) }}"
+            EVENT_URL="${{ github.event.head_commit.url }}"
 
-      if [ "$EVENT_NAME" = "push" ]; then
-        COMMIT_MSG_RAW="${{ github.event.head_commit.message }}"
-        COMMIT_AUTHOR_RAW="${{ github.event.head_commit.author.name }}"
-        FILES_ADDED_RAW="${{ toJson(github.event.head_commit.added) }}"
-        FILES_MODIFIED_RAW="${{ toJson(github.event.head_commit.modified) }}"
-        FILES_REMOVED_RAW="${{ toJson(github.event.head_commit.removed) }}"
-        EVENT_URL="${{ github.event.head_commit.url }}"
+            SAFE_COMMIT_MSG=$(escape_md2 "$COMMIT_MSG_RAW")
+            SAFE_COMMIT_AUTHOR=$(escape_md2 "$COMMIT_AUTHOR_RAW")
 
-        SAFE_COMMIT_MSG=$(escape_md2 "$COMMIT_MSG_RAW")
-        SAFE_COMMIT_AUTHOR=$(escape_md2 "$COMMIT_AUTHOR_RAW")
+            list_files() {
+              if [ -z "$1" ] || [ "$1" = "[]" ]; then
+                echo "None"
+              else
+                echo "$1" | jq -r '.[]' | while read -r line; do
+                  echo "- $(escape_md2 "$line")"
+                done
+              fi
+            }
 
-        list_files() {
-          if [ -z "$1" ] || [ "$1" = "[]" ]; then
-            echo "None"
-          else
-            echo "$1" | jq -r '.[]' | sed 's/^/- /'
+            FILES_ADDED=$(list_files "$FILES_ADDED_RAW")
+            FILES_MODIFIED=$(list_files "$FILES_MODIFIED_RAW")
+            FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
+
+            MSG+="*Commit message:* ${SAFE_COMMIT_MSG}"$'\n'
+            MSG+="*Author:* ${SAFE_COMMIT_AUTHOR}"$'\n'
+            MSG+="*Added files:*\n${FILES_ADDED}"$'\n'
+            MSG+="*Modified files:*\n${FILES_MODIFIED}"$'\n'
+            MSG+="*Removed files:*\n${FILES_REMOVED}"$'\n'
           fi
-        }
 
-        FILES_ADDED=$(list_files "$FILES_ADDED_RAW")
-        FILES_MODIFIED=$(list_files "$FILES_MODIFIED_RAW")
-        FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
+          MSG+=$'\n'"[🔗 View on GitHub](${EVENT_URL})"
 
-        MSG+="\n*Commit message:* ${SAFE_COMMIT_MSG}"
-        MSG+="\n*Author:* ${SAFE_COMMIT_AUTHOR}"
-        MSG+="\n*Added files:*\n${FILES_ADDED}"
-        MSG+="\n*Modified files:*\n${FILES_MODIFIED}"
-        MSG+="\n*Removed files:*\n${FILES_REMOVED}"
-      fi
+          RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode text="$MSG" \
+            -d parse_mode=MarkdownV2)
 
-      MSG+="\n\n[🔗 View on GitHub](${EVENT_URL})"
-
-      RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
-        -d chat_id="${TELEGRAM_CHAT_ID}" \
-        -d text="$MSG" \
-        -d parse_mode=MarkdownV2)
-
-      echo "Telegram response: $RESPONSE"
-
-      if echo "$RESPONSE" | grep -q '"ok":false'; then
-        echo "❌ Telegram API error detected, failing the job."
-        exit 1
-      fi
-
+          echo "Telegram response: $RESPONSE"
+          if echo "$RESPONSE" | grep -q '"ok":false'; then
+            echo "❌ Telegram API error detected, failing the job."
+            exit 1
+          fi
