@@ -31,7 +31,21 @@ jobs:
         URL="https://github.com/${REPO}"
         MSG="🚀 *GitHub Event Triggered*\n\n*Event:* ${EVENT_NAME}\n*Action:* ${ACTION}\n*Repo:* ${REPO}\n*By:* ${ACTOR}\n\n[🔗 Open Repo](${URL})"
 
-        curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
-        -d chat_id="$TELEGRAM_CHAT_ID" \
-        -d text="$MSG" \
-        -d parse_mode=Markdown
+        echo "Sending message to chat_id: $TELEGRAM_CHAT_ID"
+        echo "Message content:"
+        echo "$MSG"
+
+        RESPONSE=$(curl -s -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage \
+          -d chat_id="$TELEGRAM_CHAT_ID" \
+          -d text="$MSG" \
+          -d parse_mode=Markdown)
+
+        echo "Telegram API response:"
+        echo "$RESPONSE"
+
+        # Fail if Telegram API returns ok: false
+        OK=$(echo "$RESPONSE" | grep -o '"ok":true')
+        if [ -z "$OK" ]; then
+          echo "❌ Telegram API call failed!"
+          exit 1
+        fi
