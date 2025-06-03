@@ -56,7 +56,7 @@ jobs:
           SAFE_EVENT_NAME=$(escape_md2 "$EVENT_NAME")
           EVENT_URL="https://github.com/${REPO}"
 
-          MSG="     *GitHub Action Report*"$'\n'
+          MSG="*GitHub Action Report*"$'\n'
           MSG+="*Event:* ${SAFE_EVENT_NAME}"$'\n'
           MSG+="*Action:* ${SAFE_ACTION}"$'\n'
           MSG+="*Repo:* ${SAFE_REPO}"$'\n'
