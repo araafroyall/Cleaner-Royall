@@ -60,7 +60,6 @@ jobs:
           MSG+="*Event:* ${SAFE_EVENT_NAME}"$'\n'
           MSG+="*Action:* ${SAFE_ACTION}"$'\n'
           MSG+="*Repo:* ${SAFE_REPO}"$'\n'
-          MSG+="*By:* ${SAFE_ACTOR}"$'\n'
 
           # Push
           if [ "$EVENT_NAME" = "push" ]; then
@@ -86,9 +85,6 @@ jobs:
             FILES_REMOVED=$(list_files "$FILES_REMOVED_RAW")
             MSG+="*Commit message:* ${SAFE_COMMIT_MSG}"$'\n'
             MSG+="*Author:* ${SAFE_COMMIT_AUTHOR}"$'\n'
-            MSG+="*Added files:*${FILES_ADDED}"$'\n'
-            MSG+="*Modified files:*${FILES_MODIFIED}"$'\n'
-            MSG+="*Removed files:*${FILES_REMOVED}"$'\n'
           fi
 
           # Issues
