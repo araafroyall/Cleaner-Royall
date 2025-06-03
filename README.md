@@ -19,8 +19,7 @@
 
 [![Xposed Module](https://img.shields.io/badge/Xposed%20Module-✓-green.svg)]()
 [![Magisk Module](https://img.shields.io/badge/Magisk%20Module-✓-green.svg)]()
-[![Event Updates to Tg](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml)
-
+[![Events Update to Tg](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml)
 
 
 
