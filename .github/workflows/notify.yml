@@ -205,8 +205,9 @@ jobs:
             -d parse_mode=MarkdownV2 \
             -d disable_web_page_preview=true)
 
-          echo "Telegram response: $RESPONSE"
-          if echo "$RESPONSE" | grep -q '"ok":false'; then
-            echo "❌ Telegram API error detected, failing the job."
+if echo "$RESPONSE" | grep -q '"ok":false'; then
+            echo "❌ Failed to send Telegram notification."
             exit 1
+          else
+            echo "✅ Telegram notification sent successfully."
           fi
