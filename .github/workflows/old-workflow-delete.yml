@@ -1,0 +1,28 @@
+name: Delete Old Workflow Runs
+
+on:
+  schedule:
+    - cron: '0 17 * * *'   # Daily at 5 PM UTC
+  workflow_dispatch:
+
+jobs:
+  delete-old-runs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete old workflow runs
+        id: delete_runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          retain_days: 0
+          keep_minimum_runs: 10
+
+      - name: Notify on Telegram
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+          -d chat_id="${TELEGRAM_CHAT_ID}" \
+          -d text="✅ All old workflow runs have been deleted (except the latest 10)."
