@@ -205,9 +205,10 @@ jobs:
             -d parse_mode=MarkdownV2 \
             -d disable_web_page_preview=true)
 
-if echo "$RESPONSE" | grep -q '"ok":false'; then
-            echo "❌ Failed to send Telegram notification."
-            exit 1
-          else
-            echo "✅ Telegram notification sent successfully."
-          fi
+echo "$RESPONSE" | grep -q '"ok":false'
+if [ $? -eq 0 ]; then
+  echo "❌ Failed to send Telegram notification."
+  exit 1
+else
+  echo "✅ Telegram notification sent successfully."
+fi
