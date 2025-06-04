@@ -63,9 +63,6 @@ def main():
 
         msg += f"*Commit message:* {safe_commit_msg}\n"
         msg += f"*Author:* {safe_commit_author}\n"
-        msg += f"*Files added:*\n{files_added}\n"
-        msg += f"*Files modified:*\n{files_modified}\n"
-        msg += f"*Files removed:*\n{files_removed}\n"
 
     # Issues
     if event_name == "issues":
