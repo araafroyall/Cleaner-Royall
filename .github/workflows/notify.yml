@@ -194,7 +194,7 @@ jobs:
 
           # Watch (star)
           if [[ "$EVENT_NAME" == "watch" ]]; then
-            MSG+="Repository starred!"$'\n'
+            MSG+="Repository starred"$'\n'
           fi
 
           MSG+=$'\n'"[🔗 View on GitHub](${EVENT_URL})"
