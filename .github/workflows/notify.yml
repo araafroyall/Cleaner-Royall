@@ -1,7 +1,18 @@
 name: Notify Telegram on Push
 
-on: 
+on:
   push:
+  pull_request:
+  issues:
+  issue_comment:
+  release:
+  create:
+  delete:
+  discussion_comment:
+  workflow_dispatch:
+  repository_dispatch:
+  fork:
+  watch:
 
 jobs:
   notify:
