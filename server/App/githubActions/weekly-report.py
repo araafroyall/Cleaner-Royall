@@ -1,5 +1,5 @@
-from datetime import datetime, timedelta
 import requests
+import json
 import os
 
 def escape_md2(text):
@@ -30,19 +30,13 @@ def main():
     forks = data.get("forks_count", 0)
     watchers = data.get("subscribers_count", 0)
 
-    since = (datetime.utcnow() - timedelta(days=7)).isoformat() + "Z"
-    commits_url = f"https://api.github.com/repos/{repo}/commits?since={since}"
-    commits_data = requests.get(commits_url, headers=headers).json()
-    commits_count = len(commits_data) if isinstance(commits_data, list) else 0
-
     msg = "*Cleaner Royall Repo Weekly Summary*\n\n"
     msg += f"\\- ⭐ Stars: {escape_md2(str(stars))}\n"
     msg += f"\\- 🍴 Forks: {escape_md2(str(forks))}\n"
     msg += f"\\- 👀 Watchers: {escape_md2(str(watchers))}\n"
     msg += f"\\- 🐞 Open issues: {escape_md2(str(open_issues))}\n"
     msg += f"\\- ✅ Closed issues: {escape_md2(str(closed_issues))}\n"
-    msg += f"\\- 💾 Repo size: {escape_md2(str(size))} KB\n"
-    msg += f"\\- Last 7 days commits: {escape_md2(str(commits_count))}"
+    msg += f"\\- 💾 Repo size: {escape_md2(str(size))} KB"
 
     res = requests.post(
         f"https://api.telegram.org/bot{tg_token}/sendMessage",
