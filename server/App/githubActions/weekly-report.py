@@ -9,6 +9,19 @@ def escape_md2(text):
         text = text.replace(c, f'\\{c}')
     return text
 
+def get_all_commits(repo, headers, since):
+    page = 1
+    all_commits = []
+    while True:
+        url = f"https://api.github.com/repos/{repo}/commits?since={since}&per_page=100&page={page}"
+        res = requests.get(url, headers=headers)
+        data = res.json()
+        if not isinstance(data, list) or not data:
+            break
+        all_commits.extend(data)
+        page += 1
+    return all_commits
+
 def main():
     repo = os.getenv("REPO")
     token = os.getenv("GITHUB_TOKEN")
@@ -31,14 +44,11 @@ def main():
         headers=headers
     ).json().get("total_count", 0)
 
-    # Get commits from last 7 days
+    # Get commits from last 7 days (with pagination)
     since = (datetime.utcnow() - timedelta(days=7)).isoformat() + 'Z'
-    commits_url = f"https://api.github.com/repos/{repo}/commits?since={since}"
-    commits = requests.get(commits_url, headers=headers).json()
-    recent_commits = len(commits) if isinstance(commits, list) else 0
+    commits = get_all_commits(repo, headers, since)
+    recent_commits = len(commits)
 
-
-    # Get current UTC date
     now = datetime.utcnow().strftime("%Y-%m-%d")
 
     msg = "*Weekly Summary of Github Repo*\n"
