@@ -37,7 +37,21 @@ def main():
     commits = requests.get(commits_url, headers=headers).json()
     recent_commits = len(commits) if isinstance(commits, list) else 0
 
-    # Get current UTC time
+    # Calculate total files added and deleted in last 7 days
+    added_files = 0
+    deleted_files = 0
+
+    if isinstance(commits, list):
+        for commit in commits:
+            sha = commit.get("sha")
+            if sha:
+                commit_detail = requests.get(f"https://api.github.com/repos/{repo}/commits/{sha}", headers=headers).json()
+                files = commit_detail.get("files", [])
+                for f in files:
+                    added_files += f.get("additions", 0)
+                    deleted_files += f.get("deletions", 0)
+
+    # Get current UTC date
     now = datetime.utcnow().strftime("%Y-%m-%d")
 
     msg = "*Weekly Summary of Github Repo*\n"
@@ -47,6 +61,8 @@ def main():
     msg += f"\\- Open issues : {escape_md2(str(open_issues))}\n"
     msg += f"\\- Closed issues : {escape_md2(str(closed_issues))}\n"
     msg += f"\\- Commits last 7 days : {escape_md2(str(recent_commits))}\n"
+    msg += f"\\- Files added last 7 days : {escape_md2(str(added_files))}\n"
+    msg += f"\\- Files deleted last 7 days : {escape_md2(str(deleted_files))}\n"
     msg += f"\\- Repo size : {escape_md2(str(size_mb))} MB\n"
     msg += f"\\- Report generated : {escape_md2(now)}"
 
