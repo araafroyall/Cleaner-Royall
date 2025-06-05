@@ -40,7 +40,7 @@ def main():
     # Get current UTC time
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-    msg = "*Cleaner Royall Repo Weekly Summary*\n\n"
+    msg = "*Weekly Summary of Github Repo*\n"
     msg += f"\\- Stars: {escape_md2(str(stars))}\n"
     msg += f"\\- Forks: {escape_md2(str(forks))}\n"
     msg += f"\\- Watchers : {escape_md2(str(watchers))}\n"
