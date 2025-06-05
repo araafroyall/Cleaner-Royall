@@ -31,12 +31,12 @@ def main():
     watchers = data.get("subscribers_count", 0)
 
     msg = "*Cleaner Royall Repo Weekly Summary*\n\n"
-    msg += f"\\- ⭐ Stars: {escape_md2(str(stars))}\n"
-    msg += f"\\- 🍴 Forks: {escape_md2(str(forks))}\n"
-    msg += f"\\- 👀 Watchers: {escape_md2(str(watchers))}\n"
-    msg += f"\\- 🐞 Open issues: {escape_md2(str(open_issues))}\n"
-    msg += f"\\- ✅ Closed issues: {escape_md2(str(closed_issues))}\n"
-    msg += f"\\- 💾 Repo size: {escape_md2(str(size))} KB"
+    msg += f"\\- Stars: {escape_md2(str(stars))}\n"
+    msg += f"\\- Forks: {escape_md2(str(forks))}\n"
+    msg += f"\\- Watchers : {escape_md2(str(watchers))}\n"
+    msg += f"\\- Open issues : {escape_md2(str(open_issues))}\n"
+    msg += f"\\- Closed issues : {escape_md2(str(closed_issues))}\n"
+    msg += f"\\- Repo size : {escape_md2(str(size))} KB"
 
     res = requests.post(
         f"https://api.telegram.org/bot{tg_token}/sendMessage",
