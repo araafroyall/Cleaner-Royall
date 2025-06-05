@@ -38,7 +38,7 @@ def main():
     recent_commits = len(commits) if isinstance(commits, list) else 0
 
     # Get current UTC time
-    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    now = datetime.utcnow().strftime("%Y-%m-%d")
 
     msg = "*Weekly Summary of Github Repo*\n"
     msg += f"\\- Stars: {escape_md2(str(stars))}\n"
