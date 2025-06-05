@@ -21,10 +21,12 @@ def main():
     open_issues = data.get("open_issues_count", 0)
     stars = data.get("stargazers_count", 0)
     size = data.get("size", 0)
+
     closed_issues = requests.get(
         f"https://api.github.com/search/issues?q=repo:{repo}+is:issue+is:closed",
         headers=headers
     ).json().get("total_count", 0)
+
     forks = data.get("forks_count", 0)
     watchers = data.get("subscribers_count", 0)
 
@@ -34,13 +36,13 @@ def main():
     commits_count = len(commits_data) if isinstance(commits_data, list) else 0
 
     msg = "*Cleaner Royall Repo Weekly Summary*\n\n"
-    msg += f"- Stars : {escape_md2(str(stars))}\n"
-    msg += f"- Forks : {escape_md2(str(forks))}\n"
-    msg += f"- Watchers : {escape_md2(str(watchers))}\n"
-    msg += f"- Open issues : {escape_md2(str(open_issues))}\n"
-    msg += f"- Closed issues : {escape_md2(str(closed_issues))}\n"
-    msg += f"- Repo size : {escape_md2(str(size))} KB\n"
-    msg += f"- Last 7 days commits : {escape_md2(str(commits_count))}"
+    msg += f"\\- ⭐ Stars: {escape_md2(str(stars))}\n"
+    msg += f"\\- 🍴 Forks: {escape_md2(str(forks))}\n"
+    msg += f"\\- 👀 Watchers: {escape_md2(str(watchers))}\n"
+    msg += f"\\- 🐞 Open issues: {escape_md2(str(open_issues))}\n"
+    msg += f"\\- ✅ Closed issues: {escape_md2(str(closed_issues))}\n"
+    msg += f"\\- 💾 Repo size: {escape_md2(str(size))} KB\n"
+    msg += f"\\- Last 7 days commits: {escape_md2(str(commits_count))}"
 
     res = requests.post(
         f"https://api.telegram.org/bot{tg_token}/sendMessage",
