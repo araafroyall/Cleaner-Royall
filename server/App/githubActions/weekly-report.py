@@ -1,10 +1,11 @@
 import requests
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 def escape_md2(text):
     escape_chars = r'_*[]()~`>#+-=|{}.!'
+    text = text.replace('-', r'\-')
     for c in escape_chars:
         text = text.replace(c, f'\\{c}')
     return text
@@ -30,7 +31,7 @@ def main():
         headers=headers
     ).json().get("total_count", 0)
 
-    since = (datetime.utcnow() - timedelta(days=7)).isoformat() + "Z"
+    since = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     commits = requests.get(
         f"https://api.github.com/repos/{repo}/commits?since={since}",
         headers=headers
@@ -38,7 +39,6 @@ def main():
 
     commit_count = len(commits)
 
-    # Count commits per author
     authors = {}
     for commit in commits:
         author = commit.get("commit", {}).get("author", {}).get("name", "Unknown")
