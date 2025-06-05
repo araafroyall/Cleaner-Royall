@@ -45,4 +45,4 @@ jobs:
           if [ $deleted -lt 0 ]; then deleted=0; fi
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="$deleted old workflow runs have been deleted (except the latest 5 for each workflow)."
+            -d text="$deleted old workflow runs have been deleted automatically from github Repo"
