@@ -28,4 +28,4 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python3 server/App/githubActions/notify.py
+        run: python3 .github/scripts/notify.py
