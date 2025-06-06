@@ -1,0 +1,28 @@
+name: Send Source ZIP
+
+on:
+  schedule:
+    - cron: '0 12 * * 6'  # every Saturday at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  send-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run ZIP sender
+        env:
+          REPO: araafroyall/Cleaner-Royall
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 .github/scripts/source-zip-sender-weekly.py
