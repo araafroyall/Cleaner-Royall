@@ -26,4 +26,4 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           REPO: araafroyall/Cleaner-Royall
-        run: python3 server/App/githubActions/weekly-report.py
+        run: python3 .github/scripts/weekly-report.py
