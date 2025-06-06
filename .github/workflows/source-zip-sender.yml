@@ -1,4 +1,4 @@
-name: Send Source ZIP
+name: Send Source ZIP weekly
 
 on:
   schedule:
