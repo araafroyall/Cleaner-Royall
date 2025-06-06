@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REPO: your-username/your-repo
+      REPO: araafroyall/Cleaner-Royall
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
