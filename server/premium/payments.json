@@ -1,6 +1,9 @@
 {
   "paypal": "1",
   "price": "4$",
+  "evm": "0x517ab4a275620b4ff684de05a996f17d2b042fe7",
+  "ton": "UQCsuUYdcXU6MDW4ZPbxNHYxXLlXRzcl85kggOXrgbvPdmPW",
+  "near": "araafroyall.tg",
   "ppweb": "https://www.paypal.me/araafroyalls",
   "ppuser": "@araafroyalls",
   "ppgmail": "araaafroyalls@gmail.com",
@@ -9,5 +12,6 @@
   "trx": "TKpN2dRgKN89NhaSyAfncFfv13vPJ319Fy",
   "binance": "1",
   "buid": "178261749",
-  "bgmail": "araafroyall@gmail.com"
+  "bgmail": "araafroyall@gmail.com",
+  "tgpost": "https://t.me/CleanerRoyall/170"
 }
