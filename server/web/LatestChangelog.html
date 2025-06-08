@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cleaner Royall Latest Changelog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1fdfd;
+      color: #222;
+      padding-bottom: 40px;
+    }
+    header {
+      background-color: #008080;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 1.8em;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+    .section {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section h2 {
+      color: #008080;
+      margin-bottom: 12px;
+    }
+    pre {
+      font-family: inherit;
+      font-size: 1em;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #333;
+    }
+    @media screen and (max-width: 600px) {
+      header {
+        padding: 18px 12px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      .section {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cleaner Royall – Latest Changelog</h1>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Changelog v4.4</h2>
+      <pre id="latest-changelog">Loading latest changelog...</pre>
+    </div>
+  </main>
+
+  <script>
+    fetch('https://raw.githubusercontent.com/araafroyall/Cleaner-Royall/main/server/changelog/Latest_Changelog')
+      .then(response => {
+        if (!response.ok) throw new Error("Changelog not found.");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('latest-changelog').textContent = data;
+      })
+      .catch(error => {
+        document.getElementById('latest-changelog').textContent = "❌ Failed to load changelog.\n" + error;
+      });
+  </script>
+
+</body>
+</html>
