@@ -1,1 +1,5 @@
-Under maintenance 
+- Removed /data/resource-cache  , it was causing some issue on some devices
+- Resource-Cache cleaner is now available in Dynamic Shell for those who still wants to use it.
+- Please Re-enable Cache Cleaner option in Module section [Must]
+- Fix : Crash Error in some devices 
+- More Changelog items , Please check in app
