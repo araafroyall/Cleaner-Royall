@@ -1,0 +1,10 @@
+{
+    "status": "1",
+    "prm": "0",
+    "enc": "0",
+    "title": "Reset Trial",
+    "msg": "Under Maintainance , will be enabled soon within 24 hour",
+    "info": "Under Maintainance , will be enabled soon within 24 hour",
+    "contributor": "Araaf Royall",
+    "cmd": "echo Under Maintainance"
+}
