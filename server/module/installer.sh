@@ -201,7 +201,7 @@ while [ ! -f $MODDIR/disable ]; do
     
     [ -f $MODDIR/disable ] && break
 
-    chmod a+x $DATAP/* > /dev/null 2>&1
+    find "$DATAP" -type f -name "*.sh" -exec chmod +x {} \;
 
     while IFS= read -r script; do
         [ -z "$script" ] && continue
