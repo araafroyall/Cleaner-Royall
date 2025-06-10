@@ -1,0 +1,14 @@
+  - Fix Sign Problem
+  - SpeedUp Enhanced Cache Cleaner
+  - Fix Telegram group link in Premium Forum
+  - Fix The lag issue in Cache Trimmer
+  - All Cleaner option in custom cleaner Activity 
+  - Fix Minor bugs & Improvements 
+  - Auto cleaning Module version Updated to v2.5
+  - Initial RAM Booster Support
+  - Fix Xposed Related Problems 
+
+ Xposed Module Integration 
+  - Clears All types of Cache of Scoped Apps when they launch or started.
+  - Xposed Framework Initial Support
+  
