@@ -10,11 +10,14 @@ jobs:
     steps:
       - name: 📤 Send to ntfy.sh
         run: |
-          TITLE="${{ github.event.issue.title }}"
-          BODY="${{ github.event.issue.body }}"
+          echo "🔧 Preparing ntfy message..."
+
+          TITLE=$(echo "${{ github.event.issue.title }}" | sed 's/"/\\"/g')
+          BODY=$(echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g')
           LABELS=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | paste -sd ',' -)
 
-          TEXT=$(printf "🆕 New Issue\n🔖 %s\n🏷️ %s\n📝 %s" "$TITLE" "$LABELS" "$BODY")
+          MESSAGE="🆕 New Issue\n🔖 $TITLE\n🏷️ $LABELS\n📝 $BODY"
 
-          curl -d "$TEXT" \
-            "https://ntfy.sh/${{ secrets.FEEDBACK_KEY }}"
+          curl -H "Content-Type: text/plain" \
+               -d "$MESSAGE" \
+               "https://ntfy.sh/${{ secrets.FEEDBACK_KEY }}"
