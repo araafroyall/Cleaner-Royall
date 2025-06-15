@@ -1,4 +1,4 @@
-name: 📬 Send Issue Feedback to ntfy
+name: 📬 Notify Issue via ntfy.sh
 
 on:
   issues:
@@ -9,15 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📤 Send to ntfy.sh
-        env:
-          NTFY_KEY: ${{ secrets.FEEDBACK_KEY }}
         run: |
           TITLE="${{ github.event.issue.title }}"
           BODY="${{ github.event.issue.body }}"
-          LABELS="$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | paste -sd ',')"
+          LABELS=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | paste -sd ',' -)
 
-          TEXT="🆕 New Issue Created\n🔖 Title: $TITLE\n🏷️ Labels: $LABELS\n📝 $BODY"
+          TEXT=$(printf "🆕 New Issue\n🔖 %s\n🏷️ %s\n📝 %s" "$TITLE" "$LABELS" "$BODY")
 
-          curl -u "feedback:$NTFY_KEY" \
-            -d "$TEXT" \
-            https://ntfy.sh/sampleRoyall
+          curl -d "$TEXT" \
+            "https://ntfy.sh/${{ secrets.FEEDBACK_KEY }}"
