@@ -1,4 +1,4 @@
-name: 📬 Notify Issue via ntfy.sh
+name: 📬 Notify via ntfy.sh
 
 on:
   issues:
@@ -8,16 +8,15 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: 📤 Send to ntfy.sh
+      - name: 📤 Clean send to ntfy.sh
         run: |
-          echo "🔧 Preparing ntfy message..."
-
-          TITLE=$(echo "${{ github.event.issue.title }}" | sed 's/"/\\"/g')
-          BODY=$(echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g')
           LABELS=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | paste -sd ',' -)
 
-          MESSAGE="🆕 New Issue\n🔖 $TITLE\n🏷️ $LABELS\n📝 $BODY"
-
-          curl -H "Content-Type: text/plain" \
-               -d "$MESSAGE" \
-               "https://ntfy.sh/${{ secrets.FEEDBACK_KEY }}"
+          printf "🆕 New Issue\n🔖 %s\n🏷️ %s\n📝 %s" \
+            "${{ github.event.issue.title }}" \
+            "$LABELS" \
+            "${{ github.event.issue.body }}" \
+          | iconv -c -t utf-8 \
+          | curl -H "Content-Type: text/plain" \
+                 --data-binary @- \
+                 "https://ntfy.sh/${{ secrets.FEEDBACK_KEY }}"
