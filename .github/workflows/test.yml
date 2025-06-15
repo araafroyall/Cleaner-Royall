@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📤 Clean send to ntfy.sh
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABELS_JSON: ${{ toJson(github.event.issue.labels) }}
         run: |
-          ISSUE_NUMBER="${{ github.event.issue.number || github.event.number }}"
-          ISSUE_TITLE="${{ github.event.issue.title || 'No Title' }}"
-          ISSUE_BODY="${{ github.event.issue.body || 'No Body' }}"
-          LABELS=$(echo '${{ toJson(github.event.issue.labels || []) }}' | jq -r '.[].name' | paste -sd ',' -)
-
+          LABELS=$(echo "$LABELS_JSON" | jq -r '.[].name' | paste -sd ',' - 2>/dev/null || echo "None")
+          
           printf "🆕 New Issue #%s\n🔖 %s\n🏷️ %s\n📝 %s" \
-            "$ISSUE_NUMBER" \
-            "$ISSUE_TITLE" \
+            "${NUMBER:-Manual Trigger}" \
+            "${TITLE:-(no title)}" \
             "$LABELS" \
-            "$ISSUE_BODY" \
+            "${BODY:-(no body)}" \
           | iconv -c -t utf-8 \
           | curl -H "Content-Type: text/plain" \
                  --data-binary @- \
