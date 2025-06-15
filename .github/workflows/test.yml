@@ -3,6 +3,7 @@ name: 📬 Notify via ntfy.sh
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
 
 jobs:
   notify:
@@ -10,12 +11,16 @@ jobs:
     steps:
       - name: 📤 Clean send to ntfy.sh
         run: |
-          LABELS=$(echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name' | paste -sd ',' -)
+          ISSUE_NUMBER="${{ github.event.issue.number || github.event.number }}"
+          ISSUE_TITLE="${{ github.event.issue.title || 'No Title' }}"
+          ISSUE_BODY="${{ github.event.issue.body || 'No Body' }}"
+          LABELS=$(echo '${{ toJson(github.event.issue.labels || []) }}' | jq -r '.[].name' | paste -sd ',' -)
 
-          printf "🆕 New Issue\n🔖 %s\n🏷️ %s\n📝 %s" \
-            "${{ github.event.issue.title }}" \
+          printf "🆕 New Issue #%s\n🔖 %s\n🏷️ %s\n📝 %s" \
+            "$ISSUE_NUMBER" \
+            "$ISSUE_TITLE" \
             "$LABELS" \
-            "${{ github.event.issue.body }}" \
+            "$ISSUE_BODY" \
           | iconv -c -t utf-8 \
           | curl -H "Content-Type: text/plain" \
                  --data-binary @- \
