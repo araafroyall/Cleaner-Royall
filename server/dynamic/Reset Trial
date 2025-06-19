@@ -1,10 +1,10 @@
 {
     "status": "1",
     "prm": "0",
-    "enc": "0",
+    "enc": "1",
     "title": "Reset Trial",
-    "msg": "Under Maintainance , will be enabled soon within 24 hour",
-    "info": "Under Maintainance , will be enabled soon within 24 hour",
+    "msg": "It helps you to Reset Your Free trial for upto 52 days.\nYou can use this option only once.",
+    "info": "This option allows you to reset your free trial and enjoy full access again for up to 52 app launches or 52 days, whichever limit the app uses. It simulates a fresh trial period as if you’re opening the app for the first time. This can be useful when your original trial has expired but you need more time to explore the features. However, the reset can only be used once to ensure fair use. ",
     "contributor": "Araaf Royall",
-    "cmd": "echo Under Maintainance"
+    "cmd": "$IVPD5FGlqAzHjWwu7g8VZkcs6\/gLL44Shmvm4wHKn8nW03rOxhbKrOZijWzZWnZuAqMx6rS3tP3F+U\nxGt8+R\/yKh4rZF\/GYeQj8\/X\/wQX9oQyII\/m3FsRT02sjWQV3ppXCOUUjAxANj0Z3Mfw7T4fSr75v\nLS0S88LwqSLXyO0Do\/36qjYGIMGlG\/0q5y7Jb64fWQXF3gV5NkAo0lq47F2Mi5p6unrIAN0RP6tG\n28oq8CbaOfOAuAa\/Ewnkx0ULimTNPmc6olnihYEAcfaVEju3gECcJ4npo726q3pEt6GBmhleUwyw\nylZB+lAvZib+6L4JasxB49GSURfDxuYxb+99h4JXM0lZl3kpiyO+PBf+\/bos12pNidDopNc8Dhfw\n7GGkMX\/8+XHcNLfxQxuJWYXf32nu35wU\/e1uj154CK8nYRWDfcfdE5nr6aJBxpsDioPn+P7HQcsn\nqb0+ofkyK+U6uj0e8+ZkX7tvh+tSU49overrPOr1ke0aU13ql0n\/QcKWCOxiD19UsCYpw5dWZ4zw\ncStp973hXr9ncgGRXnemcG0="
 }
