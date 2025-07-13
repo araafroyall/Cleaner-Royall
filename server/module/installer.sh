@@ -86,7 +86,7 @@ fi
 logg "Starting From Boot"
 
 if ! pm list packages | grep -q "Cleaner.Royall"; then
-    rm -rf "/data/adb/modules/CleanerRoyall"
+#    rm -rf "/data/adb/modules/CleanerRoyall"
     exit 1
 fi
 
@@ -151,7 +151,7 @@ DURATION="$MODDIR/xdata/duration.txt"
 RUNN="$DATAP/scripts.txt"
 
 if ! pm list packages | grep -q "Cleaner.Royall"; then
-    rm -rf "/data/adb/modules/CleanerRoyall"
+#    rm -rf "/data/adb/modules/CleanerRoyall"
     exit 1
 fi
 
@@ -247,4 +247,3 @@ chmod -R a+w "$MDK" 2>/dev/null
 echo "Module Installation Sucess."
 
 echo "Now you can complete other setup"
-
