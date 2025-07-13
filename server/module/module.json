@@ -1,5 +1,5 @@
 {
-    "version": "2.5",
+    "version": "2.6",
     "status": "1",
-    "Changelog": "Cleaning Notification Posted in logs\nFix Permission of Patches & Module\nFix Installation on some devices\nDisable module earlier when set to disable & prevents further 1 extra cleaning"
+    "Changelog": "Fix : Auto Remove of Module while using APatch\nCleaning Notification Posted in logs\nFix Permission of Patches & Module\nFix Installation on some devices\nDisable module earlier when set to disable & prevents further 1 extra cleaning"
 }
