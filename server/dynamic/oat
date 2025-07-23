@@ -1,3 +1,0 @@
-rm -rvf /data/app/*/*/oat
-rm -rvf /data/app/*/oat
-echo "Sucessfully Cleared oat of all Apps"
