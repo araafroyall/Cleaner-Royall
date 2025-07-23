@@ -1,10 +1,11 @@
 {
     "status": "1",
-    "msg": "It can clean Package and graphics cache from \/data",
-    "title": "Package & Graphics Cache",
-    "contributor": "Araaf Royall",
-    "info": "It can clean the Package and graphics cache from \/data",
     "prm": "0",
     "enc": "0",
-    "cmd": "\nrm -rvf \/data\/system\/package_cache\nrm -rvf \/data\/system\/graphicsstats\nmount -o remount,rw \/data >\/dev\/null 2>&1\nmkdir -p \/data\/system\/graphicsstats >\/dev\/null 2>&1\nmkdir -p \/data\/system\/package_cache >\/dev\/null 2>&1\n"
+    "title": "Package & Graphics Cache",
+    "msg": "It can clean Package and graphics cache from \/data",
+    "info": "It can clean the Package and graphics cache from \/data with full output",
+    "contributor": "Araaf Royall",
+    "cmd": "\nrm -rvf \/data\/system\/package_cache\/*\nrm -rvf \/data\/system\/graphicsstats\/*\n\nmount -o remount,rw \/data >\/dev\/null 2>&1\nmkdir -p \/data\/system\/graphicsstats >\/dev\/null 2>&1\nmkdir -p \/data\/system\/package_cache >\/dev\/null 2>&1\n",
+    "pid": "#Admin"
 }
