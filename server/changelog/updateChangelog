@@ -1,5 +1,8 @@
-- Removed /data/resource-cache  , it was causing some issue on some devices
-- Resource-Cache cleaner is now available in Dynamic Shell for those who still wants to use it.
-- Please Re-enable Cache Cleaner option in Module section [Must]
-- Fix : Crash Error in some devices 
-- More Changelog items , Please check in app
+   - This is Small Update with some bugs Fixed
+   - Stream Closed Error now show exact error output
+   - Increased maximum cleaning time to 30 seconds ( if exceed, try to clean remain waste again).
+   - Fix : Crash Report Sender
+   - Fix : Online Cleaner Premium Detection
+   - Fix : Dalvik Cache option from one tap
+   - Fix : Minor Text in Dynamic Action
+   - Fix : Minor Texts & Improvements
