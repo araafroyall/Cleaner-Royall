@@ -1,0 +1,33 @@
+#!/system/bin/sh
+
+mount -o remount,rw /data >/dev/null 2>&1
+
+tmpf="/data/local/tmp/royall_cleaner.sh"
+
+cat <<EOF > "$tmpf"
+#!/system/bin/sh
+rm -rf /data/*/*.tmp
+rm -rf /data/*/*.temp
+rm -rf /data/*/*.tempfile
+
+rm -rf /data/*/*/*.tmp
+rm -rf /data/*/*/*.temp
+rm -rf /data/*/*/*.tempfile
+
+rm -rf /data/*/*/*/*.tmp
+rm -rf /data/*/*/*/*.temp
+rm -rf /data/*/*/*/*.tempfile
+
+rm -rf /data/*/*/*/*/*.tmp
+rm -rf /data/*/*/*/*/*.temp
+rm -rf /data/*/*/*/*/*.tempfile
+
+find /data -type f -name "*.tmp" -delete
+find /data -type f -name "*.temp" -delete
+find /data -type f -name "*.tempfile" -delete
+EOF
+
+chmod 700 "$tmpf"
+su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Background Cleaning has been Started.'"
+nohup sh "$tmpf" >/dev/null 2>&1 &
+echo test
