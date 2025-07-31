@@ -25,9 +25,15 @@ rm -rf /data/*/*/*/*/*.tempfile
 find /data -type f -name "*.tmp" -delete
 find /data -type f -name "*.temp" -delete
 find /data -type f -name "*.tempfile" -delete
+
+sleep 2
+
+su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Trash Background Cleaning has been Completed.'"
+
 EOF
 
 chmod 700 "$tmpf"
-su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Background Cleaning has been Started.'"
+su 2000 -c "cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Trash Background Cleaning has been Started, Please Allow upto 2-3 minutes.'"
 nohup sh "$tmpf" >/dev/null 2>&1 &
-echo test
+echo " " 
+# end of script.
