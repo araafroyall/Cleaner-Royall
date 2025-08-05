@@ -90,10 +90,12 @@
       <label for="b">Blue</label>
       <input type="range" id="b" min="0" max="255" value="1">
     </div>
-    <div id="hexCode">#FFFFFFFF</div>
+    <div id="hexCode">#010101</div>
     <button onclick="copyHex()">Copy Hex Code</button>
     <div class="footer">This feature is Provided by Araaf Royall ❂</div>
-  </div>  <script>
+  </div>
+
+  <script>
     const r = document.getElementById('r');
     const g = document.getElementById('g');
     const b = document.getElementById('b');
@@ -110,8 +112,8 @@
       const green = parseInt(g.value);
       const blue = parseInt(b.value);
 
-      const hex = '#' + [red, green, blue, alpha].map(toHex).join('').toUpperCase();
-      preview.style.backgroundColor = `rgba(${red}, ${green}, ${blue})`;
+      const hex = '#' + [red, green, blue].map(toHex).join('').toUpperCase();
+      preview.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
       hexCode.textContent = hex;
     }
 
@@ -120,10 +122,9 @@
       alert('Copied to Clipboard : ' + hexCode.textContent);
     }
 
-    r.addEventListener('input', updateColor);
-    g.addEventListener('input', updateColor);
-    b.addEventListener('input', updateColor);
+    [r, g, b].forEach(input => input.addEventListener('input', updateColor));
 
     updateColor();
-  </script></body>
+  </script>
+</body>
 </html>
