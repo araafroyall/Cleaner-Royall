@@ -86,7 +86,6 @@
     <div class="title">Color Picker</div>
     <div class="subtitle">Swipe the sliders to change color</div>
     <div id="colorPreview"></div>
-    <div id="gradientBox"></div>
 
     <div class="slider-group">
       <label for="r">Red <span id="rVal">1</span></label>
@@ -135,7 +134,6 @@
       bVal.textContent = blue;
 
       preview.style.backgroundColor = rgb;
-      gradientBox.style.background = `linear-gradient(to right, ${rgb}, #000)`;
 
       hexCode.textContent = '#' + hex;
     }
