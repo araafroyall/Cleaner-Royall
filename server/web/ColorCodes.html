@@ -101,7 +101,6 @@
     const r = document.getElementById('r');
     const g = document.getElementById('g');
     const b = document.getElementById('b');
-    const a = document.getElementById('a');
     const hexCode = document.getElementById('hexCode');
     const preview = document.getElementById('colorPreview');
 
@@ -114,10 +113,9 @@
       const red = parseInt(r.value);
       const green = parseInt(g.value);
       const blue = parseInt(b.value);
-      const alpha = parseInt(a.value);
 
       const hex = '#' + [red, green, blue, alpha].map(toHex).join('').toUpperCase();
-      preview.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${alpha / 255})`;
+      preview.style.backgroundColor = `rgba(${red}, ${green}, ${blue})`;
       hexCode.textContent = hex;
     }
 
@@ -129,7 +127,6 @@
     r.addEventListener('input', updateColor);
     g.addEventListener('input', updateColor);
     b.addEventListener('input', updateColor);
-    a.addEventListener('input', updateColor);
 
     updateColor();
   </script></body>
