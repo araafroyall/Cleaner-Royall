@@ -37,7 +37,8 @@
       margin-bottom: 20px;
     }
     label {
-      display: block;
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 5px;
       font-weight: bold;
     }
@@ -48,12 +49,26 @@
       width: 100%;
       height: 100px;
       border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    #gradientBox {
+      width: 100%;
+      height: 30px;
+      border-radius: 5px;
       margin-bottom: 20px;
     }
     #hexCode {
       font-size: 18px;
       text-align: center;
       margin-bottom: 10px;
+      cursor: pointer;
+    }
+    select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
     button {
       background: teal;
@@ -78,20 +93,28 @@
     <div class="title">Color Picker</div>
     <div class="subtitle">Swipe the sliders to change color</div>
     <div id="colorPreview"></div>
+    <div id="gradientBox"></div>
+
     <div class="slider-group">
-      <label for="r">Red</label>
+      <label for="r">Red <span id="rVal">1</span></label>
       <input type="range" id="r" min="0" max="255" value="1">
     </div>
     <div class="slider-group">
-      <label for="g">Green</label>
+      <label for="g">Green <span id="gVal">1</span></label>
       <input type="range" id="g" min="0" max="255" value="1">
     </div>
     <div class="slider-group">
-      <label for="b">Blue</label>
+      <label for="b">Blue <span id="bVal">1</span></label>
       <input type="range" id="b" min="0" max="255" value="1">
     </div>
-    <div id="hexCode">#010101</div>
-    <button onclick="copyHex()">Copy Hex Code</button>
+
+    <select id="format">
+      <option value="hex">HEX</option>
+      <option value="rgb">RGB</option>
+    </select>
+
+    <div id="hexCode" onclick="copyHex()">#010101</div>
+    <button onclick="copyHex()">Copy Color Code</button>
     <div class="footer">This feature is Provided by Araaf Royall ❂</div>
   </div>
 
@@ -99,8 +122,13 @@
     const r = document.getElementById('r');
     const g = document.getElementById('g');
     const b = document.getElementById('b');
+    const rVal = document.getElementById('rVal');
+    const gVal = document.getElementById('gVal');
+    const bVal = document.getElementById('bVal');
+    const format = document.getElementById('format');
     const hexCode = document.getElementById('hexCode');
     const preview = document.getElementById('colorPreview');
+    const gradientBox = document.getElementById('gradientBox');
 
     function toHex(value) {
       const hex = value.toString(16);
@@ -113,16 +141,45 @@
       const blue = parseInt(b.value);
 
       const hex = [red, green, blue].map(toHex).join('').toUpperCase();
-      preview.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      const rgb = `rgb(${red}, ${green}, ${blue})`;
+
+      rVal.textContent = red;
+      gVal.textContent = green;
+      bVal.textContent = blue;
+
+      preview.style.backgroundColor = rgb;
+      gradientBox.style.background = `linear-gradient(to right, ${rgb}, #000)`;
+
       hexCode.textContent = '#' + hex;
     }
 
     function copyHex() {
-      navigator.clipboard.writeText(hexCode.textContent.slice(1));
-      alert('Copied to Clipboard : ' + hexCode.textContent);
+      const formatType = format.value;
+      const red = parseInt(r.value);
+      const green = parseInt(g.value);
+      const blue = parseInt(b.value);
+
+      const hex = [red, green, blue].map(toHex).join('').toUpperCase();
+      const rgb = `rgb(${red}, ${green}, ${blue})`;
+
+      const text = formatType === 'hex' ? hex : rgb;
+      navigator.clipboard.writeText(text);
+
+      const msg = document.createElement('div');
+      msg.textContent = 'Copied!';
+      msg.style.position = 'fixed';
+      msg.style.bottom = '20px';
+      msg.style.background = 'black';
+      msg.style.color = 'white';
+      msg.style.padding = '8px 16px';
+      msg.style.borderRadius = '10px';
+      msg.style.opacity = '0.9';
+      msg.style.zIndex = '9999';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 1200);
     }
 
-    [r, g, b].forEach(input => input.addEventListener('input', updateColor));
+    [r, g, b, format].forEach(input => input.addEventListener('input', updateColor));
 
     updateColor();
   </script>
