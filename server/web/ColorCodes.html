@@ -112,7 +112,7 @@
       const green = parseInt(g.value);
       const blue = parseInt(b.value);
 
-      const hex = '#' + [red, green, blue].map(toHex).join('').toUpperCase();
+      const hex = [red, green, blue].map(toHex).join('').toUpperCase();
       preview.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
       hexCode.textContent = hex;
     }
