@@ -118,7 +118,7 @@
     }
 
     function copyHex() {
-      navigator.clipboard.writeText(hexCode.textContent);
+      navigator.clipboard.writeText(hexCode.textContent.slice(1));
       alert('Copied to Clipboard : ' + hexCode.textContent);
     }
 
