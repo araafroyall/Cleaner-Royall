@@ -57,5 +57,10 @@ Gmail : AraafRoyall@gmail.com
 •••••••••••••••••••••••••••••••••••
 
 
+# For Developers (as source code)
+
+- Only Structural codes are open source
+- The Core codes like cleaning mechanism, scripts and premium stuff is not allowed to modify in anyway 
+
 
 
