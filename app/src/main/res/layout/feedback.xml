@@ -1,0 +1,188 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/header"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginRight="10dp"
+		android:padding="8dp"
+		android:orientation="horizontal">
+		<ImageView
+			android:id="@+id/imageview1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/header"
+			android:scaleType="center"
+			android:layout_gravity="center_horizontal|center_vertical" />
+		<TextView
+			android:id="@+id/textview1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="𝐘𝐨𝐮 𝐂𝐚𝐧 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐅𝐞𝐞𝐝𝐛𝐚𝐜𝐤 , 𝐑𝐞𝐩𝐨𝐫𝐭 𝐁𝐮𝐠𝐬 , 𝐒𝐮𝐠𝐠𝐞𝐬𝐭𝐢𝐨𝐧𝐬 𝐚𝐧𝐝 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬."
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<TextView
+		android:id="@+id/textview2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="20dp"
+		android:padding="8dp"
+		android:text="👨‍💻 𝘄𝗵𝗮𝘁 𝗱𝗼 𝘆𝗼𝘂 𝘄𝗮𝗻𝘁 \?"
+		android:textSize="14sp"
+		android:textColor="#000000" />
+	<LinearLayout
+		android:id="@+id/linear2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:orientation="horizontal">
+		<RadioButton
+			android:id="@+id/bugrep"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="7dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="Bug Report"
+			android:textSize="14sp"
+			android:textColor="#D500F9" />
+		<RadioButton
+			android:id="@+id/feed"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="7dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="Feedback Or Suggestion"
+			android:textSize="14sp"
+			android:textColor="#D500F9" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:orientation="horizontal">
+		<RadioButton
+			android:id="@+id/featurere"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Request a Feature"
+			android:textSize="14sp"
+			android:textColor="#D500F9" />
+		<RadioButton
+			android:id="@+id/other"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Other"
+			android:textSize="14sp"
+			android:textColor="#D500F9" />
+	</LinearLayout>
+	<TextView
+		android:id="@+id/textview4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="5dp"
+		android:padding="8dp"
+		android:text="🗒️ 𝗙𝗲𝗲𝗱𝗯𝗮𝗰𝗸 𝗳𝗼𝗿𝘂𝗺"
+		android:textSize="14sp"
+		android:textColor="#000000" />
+	<EditText
+		android:id="@+id/headline"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:layout_marginRight="25dp"
+		android:padding="8dp"
+		android:textSize="12sp"
+		android:textColor="#000000"
+		android:hint="Write Headline Here"
+		android:textColorHint="#607D8B"
+		android:lines="1" />
+	<EditText
+		android:id="@+id/details"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginRight="25dp"
+		android:padding="8dp"
+		android:textSize="12sp"
+		android:textColor="#000000"
+		android:hint="Explain in Detail here... You can also mention comment (if any)"
+		android:textColorHint="#607D8B"
+		android:lines="4" />
+	<EditText
+		android:id="@+id/gmail"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginRight="25dp"
+		android:padding="8dp"
+		android:textSize="12sp"
+		android:textColor="#000000"
+		android:hint="Enter Your Gmail or Telegram Username"
+		android:textColorHint="#607D8B"
+		android:lines="1" />
+	<Button
+		android:id="@+id/submit"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="30dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginRight="30dp"
+		android:layout_marginBottom="5dp"
+		android:background="#B9F6CA"
+		android:gravity="center_horizontal|center_vertical"
+		android:text="📤 𝗦𝘂𝗯𝗺𝗶𝘁"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		android:textColor="#000000"
+		android:layout_gravity="center_horizontal|center_vertical" />
+	<LinearLayout
+		android:id="@+id/tg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="30dp"
+		android:orientation="horizontal">
+		<ImageView
+			android:id="@+id/imageview2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp"
+			android:src="@drawable/telegram"
+			android:scaleType="center"
+			android:layout_gravity="center_horizontal|center_vertical" />
+		<TextView
+			android:id="@+id/textview5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Telegram Group"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<TextView
+		android:id="@+id/submissions"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="5dp"
+		android:padding="8dp"
+		android:text="🧿 Your Submissions"
+		android:textSize="12sp"
+		android:textColor="#000000" />
+</LinearLayout>

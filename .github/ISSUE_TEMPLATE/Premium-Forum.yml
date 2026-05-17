@@ -1,0 +1,80 @@
+name: "Premium Forum"
+description: Fill & Submit this Forum to get Premium Acess
+title: "Premium Acess"
+labels: ["Activation Acess"
+]
+assignees:
+  - araafroyall
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please Don't Change the Title. 
+  - type: markdown
+    attributes:
+      value: |
+        Fill This Forum , Wait for Review , Get Your Premium Acess , For Any Help [Contact Developer](https://t.me/AraafRoyall)
+
+
+  - type: dropdown
+    id: method
+    attributes:
+      label: "🪙 Payment Method"
+      description: Select Your Payment Method
+      multiple: true
+      options:
+        - Paypal
+        - Telegram Stars
+        - Crypto or BTC or Binance
+        - Others
+    validations:
+      required: true
+
+
+  - type: input
+    attributes:
+      label: 💸 Transaction id or Hash
+    validations:
+      required: true
+
+
+
+  - type: input
+    id: stringid
+    attributes:
+      label: "📟 String from Cleaner Royall App"
+      description: Paste String text here, you can find this in Cleaner Royall app at premium activity page, [Example](https://graph.org/Copy-String-11-19)
+      placeholder: Paste String here...
+    validations:
+      required: true
+
+
+  - type: input
+    id: cnts
+    attributes:
+      label: "📟 UserID From Cleaner Royall App"
+      description: Enter the 8 digit User Id from Cleaner Royall app (given in premium page)
+      placeholder: Enter here ... 
+    validations:
+      required: true
+
+
+
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Comment or Extra Information"
+      description: Optionally , Write comment or any extra thing which you want to share or tell us.
+      placeholder: you may also attach payment screenshots here or anything which you want to tell
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Click 'Create' button given below or in last to Submit this forum
+
+
+

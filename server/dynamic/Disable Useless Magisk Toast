@@ -1,0 +1,10 @@
+{
+    "status": "1",
+    "prm": "0",
+    "enc": "0",
+    "title": "Disable Useless Magisk Tost",
+    "msg": "Disable \"Cleaner Royall was Granted Superuser Rights\" useless magisk Toast for this App Only\nAlso Disables Logs for it.\n\n+ Disabling it can solve some blink issues",
+    "info": "This option is currently not available for KernalSU.\nThis option does same work as from Magisk Manager.\n\nIt is recommended to Disable that toast notification if you use any app locker for magisk ",
+    "contributor": "Araaf Royall",
+    "cmd": "#!\/bin\/sh\n\nuid=$(dumpsys package Cleaner.Royall | grep userId | grep -oE '[0-9]+')\n\nif ! command -v magisk > \/dev\/null; then\n  echo \"This option is only for Magisk Users , Ignore if you have other root solutions\"\n  exit 1\nfi\n\n\nmagisk --sqlite \"UPDATE policies SET notification = 0 WHERE uid = $uid;\"\n\nmagisk --sqlite \"UPDATE policies SET logging = 0 WHERE uid = $uid;\"\n"
+}

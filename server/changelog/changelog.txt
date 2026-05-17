@@ -1,0 +1,2 @@
+@Deprecated 
+Please use in-app Changelog viewer

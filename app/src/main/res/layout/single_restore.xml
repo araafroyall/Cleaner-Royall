@@ -1,0 +1,120 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/textview1"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="25dp"
+			android:padding="8dp"
+			android:text="𝗩𝗲𝗿𝘀𝗶𝗼𝗻 : "
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/ver"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/textview2"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="25dp"
+			android:padding="8dp"
+			android:text="𝗖𝗼𝗺𝗺𝗲𝗻𝘁 : "
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/cmt"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="3dp"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/textview5"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="25dp"
+			android:padding="8dp"
+			android:text="𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿𝗶𝗲𝘀 : "
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<HorizontalScrollView
+			android:id="@+id/hscroll1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:id="@+id/bkp"
+				android:focusable="false"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="TextView"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+		</HorizontalScrollView>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear9"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="3dp"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/textview8"
+			android:focusable="false"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="25dp"
+			android:padding="8dp"
+			android:text="𝗦𝗹𝗼𝘁 : "
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<HorizontalScrollView
+			android:id="@+id/hscroll2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:id="@+id/slot"
+				android:focusable="false"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="TextView"
+				android:textSize="12sp"
+				android:textColor="#000000" />
+		</HorizontalScrollView>
+	</LinearLayout>
+</LinearLayout>

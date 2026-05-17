@@ -1,0 +1,8 @@
+{
+    "id": "96158",
+    "title": "LuckyPatcher Modified Apps",
+    "description": "It can Clear the modified apk file in lucky patcher directory",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Android\/data\/*\/files\/LuckyPatcher\/Modified"
+}

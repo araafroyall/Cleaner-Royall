@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaner Royall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981; /* teal */
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #0f172a;
+      border-bottom: 1px solid #1f2937;
+    }
+    header img {
+      height: 44px;
+    }
+    header h1 {
+      margin-left: 10px;
+      color: var(--primary);
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .buttons a {
+      text-decoration: none;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+    .buttons a:hover {
+      background-color: #0d9488;
+    }
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .section h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background-color: var(--card);
+      border: 1px solid #334155;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .card h4 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid #334155;
+      color: var(--muted);
+    }
+    .info-table td:first-child {
+      font-weight: bold;
+      color: var(--text);
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/NewIcon.png" alt="Icon">
+      <h1>Cleaner Royall</h1>
+    </div>
+  </header>  <section class="hero">
+    <h2>A Most Powerful Cleaner For Android</h2>
+    <p>The Complete Cleaning Solution of Cleaning for Android with powerful auto cleaning systemless module & Xposed/LsPosed Framework powered. Cleans Almost All Chunk, Cache & Logs.</p>
+    <div class="buttons">
+      <a href="https://github.com/araafroyall/cleaner-royall" target="_blank">GitHub Repo</a>
+      <a href="https://github.com/araafroyall/cleaner-royall#features" target="_blank">Features</a>
+      <a href="https://github.com/araafroyall/cleaner-royall#modules" target="_blank">Download</a>
+      <a href="https://github.com/araafroyall/cleaner-royall#changelog" target="_blank">Contact</a>
+      <a href="https://github.com/araafroyall/cleaner-royall#settings" target="_blank">Index</a>
+      <a href="https://t.me/CleanerRoyall" target="_blank">Telegram</a>
+    </div>
+  </section>  <section class="section">
+    <h3>App Information</h3>
+    <table class="info-table">
+      <tr><td>App Name</td><td>Cleaner Royall</td></tr>
+      <tr><td>Package</td><td>Cleaner.Royall</td></tr>
+      <tr><td>Version</td><td>v4.4</td></tr>
+      <tr><td>Last Update</td><td>2025-05-14</td></tr>
+      <tr><td>Minimum SDK</td><td>21+</td></tr>
+      <tr><td>Root Required</td><td>Yes</td></tr>
+    </table>
+  </section>  <section class="section">
+    <h3>Highlights</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Smart Cleaning</h4>
+        <p>Automatically cleans cache, logs, and trash intelligently, reducing manual effort.</p>
+      </div>
+      <div class="card">
+        <h4>Wiper API</h4>
+        <p>Uses native commands and root access to perform deep and safe wipe operations.</p>
+      </div>
+      <div class="card">
+        <h4>Custom Rules</h4>
+        <p>Let users define cleaning filters based on folders, extensions, or file patterns.</p>
+      </div>
+      <div class="card">
+        <h4>Performance Boost</h4>
+        <p>Fstrim support helps improve I/O responsiveness on rooted devices.</p>
+      </div>
+    </div>
+  </section>  <section class="section">
+    <h3>My Suggestions</h3>
+    <ul>
+      <li>Consider adding in-app changelog & settings backup</li>
+      <li>Provide module disable/enable switch for better control</li>
+      <li>Allow user to schedule daily clean or on screen off</li>
+      <li>Make a plugin system for custom shell commands</li>
+    </ul>
+  </section>  <div class="footer">
+    &copy; 2025 Cleaner Royall. Crafted by AraafRoyall.
+  </div>
+</body>
+</html>

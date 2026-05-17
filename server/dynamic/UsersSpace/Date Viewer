@@ -1,0 +1,11 @@
+{
+    "status": "1",
+    "prm": "0",
+    "enc": "0",
+    "title": "Date Viewer",
+    "msg": "A Simple Dynamic Action to view current date details",
+    "info": "A Simple Dynamic Action to view current date details\nJust for Fun",
+    "contributor": "unknown",
+    "cmd": "date",
+    "pid": "#Admin"
+}

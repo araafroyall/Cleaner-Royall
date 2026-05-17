@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Fundraising for Dark Mode</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdfc;
+      color: #073b3a;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 480px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      color: #065f46;
+      margin-bottom: 10px;
+    }
+
+    .goal-info {
+      background: #ccfbf1;
+      border-left: 5px solid #0f766e;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .goal-info h2 {
+      margin: 0 0 5px 0;
+      color: #047857;
+    }
+
+    .progress-container {
+      background-color: #d1fae5;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 16.66%;
+      background-color: #14b8a6;
+      transition: width 0.5s;
+    }
+
+    .support-button {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .support-button a {
+      background-color: #0d9488;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #065f46;
+    }
+
+    .footer small {
+      display: block;
+      margin-top: 8px;
+      color: #0f766e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Cleaner Royall<br>Dark Mode Support</h1>
+      <p>Help us to bring dark mode to Cleaner Royall app</p>
+    </div>
+
+    <div class="goal-info">
+      <h2>Goal : 30$</h2>
+      <p>Raised : <strong>2$</strong></p>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div class="support-button">
+      <a href="https://xyz.page.com" target="_blank">Support Here</a>
+    </div>
+
+    <div class="footer">
+      After the Completion of 30$ Developer will start working on Dark Mode Support <br> Why Need this ? = Bringing Dark mode will take about 1 week to complete + some codes needs to be integrated from external Tools <br> For Any Help , Contact Developer <br>
+      <small><span style="color:#ff0000">This Page Updates every 8 hours</span></small>
+    </div>
+  </div>
+
+  <script>
+    const collected = 2;
+    const goal = 30;
+    const progress = (collected / goal) * 100;
+    document.querySelector('.progress-bar').style.width = progress + '%';
+  </script>
+</body>
+</html>

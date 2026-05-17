@@ -1,0 +1,7 @@
+{
+    "title": "Fonts Folder in $INT",
+    "description": "This folder stores some fonts useless data in Internal Storage",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Fonts"
+}

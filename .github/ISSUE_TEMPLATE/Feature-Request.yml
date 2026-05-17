@@ -1,0 +1,31 @@
+name: "Feature Request"
+description: Suggest New Features.
+title: "‎ "
+labels: [
+  "Feature Request"
+]
+assignees:
+  - araafroyall
+body:
+
+  - type: textarea
+    id: featr
+    attributes:
+      label: "Explain Feature"
+      description: Please Explain in detail which Feature which you want 
+      value: 
+      render: info
+    validations:
+      required: true
+
+
+
+  - type: textarea
+    id: optnal
+    attributes:
+      label: "Comment or Extra Info"
+      description: Please Explain or tell addition information here 
+      placeholder: Optionally you can Attach screenshots , video , etc...
+    validations:
+      required: False
+
