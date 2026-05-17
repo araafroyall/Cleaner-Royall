@@ -1,3 +1,4 @@
+   - fix know bugs
    - This is Small Update with some bugs Fixed
    - Stream Closed Error now show exact error output
    - Increased maximum cleaning time to 30 seconds ( if exceed, try to clean remain waste again).
