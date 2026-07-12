@@ -24,9 +24,9 @@
 
 
 `⚡ Lightweight, Ultra-Fast & Powerful`
-🔒 Privacy First — Zero Data Collection
+`🔒 Privacy First — Zero Data Collection
 🛡️ Root Only — No Additional Permissions
-```🤖 Automatic Cleaning Module Support```
+🤖 Automatic Cleaning Module Support`
 
 
 ## Download
