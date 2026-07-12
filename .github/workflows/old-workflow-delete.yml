@@ -1,0 +1,48 @@
+name: Delete Old Workflow Runs
+
+on:
+  schedule:
+    - cron: '0 17 * * 0'
+  workflow_dispatch:
+
+jobs:
+  delete-old-runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get all workflow runs count before deletion
+        id: count_before
+        env:
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.WORK_FLOW_DELETER }}
+        run: |
+          count=$(curl -s -H "Authorization: Bearer $TOKEN" \
+            "https://api.github.com/repos/$REPO/actions/runs?per_page=1" | jq '.total_count')
+          echo "count=$count" >> $GITHUB_OUTPUT
+
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.WORK_FLOW_DELETER }}
+          retain_days: 0
+          keep_minimum_runs: 0
+
+      - name: Get all workflow runs count after deletion
+        id: count_after
+        env:
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.WORK_FLOW_DELETER }}
+        run: |
+          count=$(curl -s -H "Authorization: Bearer $TOKEN" \
+            "https://api.github.com/repos/$REPO/actions/runs?per_page=1" | jq '.total_count')
+          echo "count=$count" >> $GITHUB_OUTPUT
+
+      - name: Calculate deleted count and notify Telegram
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          deleted=$(( ${{ steps.count_before.outputs.count }} - ${{ steps.count_after.outputs.count }} ))
+          if [ $deleted -lt 0 ]; then deleted=0; fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="$deleted old workflow runs have been deleted automatically from github Repo"

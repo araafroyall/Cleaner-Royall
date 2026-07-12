@@ -1,0 +1,8 @@
+{
+    "id": "08420",
+    "title": "MIUI Bluetooth Waste Folder",
+    "description": "This folder is automatically created in Internal storage when you use bluetooth in Redmi phones",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/com.xiaomi.bluetooth"
+}

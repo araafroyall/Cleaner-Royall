@@ -1,0 +1,43 @@
+name: "Submit Directory"
+description: Submit Missing directories
+title: "Submit Directory"
+labels: ["Directory Submission"
+]
+assignees:
+  - araafroyall
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please Don't Change the Title. & The marked options with * must be filled. 
+  - type: markdown
+    attributes:
+      value: |
+        If you think any directory left from cleaning than you can submit here. we don't support submission of internal storage directory, for this use Custom Cleaner Premium feature. For Any Help [Contact Developer](https://t.me/AraafRoyall)
+  - type: markdown
+    attributes:
+      value: |
+        Please make sure and fill this forum only if you confirmed that a directory is missing & it is not fully guarenteed that your submitted directory will be accepted. On Approval your submitted directory will be implimented in next update.
+
+
+
+
+  - type: textarea
+    id: dirs
+    attributes:
+      label: "Submit Directory"
+      description: Please enter or Paste Directory or multiple directories
+      value: 
+      render: shell
+    validations:
+      required: true
+
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Comment or Extra Information"
+      description: Optionally , Write comment or any extra thing which you want to share or tell us.
+      placeholder: you may also attach payment screenshots here or anything which you want to tell
+    validations:
+      required: false

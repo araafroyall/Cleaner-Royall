@@ -1,0 +1,31 @@
+name: Notify Telegram on Push
+
+on:
+  push:
+  pull_request:
+  issues:
+  issue_comment:
+  release:
+  create:
+  delete:
+  discussion_comment:
+  workflow_dispatch:
+  repository_dispatch:
+  fork:
+  watch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run notify.py script
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 .github/scripts/notify.py

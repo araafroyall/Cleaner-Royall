@@ -1,0 +1,8 @@
+{
+    "id": "29151",
+    "title": "LuckyPatcher Custom Patches",
+    "description": "It Will Clear All Custom Patches Downloaded in Lucky Patcher App",
+    "enc": "0",
+    "status": "1",
+    "cmd": "\/storage\/emulated\/0\/Android\/data\/*\/files\/LuckyPatcher\/CustomPatches"
+}

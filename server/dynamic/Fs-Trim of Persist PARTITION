@@ -1,0 +1,10 @@
+{
+    "status": "1",
+    "title": "FS-Trim Persist Partition",
+    "msg": "FsTrim support for Persist PARTITION for older devices",
+    "contributor": "Araaf Royall",
+    "info": "FsTrim support for Persist PARTITION for older devices",
+    "prm": "0",
+    "enc": "0",
+    "cmd": "Partition=\"\/persist\"\n\nmount -o remount,rw $Partition >\/dev\/null 2>&1\nPath1=\"\/data\/adb\/ksu\/bin\/busybox\"\nPath2=\"\/data\/adb\/magisk\/busybox\"\nPath3=\"\/data\/adb\/ap\/bin\/busybox\"\nFstrimPath=$(which fstrim)\n\nif [ -f $Path1 ]; then\n    $Path1 fstrim -v $Partition\nelif [ -f $Path2 ]; then\n    $Path2 fstrim -v $Partition\nelif [ -f $Path3 ]; then\n    $Path3 fstrim -v $Partition\nelif [ -n \"$FstrimPath\" ]; then\n    $FstrimPath -v $Partition\nelse\n    echo \"fstrim not found\"\nfi\n"
+}

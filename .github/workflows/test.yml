@@ -1,0 +1,31 @@
+name: Wipe Git History
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wipe-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create fresh history
+        run: |
+          git checkout --orphan clean-history
+          git add -A
+          git commit -m "Initial commit"
+
+      - name: Force push
+        run: |
+          git push --force origin clean-history:${{ github.event.repository.default_branch }}
