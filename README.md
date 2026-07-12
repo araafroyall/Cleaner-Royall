@@ -29,6 +29,12 @@
 *  Never Collect Any Data.
 *  Supports Automatic Cleaner Module
 
+## Download
+
+[![Version](https://img.shields.io/github/v/release/araafroyall/Cleaner-Royall?style=for-the-badge&color=22C55E)](https://github.com/araafroyall/Cleaner-Royall/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total?style=for-the-badge)](https://github.com/araafroyall/Cleaner-Royall/releases/latest)
+
+
 ## Requirements 
   - Root (Any Root solution like Magisk)
   - Busybox (Optional)
