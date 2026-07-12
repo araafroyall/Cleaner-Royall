@@ -23,10 +23,10 @@
 [![Systemless](https://img.shields.io/badge/Systemless-✓-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
 
 
-`⚡ Lightweight, Ultra-Fast & Powerful`
-`🔒 Privacy First — Zero Data Collection`
-`🛡️ Root Only — No Additional Permissions`
-`🤖 Automatic Cleaning Module Support`
++ `⚡ Lightweight, Ultra-Fast & Powerful`
++ `🔒 Privacy First — Zero Data Collection`
++ `🛡️ Root Only — No Additional Permissions`
++ `🤖 Automatic Cleaning Module Support`
 
 
 ## Download
