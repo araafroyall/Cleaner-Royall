@@ -19,8 +19,8 @@
 [![Tg-Group](https://img.shields.io/badge/Tg-Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/CleanerRoyalls)
 
 
-[![Xposed](https://img.shields.io/badge/Xposed-✔️-5DBB63?style=for-the-badge&logo=android&logoColor=white)]()
-[![Systemless](https://img.shields.io/badge/Systemless-✔️-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
+[![Xposed](https://img.shields.io/badge/Xposed-✓-5DBB63?style=for-the-badge&logo=android&logoColor=white)]()
+[![Systemless](https://img.shields.io/badge/Systemless-✓-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
 
 
 
