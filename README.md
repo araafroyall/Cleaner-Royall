@@ -19,16 +19,8 @@
 [![Tg-Group](https://img.shields.io/badge/Tg-Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/CleanerRoyalls)
 
 
-<table align="center" border="0" cellspacing="0" cellpadding="0" style="border:none;">
-  <tr style="border:none;">
-    <td style="border:none; padding-right:12px;">
-      <img src="https://raw.githubusercontent.com/araafroyall/Cleaner-Royall/main/assets/XposedModuleStatus.svg" height="36" alt="Xposed Module">
-    </td>
-    <td style="border:none;">
-      <img src="https://raw.githubusercontent.com/araafroyall/Cleaner-Royall/main/assets/SystemlessModuleStatus.svg" height="36" alt="Systemless Module">
-    </td>
-  </tr>
-</table>
+[![Xposed Module](https://img.shields.io/badge/Xposed%20Module-✓-5DBB63?style=for-the-badge)]()
+[![Systemless Module](https://img.shields.io/badge/Systemless%20Module-✓-F9A825?style=for-the-badge)]()
 
 [![Events Update to Tg](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml)
 
