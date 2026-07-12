@@ -33,6 +33,12 @@
 
 [![Version](https://img.shields.io/github/v/release/araafroyall/Cleaner-Royall?style=for-the-badge&color=22C55E)](https://github.com/araafroyall/Cleaner-Royall/releases/latest)
 
+## 📥 Download
+
+The latest APK is available on **GitHub Releases**.
+
+[![Download](https://img.shields.io/github/v/release/araafroyall/Cleaner-Royall?label=Download&style=for-the-badge&color=22C55E)](https://github.com/araafroyall/Cleaner-Royall/releases/latest)
+
 ## Requirements 
   - Root (Any Root solution like Magisk)
   - Busybox (Optional)
