@@ -9,7 +9,7 @@
 
 
 
-𝗧𝗵𝗲 𝗕𝗲𝘀𝘁 𝗖𝗹𝗲𝗮𝗻𝗶𝗻𝗴 𝗔𝗽𝗽 𝗘𝘃𝗲𝗿 𝗠𝗮𝗱𝗲
+**The Most Advanced Cleaner for Android**
 
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total?style=for-the-badge)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
 
@@ -23,10 +23,10 @@
 [![Systemless](https://img.shields.io/badge/Systemless-✓-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
 
 
-+ `⚡ Lightweight, Ultra-Fast & Powerful`
-+ `🔒 Privacy First — Zero Data Collection`
-+ `🛡️ Root Only — No Additional Permissions`
-+ `🤖 Automatic Cleaning Module Support`
++ `⚡ **Lightweight, Ultra-Fast & Powerful**`
++ `🔒 **Privacy First** — Zero Data Collection`
++ `🛡️ **Root Only — No Additional Permissions`
++ `🤖 **Automatic Cleaning Module** Support`
 
 
 ## Download
