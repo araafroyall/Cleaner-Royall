@@ -23,11 +23,11 @@
 [![Systemless](https://img.shields.io/badge/Systemless-✓-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
 
 
+- ⚡ Lightweight, Ultra-Fast & Powerful
+- 🔒 Privacy First — Zero Data Collection
+- 🛡️ Root Only — No Additional Permissions
+- 🤖 Automatic Cleaning Module Support
 
-*  Light weight but Ultra Fast & Powerful
-*  No Permission Required (Except Root)
-*  Never Collect Any Data.
-*  Supports Automatic Cleaner Module
 
 ## Download
 
