@@ -9,7 +9,7 @@
 
 
 
-**The Most Advanced Cleaner for Android**
+> **The Most Advanced Cleaner for Android**
 
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total?style=for-the-badge)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
 
