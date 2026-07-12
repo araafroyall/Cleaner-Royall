@@ -19,8 +19,8 @@
 [![Tg-Group](https://img.shields.io/badge/Tg-Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/CleanerRoyalls)
 
 
-[![Xposed Module](https://img.shields.io/badge/Xposed-Module-5DBB63?style=for-the-badge)]()
-[![Systemless Module](https://img.shields.io/badge/Systemless-Module-F9A825?style=for-the-badge)]()
+[![Xposed](https://img.shields.io/badge/Xposed-Supported-5DBB63?style=for-the-badge)]()
+[![Systemless](https://img.shields.io/badge/Systemless-Supported-F9A825?style=for-the-badge)]()
 
 [![Events Update to Tg](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml)
 
