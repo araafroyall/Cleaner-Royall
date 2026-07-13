@@ -7,7 +7,7 @@
   <strong>The Most Advanced Cleaner for Android</strong>
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2000&pause=100&color=229C43&width=435&lines=Hi+From+AraafRoyall.;Welcome+to+Most+Advanced+Cleaner.;Supports+Auto+Cleaning+Module.;Never+Collect+Any+Data)]()
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2000&pause=100&color=229C43&width=435&lines=Hi+From+AraafRoyall.;Welcome+to+Most+Advanced+Cleaner.;Supports+Auto+Cleaning+Module.;Never+Collect+Any+Data.;Lightweight+but+powerful)]()
 <h2 align="center"></h2>
 
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total?style=for-the-badge)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
