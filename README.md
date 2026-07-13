@@ -8,8 +8,9 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2000&pause=100&color=229C43&width=435&lines=Hi+From+AraafRoyall.;Welcome+to+Most+Advanced+Cleaner.;Supports+Auto+Cleaning+Module.;Never+Collect+Any+Data)]()
 
 
+ **The Most Advanced Cleaner for Android**
 
-> **The Most Advanced Cleaner for Android**
+<span style="color:#22C55E;">The Most Advanced Cleaner for Android</span>
 
 [![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total?style=for-the-badge)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
 
@@ -23,10 +24,10 @@
 [![Systemless](https://img.shields.io/badge/Systemless-✓-F9A825?style=for-the-badge&logo=magisk&logoColor=white)]()
 
 
-+ ⚡ **Lightweight, Ultra-Fast & Powerful**
-+ 🔒 **Privacy First** — Zero Data Collection
-+ 🛡️ **Root Only** — No Additional Permissions
-+ 🤖 **Automatic Cleaning Module** Support
+> ⚡ **Lightweight, Ultra-Fast & Powerful**
+> 🔒 **Privacy First** — Zero Data Collection
+> 🛡️ **Root Only** — No Additional Permissions
+> 🤖 **Automatic Cleaning Module** Support
 
 
 ## Download
