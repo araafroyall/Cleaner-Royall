@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  issues: write
+  contents: read
 
 jobs:
   delete:
@@ -13,17 +13,13 @@ jobs:
     steps:
       - name: Delete matching issues
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DELETE_TOKEN }}
         run: |
           gh api graphql --paginate \
             -f query='
               query($cursor: String) {
                 repository(owner: "AraafRoyall", name: "Cleaner-Royall") {
                   issues(first: 100, after: $cursor, states: [OPEN, CLOSED]) {
-                    pageInfo {
-                      hasNextPage
-                      endCursor
-                    }
                     nodes {
                       id
                       number
@@ -56,5 +52,5 @@ jobs:
               ' \
               -F id="$id"
 
-            echo "Deleted #$number"
+            echo "Deleted #$number — $title"
           done
