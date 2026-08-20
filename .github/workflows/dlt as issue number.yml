@@ -1,0 +1,48 @@
+name: Delete Issues By Number
+
+on:
+  workflow_dispatch:
+    inputs:
+      issues:
+        description: "Issue numbers separated by spaces"
+        required: true
+        type: string
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete selected issues
+        env:
+          GH_TOKEN: ${{ secrets.DELETE_TOKEN }}
+          ISSUES: ${{ inputs.issues }}
+        run: |
+          for number in $ISSUES; do
+
+            echo "Deleting issue #$number"
+
+            id=$(gh api \
+              "/repos/AraafRoyall/Cleaner-Royall/issues/$number" \
+              --jq '.node_id')
+
+            if [ -z "$id" ] || [ "$id" = "null" ]; then
+              echo "Issue #$number not found"
+              continue
+            fi
+
+            gh api graphql \
+              -f query='
+                mutation($id: ID!) {
+                  deleteIssue(input: {issueId: $id}) {
+                    repository {
+                      id
+                    }
+                  }
+                }
+              ' \
+              -F id="$id"
+
+            echo "Deleted #$number"
+
+          done
