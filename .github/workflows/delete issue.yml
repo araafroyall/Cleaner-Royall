@@ -1,0 +1,60 @@
+name: Delete Selected Issues
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete matching issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql --paginate \
+            -f query='
+              query($cursor: String) {
+                repository(owner: "AraafRoyall", name: "Cleaner-Royall") {
+                  issues(first: 100, after: $cursor, states: [OPEN, CLOSED]) {
+                    pageInfo {
+                      hasNextPage
+                      endCursor
+                    }
+                    nodes {
+                      id
+                      number
+                      title
+                    }
+                  }
+                }
+              }
+            ' \
+            --jq '.data.repository.issues.nodes[] |
+              select(
+                (.title | ascii_downcase | contains("premium forum"))
+                or
+                (.title | ascii_downcase == "test")
+              ) |
+              "\(.id)\t\(.number)\t\(.title)"' |
+          while IFS=$'\t' read -r id number title; do
+
+            echo "Deleting #$number — $title"
+
+            gh api graphql \
+              -f query='
+                mutation($id: ID!) {
+                  deleteIssue(input: {issueId: $id}) {
+                    repository {
+                      id
+                    }
+                  }
+                }
+              ' \
+              -F id="$id"
+
+            echo "Deleted #$number"
+          done
