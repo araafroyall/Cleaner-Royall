@@ -1,51 +1,39 @@
-name: Delete Premium Forum and Test Issues
+name: Delete Issues By Number
 
 on:
   workflow_dispatch:
+    inputs:
+      issues:
+        description: "Issue numbers separated by dots"
+        required: true
+        type: string
 
 jobs:
   delete:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Delete matching issues
+      - name: Delete selected issues
         env:
           GH_TOKEN: ${{ secrets.DELETE_TOKEN }}
+          ISSUES: ${{ inputs.issues }}
         run: |
-          gh api graphql --paginate \
-            -f query='
-              query($endCursor: String) {
-                repository(owner: "AraafRoyall", name: "Cleaner-Royall") {
-                  issues(
-                    first: 100
-                    after: $endCursor
-                    states: [OPEN, CLOSED]
-                  ) {
-                    pageInfo {
-                      hasNextPage
-                      endCursor
-                    }
-                    nodes {
-                      id
-                      number
-                      title
-                    }
-                  }
-                }
-              }
-            ' \
-            --jq '
-              .data.repository.issues.nodes[]
-              | select(
-                  (.title | ascii_downcase | contains("premium forum"))
-                  or
-                  (.title | ascii_downcase | contains("test"))
-                )
-              | "\(.id)\t\(.number)\t\(.title)"
-            ' |
-          while IFS=$'\t' read -r id number title; do
+          IFS='.' read -ra NUMBERS <<< "$ISSUES"
 
-            echo "Deleting #$number — $title"
+          for number in "${NUMBERS[@]}"; do
+
+            number=$(echo "$number" | xargs)
+
+            echo "Deleting issue #$number"
+
+            id=$(gh api \
+              "/repos/AraafRoyall/Cleaner-Royall/issues/$number" \
+              --jq '.node_id')
+
+            if [ -z "$id" ] || [ "$id" = "null" ]; then
+              echo "Issue #$number not found"
+              continue
+            fi
 
             gh api graphql \
               -f query='
@@ -60,4 +48,5 @@ jobs:
               -F id="$id"
 
             echo "Deleted #$number"
+
           done
